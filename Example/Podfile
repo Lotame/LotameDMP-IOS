@@ -7,6 +7,6 @@ end
 
 target 'LotameDMP_Tests', :exclusive => true do
   pod "LotameDMP", :path => "../"
-
+  pod 'OHHTTPStubs'
   
 end

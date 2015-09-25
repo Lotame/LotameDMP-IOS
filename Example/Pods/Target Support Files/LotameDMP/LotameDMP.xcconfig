@@ -1,0 +1,1 @@
+LOTAMEDMP_OTHER_LDFLAGS = -framework "AdSupport"

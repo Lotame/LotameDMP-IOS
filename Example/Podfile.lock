@@ -1,0 +1,32 @@
+PODS:
+  - Alamofire (2.0.2)
+  - LotameDMP (0.1.0):
+    - Alamofire (~> 2.0)
+  - OHHTTPStubs (4.3.0):
+    - OHHTTPStubs/Default (= 4.3.0)
+  - OHHTTPStubs/Core (4.3.0)
+  - OHHTTPStubs/Default (4.3.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (4.3.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (4.3.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (4.3.0)
+
+DEPENDENCIES:
+  - LotameDMP (from `../`)
+  - OHHTTPStubs
+
+EXTERNAL SOURCES:
+  LotameDMP:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
+  LotameDMP: 9224797dc437cb3b2ae9534ec7b48aa2546baead
+  OHHTTPStubs: 0aec5755528693a165bd616cb79f69387de306a8
+
+COCOAPODS: 0.38.2
