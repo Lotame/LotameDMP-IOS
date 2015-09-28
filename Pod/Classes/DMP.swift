@@ -49,7 +49,7 @@ public class DMP{
     Gets the IDFA or nil if it is not enabled.
     */
     public static var advertisingId: String?{
-        if ASIdentifierManager.sharedManager().advertisingTrackingEnabled{
+        if trackingEnabled{
             return ASIdentifierManager.sharedManager().advertisingIdentifier.UUIDString
         }else{
             return nil
@@ -77,7 +77,7 @@ public class DMP{
     Tracking is enabled only if advertising id is enabled on the user's device
     */
     public static var trackingEnabled: Bool{
-        return DMP.advertisingId != nil
+        return ASIdentifierManager.sharedManager().advertisingTrackingEnabled
     }
     
     /**
@@ -93,19 +93,24 @@ public class DMP{
         return clientId != nil && !clientId!.isEmpty
     }
     
+    private static let defaultDomain = "crwdcntrl.net"
+    private static let defaultProtocol = "https"
+    
     /**
     The domain of the base urls for the network calls. Defaults to crwdcntrl.net
     */
-    public var domain: String = "crwdcntrl.net"{
+    public var domain: String = DMP.defaultDomain{
         didSet{
             DMP.startNewSession()
         }
     }
     
     /**
-    The protocol to use for the network calls. Defaults to https
+    The protocol to use for the network calls. Defaults to https.
+    Changing to http will require special settings in Info.plist to disable
+    ATS.
     */
-    public var httpProtocol: String = "https"{
+    public var httpProtocol: String = DMP.defaultProtocol{
         didSet{
             DMP.startNewSession()
         }
@@ -133,24 +138,21 @@ public class DMP{
     
     /**
     Call this first to initialize the singleton. Only needs to be called once.
+    Starts a new session, sets the domain to default "crwdcntrl.net" and httpProtocol to default "http"
     **/
     public class func initialize(clientId: String){
         DMP.sharedManager.clientId = clientId
+        DMP.sharedManager.domain = defaultDomain
+        DMP.sharedManager.httpProtocol = defaultProtocol
         DMP.startNewSession()
     }
     
     /**
     Starts a new page view session
     */
-    class func startNewSession(){
+    public class func startNewSession(){
         dispatch_sync(dispatchQueue){
             sharedManager.isNewSession = true
-            if let clientId = DMP.sharedManager.clientId where !clientId.isEmpty{
-                if DMP.trackingEnabled && DMP.sharedManager.clientId != nil{
-                    Router.baseBCPString = DMP.sharedManager.baseBCPUrl
-                    Router.baseADString = DMP.sharedManager.baseADUrl
-                }
-            }
         }
     }
     
@@ -167,7 +169,9 @@ public class DMP{
             if !DMP.trackingEnabled{
                 sharedManager.behaviors.removeAll()
                 //Don't send tracking data if it user has opted out
-                completion(error: LotameError.TrackingDisabled)
+                dispatch_async(dispatch_get_main_queue()){
+                    completion(error: LotameError.TrackingDisabled)
+                }
                 return
             }
             //Add random number for cache busting
@@ -187,10 +191,12 @@ public class DMP{
             }
             
             let behaviorCopy = sharedManager.behaviors
-            Alamofire.request(Router.SendBehaviorData(params: behaviorCopy))
+            Alamofire.request(Router.SendBehaviorData(baseUrlString: sharedManager.baseBCPUrl, params: behaviorCopy))
                 .validate().response{
                     _, _, _, err in
-                    completion(error:err)
+                    dispatch_async(dispatch_get_main_queue()){
+                        completion(error:err)
+                    }
                 }
             sharedManager.behaviors.removeAll()
         }
@@ -210,9 +216,11 @@ public class DMP{
     Collects behavior data with any type and value
     */
     public class func addBehaviorData(value: String?, forType key: String){
-        dispatch_async(dispatchQueue){
-            if DMP.trackingEnabled{
-                sharedManager.behaviors.append(Behavior(value: value, forKey: key))
+        if !key.isEmpty{
+            dispatch_async(dispatchQueue){
+                if DMP.trackingEnabled{
+                    sharedManager.behaviors.append(Behavior(value: value, forKey: key))
+                }
             }
         }
     }
@@ -246,19 +254,24 @@ public class DMP{
         }
         if !DMP.trackingEnabled{
             //Don't get audience data if it user has opted out
-            completion(data: nil, error: LotameError.TrackingDisabled)
+            dispatch_async(dispatch_get_main_queue()){
+                completion(data: nil, error: LotameError.TrackingDisabled)
+            }
             return
         }
         dispatch_async(dispatchQueue){
-            Alamofire.request(Router.AudienceData(params: nil))
+            
+            Alamofire.request(Router.AudienceData(baseUrlString: sharedManager.baseADUrl, params: nil))
                 .validate()
                 .responseJSON(options: .AllowFragments){
                     req, res, result in
-                    if let value = result.value where res?.statusCode == 200 && result.isSuccess{
-                        completion(data:LotameProfile(json: JSON(value)), error: nil)
-                    }
-                    else{
-                        completion(data: nil, error: result.error)
+                    dispatch_async(dispatch_get_main_queue()){
+                        if let value = result.value where res?.statusCode == 200 && result.isSuccess{
+                            completion(data:LotameProfile(json: JSON(value)), error: nil)
+                        }
+                        else{
+                            completion(data: nil, error: result.error)
+                        }
                     }
             }
         }
@@ -268,22 +281,20 @@ public class DMP{
     Handles building the URLs for each of the requests
     */
     private enum Router: URLRequestConvertible{
-        static var baseBCPString = ""
-        static var baseADString = ""
         
-        case SendBehaviorData(params: [Behavior]?)
-        case AudienceData(params: [Behavior]?)
+        case SendBehaviorData(baseUrlString: String, params: [Behavior]?)
+        case AudienceData(baseUrlString: String, params: [Behavior]?)
         
         var URLRequest: NSMutableURLRequest{
             
             var behaviors:[Behavior]?
             var URL: NSURL?
             switch self{
-            case .AudienceData(let params):
-                URL = NSURL(string: Router.baseBCPString)
+            case .AudienceData(let baseURL, let params):
+                URL = NSURL(string: baseURL)
                 behaviors = params
-            case .SendBehaviorData(let params):
-                URL = NSURL(string: Router.baseADString)
+            case .SendBehaviorData(let baseURL, let params):
+                URL = NSURL(string: baseURL)
                 behaviors = params
             }
             
@@ -310,10 +321,15 @@ public class DMP{
             
             if let params = params{
                 for (key, val) in params{
-                    if let valString = val as? String where !valString.isEmpty {
-                        urlString += "\(key.urlPathEncoded())=\(valString.urlPathEncoded())/"
-                    }else{
-                        urlString += "\(key.urlPathEncoded())/"
+                    if let key = key.urlPathEncoded(){
+                        if let valString = val as? String where !valString.isEmpty {
+                            if let valString = valString.urlPathEncoded(){
+                                urlString += "\(key)=\(valString)/"
+                            }
+                        }else{
+                            
+                            urlString += "\(key.urlPathEncoded())/"
+                        }
                     }
                 }
             }

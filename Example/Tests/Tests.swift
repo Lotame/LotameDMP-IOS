@@ -40,10 +40,46 @@ class Tests: XCTestCase {
             XCTAssertEqual(profile?.jsonString!, JSON(self.mockProfile).rawString()!, "Json generation should work correctly")
             expectation.fulfill()
         }
-        self.waitForExpectationsWithTimeout(120.0, handler: nil)
+        self.waitForExpectationsWithTimeout(10.0, handler: nil)
+    }
+    
+    func testGetAudienceFromServer(){
+        let expectation = self.expectationWithDescription("asynchronous request")
+        DMP.initialize("205")
+        try! DMP.getAudienceData{
+            profile, err in
+            XCTAssertNotNil(profile, "Profile must exist")
+            expectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(10.0, handler: nil)
+    }
+    
+    func testSendDataToServer(){
+        let expectation = self.expectationWithDescription("asynchronous request")
+        DMP.initialize("25")
+        DMP.addBehaviorData("test", forType: "t")
+        try! DMP.sendBehaviorData{
+            err in
+            XCTAssertNil(err, "Sending must not throw errors")
+            expectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(10.0, handler: nil)
+    }
+    
+    func testSendBlankType(){
+        let expectation = self.expectationWithDescription("asynchronous request")
+        DMP.initialize("25")
+        DMP.addBehaviorData(nil, forType: "")
+        try! DMP.sendBehaviorData{
+            err in
+            XCTAssertNil(err, "Sending must not throw errors")
+            expectation.fulfill()
+        }
+        self.waitForExpectationsWithTimeout(10.0, handler: nil)
     }
     
     func testFailGetAudienceWhenUninitialized(){
+        DMP.initialize("")
         do{
             try DMP.getAudienceData{
                 profile, err in
@@ -58,6 +94,7 @@ class Tests: XCTestCase {
     }
     
     func testFailBehaviorWhenUninitialized(){
+        DMP.initialize("")
         do{
             try DMP.sendBehaviorData()
         } catch LotameError.InitializeNotCalled{
@@ -71,6 +108,42 @@ class Tests: XCTestCase {
     
     func testIgnoreError(){
         _ = try? DMP.sendBehaviorData()
+    }
+    
+    private static let dispatchQueue = dispatch_queue_create("com.lotame.testsync", nil)
+    func testAsynchronous(){
+        
+        DMP.initialize("25")
+        
+        for _ in 1...10{
+            let expectationSend = self.expectationWithDescription("send behavior request")
+            let expectationGet = self.expectationWithDescription("get audience request")
+            dispatch_async(Tests.dispatchQueue) {
+                DMP.addBehaviorData("test", forType: "t")
+                do{
+                    try DMP.sendBehaviorData{
+                        err in
+                        XCTAssertNil(err, "Sending must not throw errors")
+                        expectationSend.fulfill()
+                    }
+                }catch {
+                    XCTFail("Should not send error")
+                }
+            }
+            dispatch_async(Tests.dispatchQueue){
+                do{
+                    try DMP.getAudienceData {
+                        profile, err in
+                        XCTAssertNotNil(profile, "Profile must exist")
+                        expectationGet.fulfill()
+                    }
+                }catch{
+                     XCTFail("Should not send error")
+                }
+            }
+        }
+        
+        self.waitForExpectationsWithTimeout(10.0, handler: nil)
     }
     
 }
