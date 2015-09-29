@@ -105,7 +105,7 @@ DMP.sendBehaviorData()
 
 Get the audience data with the following command:
 
-```
+```swift
 DMP.getAudienceData{
 	result in
 	if let profile = result.value{
