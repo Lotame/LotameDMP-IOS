@@ -70,7 +70,7 @@ import LotameDMP
 
 ### Initialization
 
-LotameDMP is a singleton that must be intiialized with a client id once before using it.  Run the following command before executing any other calls:
+LotameDMP is a singleton that must be initialized with a client id once before using it.  Run the following command before executing any other calls:
 
 ```swift
 DMP.initialize("YOUR_CLIENT_ID_NUMBER")
