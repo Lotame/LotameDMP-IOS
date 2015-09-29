@@ -31,13 +31,14 @@ class Tests: XCTestCase {
         })
         
         
-        try! DMP.getAudienceData{
-            profile, err in
-            XCTAssertNotNil(profile, "Profile must exist")
-            XCTAssertEqual(self.mockProfile["Profile"]!["pid"]!.description, profile?.pid, "Profile object id must match the mock")
-            XCTAssertEqual("60519", profile?.audiences[0].id, "First audience object must match the mock")
-            XCTAssertEqual("OCR_Matchflow_Segment_37_2", profile?.audiences[0].abbreviation, "First audience object must match the mock")
-            XCTAssertEqual(profile?.jsonString!, JSON(self.mockProfile).rawString()!, "Json generation should work correctly")
+        DMP.getAudienceData{
+            result in
+            
+            XCTAssertNotNil(result.value, "Profile must exist")
+            XCTAssertEqual(self.mockProfile["Profile"]!["pid"]!.description, result.value?.pid, "Profile object id must match the mock")
+            XCTAssertEqual("60519", result.value?.audiences[0].id, "First audience object must match the mock")
+            XCTAssertEqual("OCR_Matchflow_Segment_37_2", result.value?.audiences[0].abbreviation, "First audience object must match the mock")
+            XCTAssertEqual(result.value?.jsonString!, JSON(self.mockProfile).rawString()!, "Json generation should work correctly")
             expectation.fulfill()
         }
         self.waitForExpectationsWithTimeout(10.0, handler: nil)
@@ -46,9 +47,9 @@ class Tests: XCTestCase {
     func testGetAudienceFromServer(){
         let expectation = self.expectationWithDescription("asynchronous request")
         DMP.initialize("205")
-        try! DMP.getAudienceData{
-            profile, err in
-            XCTAssertNotNil(profile, "Profile must exist")
+        DMP.getAudienceData{
+            result in
+            XCTAssertNotNil(result.value, "Profile must exist")
             expectation.fulfill()
         }
         self.waitForExpectationsWithTimeout(10.0, handler: nil)
@@ -58,9 +59,9 @@ class Tests: XCTestCase {
         let expectation = self.expectationWithDescription("asynchronous request")
         DMP.initialize("25")
         DMP.addBehaviorData("test", forType: "t")
-        try! DMP.sendBehaviorData{
-            err in
-            XCTAssertNil(err, "Sending must not throw errors")
+        DMP.sendBehaviorData{
+            result in
+            XCTAssertTrue(result.isSuccess, "Sending must not throw errors")
             expectation.fulfill()
         }
         self.waitForExpectationsWithTimeout(10.0, handler: nil)
@@ -70,44 +71,45 @@ class Tests: XCTestCase {
         let expectation = self.expectationWithDescription("asynchronous request")
         DMP.initialize("25")
         DMP.addBehaviorData(nil, forType: "")
-        try! DMP.sendBehaviorData{
-            err in
-            XCTAssertNil(err, "Sending must not throw errors")
+        DMP.sendBehaviorData{
+            result in
+            XCTAssertTrue(result.isSuccess, "Sending must not throw errors")
             expectation.fulfill()
         }
         self.waitForExpectationsWithTimeout(10.0, handler: nil)
     }
     
     func testFailGetAudienceWhenUninitialized(){
+        let expectation = self.expectationWithDescription("asynchronous request")
         DMP.initialize("")
-        do{
-            try DMP.getAudienceData{
-                profile, err in
-            }
-        } catch LotameError.InitializeNotCalled{
-            //Proper error
-            return
-        } catch{
-            XCTFail("Should send initialization error")
+        
+        DMP.getAudienceData{
+            result in
+            XCTAssertTrue(result.isFailure, "Initialization error should throw")
+            XCTAssertEqual(LotameError.InitializeNotCalled._code, result.error!._code, "Should send initialization error")
+            
+            expectation.fulfill()
         }
-        XCTFail("No errors sent!")
+        
+        self.waitForExpectationsWithTimeout(10.0, handler: nil)
     }
     
     func testFailBehaviorWhenUninitialized(){
+        let expectation = self.expectationWithDescription("asynchronous request")
         DMP.initialize("")
-        do{
-            try DMP.sendBehaviorData()
-        } catch LotameError.InitializeNotCalled{
-            //Proper error
-            return
-        } catch{
-            XCTFail("Should send initialization error")
+        DMP.sendBehaviorData(){
+            result in
+            XCTAssertTrue(result.isFailure, "Initialization error should throw")
+            XCTAssertEqual(LotameError.InitializeNotCalled._code, result.error!._code, "Should send initialization error")
+            expectation.fulfill()
+            
         }
-        XCTFail("No errors sent!")
+        
+        self.waitForExpectationsWithTimeout(10.0, handler: nil)
     }
     
     func testIgnoreError(){
-        _ = try? DMP.sendBehaviorData()
+        DMP.sendBehaviorData()
     }
     
     private static let dispatchQueue = dispatch_queue_create("com.lotame.testsync", nil)
@@ -120,26 +122,22 @@ class Tests: XCTestCase {
             let expectationGet = self.expectationWithDescription("get audience request")
             dispatch_async(Tests.dispatchQueue) {
                 DMP.addBehaviorData("test", forType: "t")
-                do{
-                    try DMP.sendBehaviorData{
-                        err in
-                        XCTAssertNil(err, "Sending must not throw errors")
-                        expectationSend.fulfill()
-                    }
-                }catch {
-                    XCTFail("Should not send error")
+                
+                DMP.sendBehaviorData{
+                    result in
+                    XCTAssertTrue(result.isSuccess, "Sending must not throw errors")
+                    expectationSend.fulfill()
                 }
+                
             }
             dispatch_async(Tests.dispatchQueue){
-                do{
-                    try DMP.getAudienceData {
-                        profile, err in
-                        XCTAssertNotNil(profile, "Profile must exist")
-                        expectationGet.fulfill()
-                    }
-                }catch{
-                     XCTFail("Should not send error")
+                
+                DMP.getAudienceData {
+                    result in
+                    XCTAssertNotNil(result.value, "Profile must exist")
+                    expectationGet.fulfill()
                 }
+                
             }
         }
         

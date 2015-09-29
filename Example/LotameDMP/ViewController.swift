@@ -59,51 +59,40 @@ class ViewController: UIViewController {
     
     @IBAction func sendBehaviors(sender: UIButton) {
         self.view.endEditing(true)
-        do {
-            try DMP.sendBehaviorData(){
-                err in
-                if let err = err{
-                    self.audienceData.text = "An error occurred \(err)"
-                } else {
-                    self.audienceData.text = "Data sent"
-                }
+        DMP.sendBehaviorData(){
+            result in
+            if result.isSuccess{
+                self.audienceData.text = "Data sent"
+            } else {
+                self.audienceData.text = "An error occurred \(result.error!)"
             }
-        } catch LotameError.InitializeNotCalled {
-            audienceData.text = "Need to initialize with client id before calling send"
-        } catch {
-            audienceData.text = "An error occurred"
         }
     }
     
     @IBAction func getAudience(sender: AnyObject) {
         self.view.endEditing(true)
-        do{
-            try DMP.getAudienceData{
-                profile, err in
-                if let profile = profile{
-                    var audiences = ""
-                    for audience in profile.audiences{
-                        if !audiences.isEmpty{
-                            audiences += "; "
-                        }else{
-                            audiences += "Audiences: "
-                        }
-                        audiences += "id=\(audience.id), abbr=\(audience.abbreviation)"
+        DMP.getAudienceData{
+            result in
+            if let profile = result.value{
+                print("JSON Audience result:" + result.value!.jsonString!)
+                var audiences = ""
+                for audience in profile.audiences{
+                    if !audiences.isEmpty{
+                        audiences += "; "
+                    }else{
+                        audiences += "Audiences: "
                     }
-                    
-                    if audiences.isEmpty{
-                        audiences = "No audiences found for Advertising ID"
-                    }
-                    
-                    self.audienceData.text = audiences
-                } else {
-                    self.audienceData.text = "An error occurred \(err!)"
+                    audiences += "id=\(audience.id), abbr=\(audience.abbreviation)"
                 }
+                
+                if audiences.isEmpty{
+                    audiences = "No audiences found for Advertising ID"
+                }
+                
+                self.audienceData.text = audiences
+            } else {
+                self.audienceData.text = "An error occurred \(result.error!)"
             }
-        }catch LotameError.InitializeNotCalled {
-            audienceData.text = "Need to initialize with client id before calling extract"
-        } catch {
-            audienceData.text = "An error occurred"
         }
         
     }
@@ -111,6 +100,7 @@ class ViewController: UIViewController {
     @IBAction func startNewSession(sender: AnyObject) {
         DMP.startNewSession()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

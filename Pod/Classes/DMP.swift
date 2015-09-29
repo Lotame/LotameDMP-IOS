@@ -161,16 +161,20 @@ public class DMP{
     to the completion handler.
     **Note:** Does not collect data if the user has limited ad tracking turned on, but still clears behaviors.
     */
-    public class func sendBehaviorData(completion:(error: ErrorType?) -> Void) throws{
-        guard sharedManager.isInitialized else{
-            throw LotameError.InitializeNotCalled
-        }
+    public class func sendBehaviorData(completion:(result: Result<NSData>) -> Void){
+        
         dispatch_async(dispatchQueue){
-            if !DMP.trackingEnabled{
+            guard sharedManager.isInitialized else{
+                dispatch_async(dispatch_get_main_queue()){
+                    completion(result: Result<NSData>.Failure(nil, LotameError.InitializeNotCalled))
+                }
+                return
+            }
+            guard DMP.trackingEnabled else{
                 sharedManager.behaviors.removeAll()
                 //Don't send tracking data if it user has opted out
                 dispatch_async(dispatch_get_main_queue()){
-                    completion(error: LotameError.TrackingDisabled)
+                    completion(result: Result<NSData>.Failure(nil, LotameError.TrackingDisabled))
                 }
                 return
             }
@@ -195,7 +199,11 @@ public class DMP{
                 .validate().response{
                     _, _, _, err in
                     dispatch_async(dispatch_get_main_queue()){
-                        completion(error:err)
+                        if let err = err{
+                            completion(result:Result<NSData>.Failure(nil,err))
+                        }else{
+                            completion(result:Result<NSData>.Success(NSData()))
+                        }
                     }
                 }
             sharedManager.behaviors.removeAll()
@@ -205,8 +213,8 @@ public class DMP{
     /**
     Sends the collected behavior data to the Lotame server without a completion handler
     */
-    public class func sendBehaviorData() throws{
-        try sendBehaviorData(){
+    public class func sendBehaviorData(){
+        sendBehaviorData(){
             err in
             //Could log the message here
         }
@@ -248,14 +256,17 @@ public class DMP{
     
     **Note:** Does not get results if the user has limited ad tracking turned on
     */
-    public class func getAudienceData(completion:(data:LotameProfile?, error: ErrorType?)->Void) throws {
+    public class func getAudienceData(completion:(result: Result<LotameProfile>)->Void) {
         guard sharedManager.isInitialized else{
-            throw LotameError.InitializeNotCalled
+            dispatch_async(dispatch_get_main_queue()){
+                completion(result: Result<LotameProfile>.Failure(nil, LotameError.InitializeNotCalled))
+            }
+            return
         }
-        if !DMP.trackingEnabled{
+        guard DMP.trackingEnabled else{
             //Don't get audience data if it user has opted out
             dispatch_async(dispatch_get_main_queue()){
-                completion(data: nil, error: LotameError.TrackingDisabled)
+                completion(result: Result<LotameProfile>.Failure(nil, LotameError.TrackingDisabled))
             }
             return
         }
@@ -267,10 +278,11 @@ public class DMP{
                     req, res, result in
                     dispatch_async(dispatch_get_main_queue()){
                         if let value = result.value where res?.statusCode == 200 && result.isSuccess{
-                            completion(data:LotameProfile(json: JSON(value)), error: nil)
-                        }
-                        else{
-                            completion(data: nil, error: result.error)
+                            completion(result: Result<LotameProfile>.Success(LotameProfile(json: JSON(value))))
+                        } else if result.isFailure{
+                            completion(result: Result<LotameProfile>.Failure(nil, result.error!))
+                        } else {
+                            completion(result: Result<LotameProfile>.Failure(nil, LotameError.UnexpectedResponse))
                         }
                     }
             }

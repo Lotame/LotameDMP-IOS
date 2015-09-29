@@ -30,6 +30,7 @@ public let LotameErrorDomain = "com.splender.error"
 public enum LotameError:ErrorType{
     case TrackingDisabled
     case InitializeNotCalled
+    case UnexpectedResponse
     
     func getMessage() -> String{
         switch self{
@@ -37,6 +38,8 @@ public enum LotameError:ErrorType{
             return "User has chosen to limit ad tracking"
         case .InitializeNotCalled:
             return "Call the initialize method to set your client id before attempting network calls. This only needs to be done once per app run (can put in appdelegate)"
+        case .UnexpectedResponse:
+            return "Server is returning bad responses"
         }
     }
 }
