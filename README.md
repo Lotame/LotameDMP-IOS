@@ -42,13 +42,6 @@ Then, run the following command:
 $ pod install
 ```
 
-LotameDMP is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
-
-```ruby
-pod "LotameDMP"
-```
-
 Add the following elements to your project's Info.plist file to configure ATS:
 
 ```xml
