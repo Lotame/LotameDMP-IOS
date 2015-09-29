@@ -139,10 +139,6 @@ To indicate that a new session has started, use the following command:
 DMP.startNewSession()
 ```
 
-## Author
-
-Dan Rusk, djrusk@gmail.com
-
 ## License
 
 LotameDMP is available under the MIT license. See the LICENSE file for more info.
