@@ -1,4 +1,5 @@
-# LotameDMP
+# LotameDMP-IOS
+This open source library can be leveraged by Lotame clients to collect data from within their iOS applications.
 
 [![Version](https://img.shields.io/cocoapods/v/LotameDMP.svg?style=flat)](http://cocoapods.org/pods/LotameDMP)
 [![License](https://img.shields.io/cocoapods/l/LotameDMP.svg?style=flat)](http://cocoapods.org/pods/LotameDMP)
@@ -124,3 +125,4 @@ Dan Rusk, djrusk@gmail.com
 ## License
 
 LotameDMP is available under the MIT license. See the LICENSE file for more info.
+
