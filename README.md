@@ -101,6 +101,19 @@ It must be sent to the server to record the behaviors:
 DMP.sendBehaviorData()
 ```
 
+If you're interested in the success or failure of sending the data, use a completion handler:
+
+```swift
+DMP.sendBehaviorData(){
+	result in
+	if result.isSuccess{
+		//Success
+	} else{
+		//Failure
+	}
+}
+```
+
 ### Get Audience Data
 
 Get the audience data with the following command:
@@ -117,6 +130,14 @@ DMP.getAudienceData{
 ```
 
 The completion handler uses a Result enum to indicate success or failure.
+
+### Start a New Session
+
+To indicate that a new session has started, use the following command:
+
+```swift
+DMP.startNewSession()
+```
 
 ## Author
 
