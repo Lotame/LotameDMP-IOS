@@ -3,7 +3,7 @@
 //  LotameDMP
 //
 //  Created by Dan Rusk on 09/23/2015.
-//  Copyright (c) 2015 Dan Rusk. All rights reserved.
+//  Copyright (c) 2015 Lotame. All rights reserved.
 //
 
 import UIKit

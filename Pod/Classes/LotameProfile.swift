@@ -26,7 +26,8 @@
 
 import Foundation
 
-public class LotameProfile{
+@objc
+public class LotameProfile: NSObject{
     public let pid:String
     public var audiences: [LotameAudience] = []
     
@@ -38,6 +39,11 @@ public class LotameProfile{
         var json: JSON = ["Profile": ["pid": pid]]
         json["Profile"]["Audiences"] = JSON(["Audience" : audiences.map{["id":$0.id, "abbr": $0.abbreviation]}])
         return json
+    }
+    
+    override init(){
+        //Blank for obj-c calls
+        pid = ""
     }
     
     init(json: JSON){

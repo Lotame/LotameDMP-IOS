@@ -32,7 +32,8 @@ import Alamofire
 /**
     The Lotame Data Management Platform
 */
-public class DMP{
+@objc
+public class DMP:NSObject{
     /**
     LotameDMP is a singleton.  Calls should be made to the class functions, which
     will use this sharedManager as an object.
@@ -132,7 +133,7 @@ public class DMP{
     /**
     The DMP is a singleton, use the initialize method to set the values in the singleton
     */
-    private init(){
+    private override init(){
         
     }
     
@@ -246,6 +247,20 @@ public class DMP{
     */
     public class func addBehaviorData(opportunityId opportunityId: Int64){
         addBehaviorData(opportunityId.description, forType:opportunityParamKey)
+    }
+    
+    /**
+    Used by objective-c code that does not support generics. Do not use in swift. Use getAudienceData instead
+    */
+    @objc public class func getAudienceDataWithHandler(handler:(profile: LotameProfile?, success: Bool)->Void) {
+        getAudienceData{
+            result in
+            if result.isSuccess{
+                handler(profile: result.value!, success:true)
+            }else{
+                handler(profile: nil, success: false)
+            }
+        }
     }
     
     /**

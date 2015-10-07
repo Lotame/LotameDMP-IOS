@@ -27,7 +27,10 @@
 import Foundation
 public let LotameErrorDomain = "com.splender.error"
 
-public enum LotameError:ErrorType{
+@objc
+public enum LotameError: Int, ErrorType{
+    public static let _NSErrorDomain: String = LotameErrorDomain
+    
     case TrackingDisabled
     case InitializeNotCalled
     case UnexpectedResponse

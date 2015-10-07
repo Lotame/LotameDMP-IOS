@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (2.0.2)
-  - LotameDMP (0.1.0):
+  - LotameDMP (3.0.0):
     - Alamofire (~> 2.0)
   - OHHTTPStubs (4.3.0):
     - OHHTTPStubs/Default (= 4.3.0)
@@ -26,7 +26,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
-  LotameDMP: 9224797dc437cb3b2ae9534ec7b48aa2546baead
+  LotameDMP: 58ef9e6bd216a2af13d78c6aebdbb2bb21ffce99
   OHHTTPStubs: 0aec5755528693a165bd616cb79f69387de306a8
 
 COCOAPODS: 0.38.2
