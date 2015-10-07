@@ -31,7 +31,7 @@
                 NSLog(audience.jsonString)
             }
         }
-    }]
+    }];
 }
 
 @end

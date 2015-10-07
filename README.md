@@ -7,7 +7,7 @@ This open source library can be leveraged by Lotame clients to collect data from
 
 ## Requirements
 
-LotameDMP requires Xcode 7 and swift 2.0.
+LotameDMP requires Xcode 7 and at least iOS 8.0.  It will work with swift or Objective-C.
 
 ## Example
 
@@ -68,12 +68,24 @@ LotameDMP must be imported by any file using the library.
 import LotameDMP
 ```
 
+or for objective-c
+
+```objective-c
+#import "LotameDMP-Swift.h"
+```
+
 ### Initialization
 
 LotameDMP is a singleton that must be initialized with a client id once before using it.  Run the following command before executing any other calls:
 
 ```swift
 DMP.initialize("YOUR_CLIENT_ID_NUMBER")
+```
+
+or for objective-c
+
+```objective-c
+[DMP initialize:@"YOUR_CLIENT_ID_NUMBER_"];
 ```
 
 The initialize call starts a new session and sets the domain and protocols to their default values (https://*.crwdcntrl.net)
@@ -88,10 +100,24 @@ DMP.addBehaviorData(behaviorId: 1)
 DMP.addBehaviorData(opportunityId: 1)
 ```
 
+or for objective-c
+
+```objective-c
+[DMP addBehaviorData:@"value" forType: @"type"];
+[DMP addBehaviorDataWithBehaviorId: 1];
+[DMP addBehaviorDataWithOpportunityId: 1];
+```
+
 It must be sent to the server to record the behaviors:
 
 ```swift
 DMP.sendBehaviorData()
+```
+
+or for objective-c
+
+```objective-c
+[DMP sendBehaviorData];
 ```
 
 If you're interested in the success or failure of sending the data, use a completion handler:
@@ -122,6 +148,16 @@ DMP.getAudienceData{
 }
 ```
 
+or for objective-c
+
+```objective-c
+[DMP getAudienceDataWithHandler:^(LotameProfile * _Nullable profile, BOOL success) {
+        if (success) { //Check for success
+            //Successful request, use LotameProfile object
+        }
+}];
+```
+
 The completion handler uses a Result enum to indicate success or failure.
 
 ### Start a New Session
@@ -130,6 +166,12 @@ To indicate that a new session has started, use the following command:
 
 ```swift
 DMP.startNewSession()
+```
+
+or for objective-c
+
+```objective-c
+[DMP startNewSession];
 ```
 
 ## License
