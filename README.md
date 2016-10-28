@@ -7,7 +7,7 @@ This open source library can be leveraged by Lotame clients to collect data from
 
 ## Requirements
 
-LotameDMP requires Xcode 7 and at least iOS 8.0.  It will work with swift or Objective-C.
+LotameDMP requires Xcode 8 and at least iOS 9.0.  It will work with swift or Objective-C.
 
 ## Example
 
@@ -15,7 +15,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-> **Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9).**
+> **Embedded frameworks require a minimum deployment target of iOS 9 or OS X Mavericks (10.9).**
 
 ### CocoaPods
 
