@@ -6,7 +6,8 @@
 //  Copyright © 2015 CocoaPods. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+// #import <Foundation/Foundation.h>
+@import UIKit;
 
 @interface ObjcExample : NSObject
 

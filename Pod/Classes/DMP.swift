@@ -162,12 +162,12 @@ public class DMP:NSObject{
     to the completion handler.
     **Note:** Does not collect data if the user has limited ad tracking turned on, but still clears behaviors.
     */
-    public class func sendBehaviorData(completion:(result: Result<NSData>) -> Void){
+    public class func sendBehaviorData(completion:(result: Result<NSData, LotameError>) -> Void){
         
         dispatch_async(dispatchQueue){
             guard sharedManager.isInitialized else{
                 dispatch_async(dispatch_get_main_queue()){
-                    completion(result: Result<NSData>.Failure(nil, LotameError.InitializeNotCalled))
+                    completion(result: Result<NSData, LotameError>.Failure(LotameError.InitializeNotCalled))
                 }
                 return
             }
@@ -175,7 +175,7 @@ public class DMP:NSObject{
                 sharedManager.behaviors.removeAll()
                 //Don't send tracking data if it user has opted out
                 dispatch_async(dispatch_get_main_queue()){
-                    completion(result: Result<NSData>.Failure(nil, LotameError.TrackingDisabled))
+                    completion(result: Result<NSData, LotameError>.Failure(LotameError.TrackingDisabled))
                 }
                 return
             }
@@ -198,12 +198,11 @@ public class DMP:NSObject{
             let behaviorCopy = sharedManager.behaviors
             Alamofire.request(Router.SendBehaviorData(baseUrlString: sharedManager.baseBCPUrl, params: behaviorCopy))
                 .validate().response{
-                    _, _, _, err in
-                    dispatch_async(dispatch_get_main_queue()){
-                        if let err = err{
-                            completion(result:Result<NSData>.Failure(nil,err))
-                        }else{
-                            completion(result:Result<NSData>.Success(NSData()))
+                    response in dispatch_async(dispatch_get_main_queue()){
+                        if let statusCode = response.1?.statusCode where statusCode == 200 {
+                            completion(result:Result<NSData, LotameError>.Success(NSData()))
+                        } else{
+                            completion(result:Result<NSData, LotameError>.Failure(LotameError.UnexpectedResponse))
                         }
                     }
                 }
@@ -271,17 +270,17 @@ public class DMP:NSObject{
     
     **Note:** Does not get results if the user has limited ad tracking turned on
     */
-    public class func getAudienceData(completion:(result: Result<LotameProfile>)->Void) {
+    public class func getAudienceData(completion:(result: Result<LotameProfile, LotameError>)->Void) {
         guard sharedManager.isInitialized else{
             dispatch_async(dispatch_get_main_queue()){
-                completion(result: Result<LotameProfile>.Failure(nil, LotameError.InitializeNotCalled))
+                completion(result: Result<LotameProfile, LotameError>.Failure(LotameError.InitializeNotCalled))
             }
             return
         }
         guard DMP.trackingEnabled else{
             //Don't get audience data if it user has opted out
             dispatch_async(dispatch_get_main_queue()){
-                completion(result: Result<LotameProfile>.Failure(nil, LotameError.TrackingDisabled))
+                completion(result: Result<LotameProfile, LotameError>.Failure(LotameError.TrackingDisabled))
             }
             return
         }
@@ -290,14 +289,11 @@ public class DMP:NSObject{
             Alamofire.request(Router.AudienceData(baseUrlString: sharedManager.baseADUrl, params: nil))
                 .validate()
                 .responseJSON(options: .AllowFragments){
-                    req, res, result in
-                    dispatch_async(dispatch_get_main_queue()){
-                        if let value = result.value where res?.statusCode == 200 && result.isSuccess{
-                            completion(result: Result<LotameProfile>.Success(LotameProfile(json: JSON(value))))
-                        } else if result.isFailure{
-                            completion(result: Result<LotameProfile>.Failure(nil, result.error!))
+                    response in dispatch_async(dispatch_get_main_queue()){
+                        if let value = response.result.value where response.response?.statusCode == 200 && response.result.isSuccess{
+                            completion(result: Result<LotameProfile, LotameError>.Success(LotameProfile(json: JSON(value))))
                         } else {
-                            completion(result: Result<LotameProfile>.Failure(nil, LotameError.UnexpectedResponse))
+                            completion(result: Result<LotameProfile, LotameError>.Failure(LotameError.UnexpectedResponse))
                         }
                     }
             }
