@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (2.0.2)
-  - LotameDMP (3.0.0):
-    - Alamofire (~> 2.0)
+  - Alamofire (4.0.1)
+  - LotameDMP (3.1.0):
+    - Alamofire (~> 4.0)
   - OHHTTPStubs (4.3.0):
     - OHHTTPStubs/Default (= 4.3.0)
   - OHHTTPStubs/Core (4.3.0)
@@ -25,8 +25,10 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
-  LotameDMP: 58ef9e6bd216a2af13d78c6aebdbb2bb21ffce99
+  Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
+  LotameDMP: 0ad1e60d8736730f1cb5b06332189754d021da02
   OHHTTPStubs: 0aec5755528693a165bd616cb79f69387de306a8
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: 5e055f3d87d9e826bbffdaa946dd6844c802fc9c
+
+COCOAPODS: 1.1.1

@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		311041731CC9832D7283825A /* Pods_LotameDMP_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525845BFDBF8CE53D6B6A996 /* Pods_LotameDMP_Tests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		32DEAC8FCC9449E100781B4B /* Pods_LotameDMP_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 999AEA689F6BCE25973BC733 /* Pods_LotameDMP_Example.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		5834CA581BC5B4BB00D245E4 /* ObjcExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5834CA571BC5B4BB00D245E4 /* ObjcExample.m */; settings = {ASSET_TAGS = (); }; };
+		4EC92AB3F9D32BBDBF5630ED /* Pods_LotameDMP_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D06D713BB18D797D99F6FA /* Pods_LotameDMP_Example.framework */; };
+		5834CA581BC5B4BB00D245E4 /* ObjcExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 5834CA571BC5B4BB00D245E4 /* ObjcExample.m */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		8D51A64CCC3C636F190654BF /* Pods_LotameDMP_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C38C3EE0F22BF2FECB37AA87 /* Pods_LotameDMP_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,10 +29,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0AAE913FC97ABF21110EEA38 /* Pods-LotameDMP_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		525845BFDBF8CE53D6B6A996 /* Pods_LotameDMP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LotameDMP_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5834CA561BC5B4BB00D245E4 /* ObjcExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjcExample.h; path = ../ObjcExample.h; sourceTree = "<group>"; };
 		5834CA571BC5B4BB00D245E4 /* ObjcExample.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjcExample.m; path = ../ObjcExample.m; sourceTree = "<group>"; };
+		5C26DC5676C205133A81B32D /* Pods-LotameDMP_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* LotameDMP_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotameDMP_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,13 +42,14 @@
 		607FACE51AFB9204008FA782 /* LotameDMP_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotameDMP_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		64F1A35CD2B8D691750FB063 /* Pods-LotameDMP_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		68A225BFFBE8E2A3FBDA7A24 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		999AEA689F6BCE25973BC733 /* Pods_LotameDMP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LotameDMP_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		70E16058F2811FDF2F67414F /* Pods-LotameDMP_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C38C3EE0F22BF2FECB37AA87 /* Pods_LotameDMP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LotameDMP_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3D06D713BB18D797D99F6FA /* Pods_LotameDMP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LotameDMP_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0F887560874FC6BE9FC36A6 /* Pods-LotameDMP_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.release.xcconfig"; sourceTree = "<group>"; };
 		E1250959D9A53E3904AE529F /* LotameDMP.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LotameDMP.podspec; path = ../LotameDMP.podspec; sourceTree = "<group>"; };
 		EACAD3F12B6BE04C206757A1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		EBC76E966AF0681785D0C6A7 /* Pods-LotameDMP_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F11ADE8BD105EE6B33B2C559 /* Pods-LotameDMP_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		FBE886B95B11D76E44F665E1 /* Pods-LotameDMP_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				32DEAC8FCC9449E100781B4B /* Pods_LotameDMP_Example.framework in Frameworks */,
+				4EC92AB3F9D32BBDBF5630ED /* Pods_LotameDMP_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,18 +65,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				311041731CC9832D7283825A /* Pods_LotameDMP_Tests.framework in Frameworks */,
+				8D51A64CCC3C636F190654BF /* Pods_LotameDMP_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		24513AC19BBF10F470F7E917 /* Frameworks */ = {
+		0467F1E8D9CAB9767B625E35 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				999AEA689F6BCE25973BC733 /* Pods_LotameDMP_Example.framework */,
-				525845BFDBF8CE53D6B6A996 /* Pods_LotameDMP_Tests.framework */,
+				C3D06D713BB18D797D99F6FA /* Pods_LotameDMP_Example.framework */,
+				C38C3EE0F22BF2FECB37AA87 /* Pods_LotameDMP_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,8 +88,8 @@
 				607FACD21AFB9204008FA782 /* Example for LotameDMP */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				BA1853FCAEBE0FDC65D6A3B9 /* Pods */,
-				24513AC19BBF10F470F7E917 /* Frameworks */,
+				FB240902E91EE869A00A17AE /* Pods */,
+				0467F1E8D9CAB9767B625E35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -153,13 +153,13 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		BA1853FCAEBE0FDC65D6A3B9 /* Pods */ = {
+		FB240902E91EE869A00A17AE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0AAE913FC97ABF21110EEA38 /* Pods-LotameDMP_Example.debug.xcconfig */,
-				EBC76E966AF0681785D0C6A7 /* Pods-LotameDMP_Example.release.xcconfig */,
-				FBE886B95B11D76E44F665E1 /* Pods-LotameDMP_Tests.debug.xcconfig */,
-				F11ADE8BD105EE6B33B2C559 /* Pods-LotameDMP_Tests.release.xcconfig */,
+				5C26DC5676C205133A81B32D /* Pods-LotameDMP_Example.debug.xcconfig */,
+				E0F887560874FC6BE9FC36A6 /* Pods-LotameDMP_Example.release.xcconfig */,
+				70E16058F2811FDF2F67414F /* Pods-LotameDMP_Tests.debug.xcconfig */,
+				64F1A35CD2B8D691750FB063 /* Pods-LotameDMP_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -171,12 +171,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "LotameDMP_Example" */;
 			buildPhases = (
-				B04DAC1C72ED6C0C7BCB844B /* Check Pods Manifest.lock */,
+				DFFF2D62FCE4EB3A33E22DC4 /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				41CEDF381F073F1CC352A7AC /* Embed Pods Frameworks */,
-				1E0806D884CA494A40006962 /* Copy Pods Resources */,
+				A00628155799EF845FC58D1C /* [CP] Embed Pods Frameworks */,
+				A7B5AA28529EC1B0155B5926 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -191,12 +191,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "LotameDMP_Tests" */;
 			buildPhases = (
-				5AAC90F1EF8764B679D68494 /* Check Pods Manifest.lock */,
+				7AD6142C1B6198A73ED210BF /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				509609D24F91B906A4B1741F /* Embed Pods Frameworks */,
-				568BDFEB067C5721F098B062 /* Copy Pods Resources */,
+				2A3DE9E072CC2766CD879577 /* [CP] Embed Pods Frameworks */,
+				DCE8B24C80B3D78A312B2796 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,9 +220,11 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0800;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -267,44 +269,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1E0806D884CA494A40006962 /* Copy Pods Resources */ = {
+		2A3DE9E072CC2766CD879577 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		41CEDF381F073F1CC352A7AC /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		509609D24F91B906A4B1741F /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,14 +284,59 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		568BDFEB067C5721F098B062 /* Copy Pods Resources */ = {
+		7AD6142C1B6198A73ED210BF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A00628155799EF845FC58D1C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A7B5AA28529EC1B0155B5926 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCE8B24C80B3D78A312B2796 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,34 +344,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5AAC90F1EF8764B679D68494 /* Check Pods Manifest.lock */ = {
+		DFFF2D62FCE4EB3A33E22DC4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		B04DAC1C72ED6C0C7BCB844B /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -445,7 +447,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -483,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -492,34 +494,38 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AAE913FC97ABF21110EEA38 /* Pods-LotameDMP_Example.debug.xcconfig */;
+			baseConfigurationReference = 5C26DC5676C205133A81B32D /* Pods-LotameDMP_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LotameDMP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EBC76E966AF0681785D0C6A7 /* Pods-LotameDMP_Example.release.xcconfig */;
+			baseConfigurationReference = E0F887560874FC6BE9FC36A6 /* Pods-LotameDMP_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = LotameDMP/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FBE886B95B11D76E44F665E1 /* Pods-LotameDMP_Tests.debug.xcconfig */;
+			baseConfigurationReference = 70E16058F2811FDF2F67414F /* Pods-LotameDMP_Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -533,13 +539,14 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LotameDMP_Example.app/LotameDMP_Example";
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F11ADE8BD105EE6B33B2C559 /* Pods-LotameDMP_Tests.release.xcconfig */;
+			baseConfigurationReference = 64F1A35CD2B8D691750FB063 /* Pods-LotameDMP_Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -549,6 +556,7 @@
 				INFOPLIST_FILE = Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LotameDMP_Example.app/LotameDMP_Example";
 			};
 			name = Release;

@@ -18,21 +18,21 @@ class ViewController: UIViewController {
     @IBOutlet var valueField: UITextField!
     
     
-    private var foregroundNotification: NSObjectProtocol!
+    fileprivate var foregroundNotification: NSObjectProtocol!
     override func viewDidLoad() {
         super.viewDidLoad()
-        foregroundNotification = NSNotificationCenter.defaultCenter().addObserverForName(UIApplicationWillEnterForegroundNotification, object: nil, queue: NSOperationQueue.mainQueue()) {
+        foregroundNotification = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.main) {
             [unowned self] notification in
             self.showUUID()
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         showUUID()
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(foregroundNotification)
+        NotificationCenter.default.removeObserver(foregroundNotification)
     }
     
     func showUUID(){
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func addBehavior(sender: UIButton) {
+    @IBAction func addBehavior(_ sender: UIButton) {
         self.view.endEditing(true)
         if let behavior = behaviorField.text{
             DMP.addBehaviorData(valueField.text, forType: behavior)
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func sendBehaviors(sender: UIButton) {
+    @IBAction func sendBehaviors(_ sender: UIButton) {
         self.view.endEditing(true)
         DMP.sendBehaviorData(){
             result in
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func getAudience(sender: AnyObject) {
+    @IBAction func getAudience(_ sender: AnyObject) {
         self.view.endEditing(true)
         DMP.getAudienceData{
             result in
@@ -97,7 +97,7 @@ class ViewController: UIViewController {
         
     }
 
-    @IBAction func startNewSession(sender: AnyObject) {
+    @IBAction func startNewSession(_ sender: AnyObject) {
         DMP.startNewSession()
     }
     
