@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "LotameDMP"
-  s.version          = "3.1.0"
+  s.version          = "4.0.0"
   s.summary          = "This open source library can be leveraged by Lotame clients to collect data from within their iOS applications."
 
 # This description is used to generate tags and improve search results.
