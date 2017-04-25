@@ -33,7 +33,10 @@ open class LotameAudience : NSObject{
     }
     
     open var json: JSON{
-        let json: JSON = ["id": id as AnyObject, "abbr" : abbreviation as AnyObject]
+        let json: JSON = [
+            "id": id,
+            "abbr" : abbreviation
+        ]
         return json
     }
     
