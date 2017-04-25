@@ -30,7 +30,7 @@
     [DMP getAudienceDataWithHandler:^(LotameProfile * _Nullable profile, BOOL success) {
         if (success) { //Check for success
             for (LotameAudience * audience in profile.audiences) { //Loop through each audience
-                NSLog(audience.jsonString);
+                NSLog(@"%@", audience.jsonString);
             }
         }
     }];
