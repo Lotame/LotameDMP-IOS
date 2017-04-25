@@ -325,8 +325,10 @@ open class DMP:NSObject{
             var params: [String: Any] = [:]
             if let behaviors = behaviors{
                 for behavior in behaviors{
-                    params[behavior.key] = behavior.value as Any?? ?? "" as Any?
-                    URL = URL?.appendingPathComponent("\(behavior.key)=\(behavior.value!)/");
+                    if let behaviorValue = behavior.value {
+                        params[behavior.key] = behaviorValue
+                        URL = URL?.appendingPathComponent("\(behavior.key)=\(behaviorValue)/");
+                    }
                 }
             }
             
