@@ -7,10 +7,10 @@ Pod::Spec.new do |s|
   Data should influence everything you do – from the products and content you create, to the way you shape and execute your go-to-market strategy. Lotame’s data management platform makes this vision a reality. Our SaaS platform is used by marketers, agencies and publishers around the world to make audience data meaningful and actionable.  This framework makes it easy to plug your iOS app into the data management platform.
                        DESC
 
-  s.homepage         = "https://github.com/Lotame/LotameDMP-IOS"
+  s.homepage         = "https://github.com/chenr2/LotameDMP-IOS"
   s.license          = 'MIT'
   s.author           = { "Dan Rusk" => "djrusk@gmail.com" }
-  s.source           = { :git => "https://github.com/Lotame/LotameDMP-IOS.git", :tag => s.version.to_s }
+  s.source           = { :git => "https://github.com/chenr2/LotameDMP-IOS.git", :tag => s.version.to_s }
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
