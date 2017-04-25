@@ -40,6 +40,8 @@ open class DMP:NSObject{
     */
     open static let sharedManager = DMP()
     
+    fileprivate static let sdkVersion = "4.0"
+    
     /**
     Thread safety (especially for behavior data0 is handled via async and sync thread calls.
     All network calls are made asynchronously.
@@ -118,11 +120,11 @@ open class DMP:NSObject{
     }
     
     fileprivate var baseBCPUrl: String{
-        return "\(httpProtocol)://bcp.\(domain.urlHostEncoded()!)/5/c=\(clientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/e=app/dt=IDFA/sdk=3.0/"
+        return "\(httpProtocol)://bcp.\(domain.urlHostEncoded()!)/5/c=\(clientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/e=app/dt=IDFA/sdk=\(DMP.sdkVersion)/"
     }
     
     fileprivate var baseADUrl: String{
-        return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(clientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=3.0/"
+        return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(clientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=\(DMP.sdkVersion)/"
     }
     
     /**
@@ -331,7 +333,7 @@ open class DMP:NSObject{
                     }
                 }
             }
-            
+            print("URL:: \(URL)")
             let urlRequest = URLRequest(url: URL!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
             return try Alamofire.URLEncoding.default.encode(urlRequest, with: params);
         }
