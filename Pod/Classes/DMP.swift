@@ -333,7 +333,6 @@ open class DMP:NSObject{
                     }
                 }
             }
-            print("URL:: \(URL)")
             let urlRequest = URLRequest(url: URL!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
             return try Alamofire.URLEncoding.default.encode(urlRequest, with: params);
         }

@@ -1,6 +1,6 @@
 {
   "name": "LotameDMP",
-  "version": "3.1.0",
+  "version": "4.0.0",
   "summary": "This open source library can be leveraged by Lotame clients to collect data from within their iOS applications.",
   "description": "Data should influence everything you do – from the products and content you create, to the way you shape and execute your go-to-market strategy. Lotame’s data management platform makes this vision a reality. Our SaaS platform is used by marketers, agencies and publishers around the world to make audience data meaningful and actionable.  This framework makes it easy to plug your iOS app into the data management platform.",
   "homepage": "https://github.com/Lotame/LotameDMP-IOS",
@@ -10,10 +10,10 @@
   },
   "source": {
     "git": "https://github.com/Lotame/LotameDMP-IOS.git",
-    "tag": "3.1.0"
+    "tag": "4.0.0"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "8.0"
   },
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",

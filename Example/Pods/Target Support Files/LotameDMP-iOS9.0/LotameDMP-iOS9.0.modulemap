@@ -1,6 +1,0 @@
-framework module LotameDMP {
-  umbrella header "LotameDMP-iOS9.0-umbrella.h"
-
-  export *
-  module * { export * }
-}
