@@ -139,7 +139,7 @@ open class DMP:NSObject{
     
     /**
     Call this first to initialize the singleton. Only needs to be called once.
-    Starts a new session, sets the domain to default "crwdcntrl.net" and httpProtocol to default "http"
+    Starts a new session, sets the domain to default "crwdcntrl.net" and httpProtocol to default "https"
     **/
     open class func initialize(_ clientId: String){
         DMP.sharedManager.clientId = clientId
@@ -284,13 +284,13 @@ open class DMP:NSObject{
             }
             return
         }
-        (dispatchQueue).async{
+        dispatchQueue.async{
             
             Alamofire.request(Router.audienceData(baseUrlString: sharedManager.baseADUrl, params: nil))
                 .validate()
                 .responseJSON(options: .allowFragments){
                     response in DispatchQueue.main.async{
-                        if let value = response.result.value , response.response?.statusCode == 200 && response.result.isSuccess{
+                        if let value = response.result.value, response.response?.statusCode == 200 && response.result.isSuccess{
                             completion(Result<LotameProfile>.success(LotameProfile(json: JSON(value))))
                         } else {
                             completion(Result<LotameProfile>.failure(LotameError.unexpectedResponse))
