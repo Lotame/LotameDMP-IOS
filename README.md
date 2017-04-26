@@ -7,7 +7,7 @@ This open source library can be leveraged by Lotame clients to collect data from
 
 ## Requirements
 
-LotameDMP requires Xcode 8 and at least iOS 9.0.  It will work with swift or Objective-C.
+LotameDMP requires Xcode 8 and at least iOS 8.0.  It will work with Swift or Objective-C.
 
 ## Example
 
@@ -15,13 +15,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-> **Embedded frameworks require a minimum deployment target of iOS 9 or OS X Sierra (10.12).**
+> **Embedded frameworks require a minimum deployment target of iOS 8 or OS X Sierra (10.12).**
 
 ### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
-CocoaPods 0.38.2 is required to build LotameDMP. You can install it with the following command:
+CocoaPods 1.2.1 is required to build LotameDMP. You can install it with the following command:
 
 ```bash
 $ gem install cocoapods
@@ -33,7 +33,7 @@ To integrate LotameDMP into your Xcode project using CocoaPods, specify it in yo
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod 'LotameDMP', '~> 3.1'
+pod 'LotameDMP', '~> 4.0'
 ```
 
 Then, run the following command:
@@ -173,6 +173,18 @@ or for objective-c
 ```objective-c
 [DMP startNewSession];
 ```
+
+## About this version
+
+Version 4.0.0 updates the code to Swift 3, since Xcode 8.3.2 dropped support for Swift 2.3.
+
+The previous version of Lotame `3.0.1` had a dependency on Alamofire `2.0`. This dependency has been updated to Alamofire `4.4`. If your project leveraged Alamofire, please see their migration guide for updating your network calls.
+
+Note to code maintainers: when changing the version, make sure to update these 3 locations:
+
+1. `LotameDMP.podspec`
+1. Git tag
+1. `sdkVersion` in `DMP.swift`
 
 ## License
 
