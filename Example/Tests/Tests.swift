@@ -130,7 +130,7 @@ class Tests: XCTestCase {
                 }
                 
             }
-            (Tests.dispatchQueue).async{
+            Tests.dispatchQueue.async{
                 
                 DMP.getAudienceData {
                     result in

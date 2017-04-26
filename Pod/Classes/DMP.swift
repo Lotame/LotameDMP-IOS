@@ -199,9 +199,9 @@ open class DMP:NSObject{
             
             let behaviorCopy = sharedManager.behaviors
             Alamofire.request(Router.sendBehaviorData(baseUrlString: sharedManager.baseBCPUrl, params: behaviorCopy))
-                .validate().response{
-                    response in DispatchQueue.main.async{
-                        if let statusCode = response.response?.statusCode , statusCode == 200 {
+                .validate().response{ response in
+                    DispatchQueue.main.async{
+                        if let statusCode = response.response?.statusCode, statusCode == 200 {
                             completion(Result<Data>.success(Data()))
                         }else{
                             completion(Result<Data>.failure(LotameError.unexpectedResponse))
@@ -254,10 +254,9 @@ open class DMP:NSObject{
     Used by objective-c code that does not support generics. Do not use in swift. Use getAudienceData instead
     */
     @objc open class func getAudienceDataWithHandler(_ handler:@escaping (_ profile: LotameProfile?, _ success: Bool)->Void) {
-        getAudienceData{
-            result in
-            if result.isSuccess{
-                handler(result.value!, true)
+        getAudienceData{ result in
+            if let resultValue = result.value, result.isSuccess {
+                handler(resultValue, true)
             }else{
                 handler(nil, false)
             }
@@ -290,8 +289,8 @@ open class DMP:NSObject{
             
             Alamofire.request(Router.audienceData(baseUrlString: sharedManager.baseADUrl, params: nil))
                 .validate()
-                .responseJSON(options: .allowFragments){
-                    response in DispatchQueue.main.async{
+                .responseJSON(options: .allowFragments){ response in
+                    DispatchQueue.main.async{
                         if let value = response.result.value, response.response?.statusCode == 200 && response.result.isSuccess{
                             completion(Result<LotameProfile>.success(LotameProfile(json: JSON(value))))
                         } else {
