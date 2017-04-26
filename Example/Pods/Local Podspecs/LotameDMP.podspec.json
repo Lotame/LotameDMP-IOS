@@ -20,7 +20,7 @@
   "frameworks": "AdSupport",
   "dependencies": {
     "Alamofire": [
-      "~> 4.0"
+      "~> 4.4"
     ]
   }
 }
