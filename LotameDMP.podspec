@@ -16,9 +16,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.source_files = 'Pod/Classes/**/*'
-  s.resource_bundles = {
-    'LotameDMP' => ['Pod/Assets/*.png']
-  }
 
   s.frameworks = 'AdSupport'
   s.dependency 'Alamofire', '~> 4.0'
