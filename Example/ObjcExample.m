@@ -36,4 +36,14 @@
     }];
 }
 
+- (void) sendBehaviorWithHandler{
+    [DMP sendBehaviorDataWithHandler: ^(NSError * _Nullable error){
+        if (error != nil){
+            NSLog(@"error:: %@", error.description);
+        } else {
+            NSLog(@"sendBehaviorDataWithHandler success");
+        }
+    }];
+}
+
 @end

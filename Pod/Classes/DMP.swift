@@ -160,6 +160,15 @@ open class DMP:NSObject{
     }
     
     /**
+     Used by objective-c code that does not support generics. Do not use in swift. Use sendBehaviorData instead
+     */
+    @objc open class func sendBehaviorDataWithHandler(_ handler:@escaping (_ error: NSError?)->Void) {
+        sendBehaviorData{ result in
+            handler(result.error as NSError?)
+        }
+    }
+    
+    /**
     Sends the collected behavior data to the Lotame server. Returns errors
     to the completion handler.
     **Note:** Does not collect data if the user has limited ad tracking turned on, but still clears behaviors.

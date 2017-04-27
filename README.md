@@ -68,7 +68,7 @@ LotameDMP must be imported by any file using the library.
 import LotameDMP
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 #import "LotameDMP-Swift.h"
@@ -82,7 +82,7 @@ LotameDMP is a singleton that must be initialized with a client id once before u
 DMP.initialize("YOUR_CLIENT_ID_NUMBER")
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP initialize:@"YOUR_CLIENT_ID_NUMBER_"];
@@ -100,7 +100,7 @@ DMP.addBehaviorData(behaviorId: 1)
 DMP.addBehaviorData(opportunityId: 1)
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP addBehaviorData:@"value" forType: @"type"];
@@ -114,7 +114,7 @@ It must be sent to the server to record the behaviors:
 DMP.sendBehaviorData()
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP sendBehaviorData];
@@ -133,6 +133,18 @@ DMP.sendBehaviorData(){
 }
 ```
 
+or for Objective-C
+
+```objective-c
+[DMP sendBehaviorDataWithHandler: ^(NSError * _Nullable error){
+    if (error != nil){
+        //Failure
+    } else {
+        //Success
+    }
+}];
+```
+
 ### Get Audience Data
 
 Get the audience data with the following command:
@@ -148,7 +160,7 @@ DMP.getAudienceData{
 }
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP getAudienceDataWithHandler:^(LotameProfile * _Nullable profile, BOOL success) {
@@ -168,7 +180,7 @@ To indicate that a new session has started, use the following command:
 DMP.startNewSession()
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP startNewSession];
