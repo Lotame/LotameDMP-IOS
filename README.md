@@ -7,7 +7,7 @@ This open source library can be leveraged by Lotame clients to collect data from
 
 ## Requirements
 
-LotameDMP requires Xcode 7 and at least iOS 8.0.  It will work with swift or Objective-C.
+LotameDMP requires Xcode 8 and at least iOS 8.0.  It will work with Swift or Objective-C.
 
 ## Example
 
@@ -15,13 +15,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-> **Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9).**
+> **Embedded frameworks require a minimum deployment target of iOS 8 or OS X Sierra (10.12).**
 
 ### CocoaPods
 
 [CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
 
-CocoaPods 0.38.2 is required to build LotameDMP. You can install it with the following command:
+CocoaPods 1.2.1 is required to build LotameDMP. You can install it with the following command:
 
 ```bash
 $ gem install cocoapods
@@ -33,7 +33,7 @@ To integrate LotameDMP into your Xcode project using CocoaPods, specify it in yo
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod 'LotameDMP', '~> 3.0'
+pod 'LotameDMP', '~> 4.0'
 ```
 
 Then, run the following command:
@@ -68,7 +68,7 @@ LotameDMP must be imported by any file using the library.
 import LotameDMP
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 #import "LotameDMP-Swift.h"
@@ -82,7 +82,7 @@ LotameDMP is a singleton that must be initialized with a client id once before u
 DMP.initialize("YOUR_CLIENT_ID_NUMBER")
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP initialize:@"YOUR_CLIENT_ID_NUMBER_"];
@@ -100,7 +100,7 @@ DMP.addBehaviorData(behaviorId: 1)
 DMP.addBehaviorData(opportunityId: 1)
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP addBehaviorData:@"value" forType: @"type"];
@@ -114,7 +114,7 @@ It must be sent to the server to record the behaviors:
 DMP.sendBehaviorData()
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP sendBehaviorData];
@@ -133,6 +133,18 @@ DMP.sendBehaviorData(){
 }
 ```
 
+or for Objective-C
+
+```objective-c
+[DMP sendBehaviorDataWithHandler: ^(NSError * _Nullable error){
+    if (error != nil){
+        //Failure
+    } else {
+        //Success
+    }
+}];
+```
+
 ### Get Audience Data
 
 Get the audience data with the following command:
@@ -148,7 +160,7 @@ DMP.getAudienceData{
 }
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP getAudienceDataWithHandler:^(LotameProfile * _Nullable profile, BOOL success) {
@@ -168,11 +180,23 @@ To indicate that a new session has started, use the following command:
 DMP.startNewSession()
 ```
 
-or for objective-c
+or for Objective-C
 
 ```objective-c
 [DMP startNewSession];
 ```
+
+## About this version
+
+Version 4.0.0 updates the code to Swift 3, since Xcode 8.3.2 dropped support for Swift 2.3.
+
+The previous version of Lotame `3.0.1` had a dependency on Alamofire `2.0`. This dependency has been updated to Alamofire `4.4`. If your project leveraged Alamofire, please see their migration guide for updating your network calls.
+
+Note to code maintainers: when changing the version, make sure to update these 3 locations:
+
+1. `LotameDMP.podspec`
+1. Git tag
+1. `sdkVersion` in `DMP.swift`
 
 ## License
 

@@ -28,20 +28,20 @@ import Foundation
 public let LotameErrorDomain = "com.splender.error"
 
 @objc
-public enum LotameError: Int, ErrorType{
+public enum LotameError: Int, Error{
     public static let _NSErrorDomain: String = LotameErrorDomain
     
-    case TrackingDisabled
-    case InitializeNotCalled
-    case UnexpectedResponse
+    case trackingDisabled
+    case initializeNotCalled
+    case unexpectedResponse
     
     func getMessage() -> String{
         switch self{
-        case .TrackingDisabled:
+        case .trackingDisabled:
             return "User has chosen to limit ad tracking"
-        case .InitializeNotCalled:
+        case .initializeNotCalled:
             return "Call the initialize method to set your client id before attempting network calls. This only needs to be done once per app run (can put in appdelegate)"
-        case .UnexpectedResponse:
+        case .unexpectedResponse:
             return "Server is returning bad responses"
         }
     }

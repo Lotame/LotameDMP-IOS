@@ -27,15 +27,15 @@
 import Foundation
 
 @objc
-public class LotameProfile: NSObject{
-    public let pid:String
-    public var audiences: [LotameAudience] = []
+open class LotameProfile: NSObject{
+    open let pid:String
+    open var audiences: [LotameAudience] = []
     
-    public var jsonString:String? {
+    open var jsonString:String? {
         return json.rawString()
     }
     
-    public var json: JSON{
+    open var json: JSON{
         var json: JSON = ["Profile": ["pid": pid]]
         json["Profile"]["Audiences"] = JSON(["Audience" : audiences.map{["id":$0.id, "abbr": $0.abbreviation]}])
         return json

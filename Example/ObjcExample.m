@@ -8,11 +8,13 @@
 
 #import "ObjcExample.h"
 
+@import LotameDMP;
+
 @implementation ObjcExample
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Call initialize before making any calls.
-    [DMP initialize:@"25"]
+    [DMP initialize:@"25"];
     return YES;
 }
 
@@ -28,8 +30,18 @@
     [DMP getAudienceDataWithHandler:^(LotameProfile * _Nullable profile, BOOL success) {
         if (success) { //Check for success
             for (LotameAudience * audience in profile.audiences) { //Loop through each audience
-                NSLog(audience.jsonString)
+                NSLog(@"%@", audience.jsonString);
             }
+        }
+    }];
+}
+
+- (void) sendBehaviorWithHandler{
+    [DMP sendBehaviorDataWithHandler: ^(NSError * _Nullable error){
+        if (error != nil){
+            NSLog(@"error:: %@", error.description);
+        } else {
+            NSLog(@"sendBehaviorDataWithHandler success");
         }
     }];
 }

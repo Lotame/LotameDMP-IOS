@@ -27,18 +27,21 @@
 import Foundation
 
 @objc
-public class LotameAudience : NSObject{
-    public var jsonString:String? {
+open class LotameAudience : NSObject{
+    open var jsonString:String? {
         return json.rawString()
     }
     
-    public var json: JSON{
-        let json: JSON = ["id": id, "abbr" : abbreviation]
+    open var json: JSON{
+        let json: JSON = [
+            "id": id,
+            "abbr" : abbreviation
+        ]
         return json
     }
     
-    public let id:String
-    public let abbreviation:String
+    open let id:String
+    open let abbreviation:String
     
     init(json: JSON){
         id = json["id"].stringValue
