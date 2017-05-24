@@ -39,7 +39,6 @@
 		A2A6F71B727312BD45CC7A4AAD7B0AB7 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2551D39689BF245ABE2FBA5F90892265 /* NetworkReachabilityManager.swift */; };
 		A82BE52873713A709356988FEB2B973F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26F06CA2E46281C39ABF8AC532C03A69 /* Alamofire.framework */; };
 		A9EEEA7477981DEEBC72432DE9990A4B /* Alamofire-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A1711E38B4A3F9C55C971A68C10D3198 /* Alamofire-dummy.m */; };
-		AD8E0792535ECDD4768C537054E43DD0 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C403EE09A6CE9F0730A567D7D12EB504 /* SwiftyJSON.swift */; };
 		AE1EF48399533730D0066E04B22CA2D6 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2556B830917A909CE4918EED8D613EBB /* SessionManager.swift */; };
 		B65FCF589DA398C3EFE0128064E510EC /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C5210BAD7B98385B871527EB384CAC /* MultipartFormData.swift */; };
 		B71274CE2E5707A2AD5688829FE616D0 /* OHHTTPStubs-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 69E64B61FD883181243E9D59370F9969 /* OHHTTPStubs-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -60,6 +59,7 @@
 		F26105CD3493CF1CF6506F36561CF17F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70F5C61FC1F0C33825FF65966AF5621D /* Foundation.framework */; };
 		F6BECD98B97CBFEBE2C96F0E9E72A6C0 /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB04B926F07C6DC574CE16F81E9689 /* ResponseSerialization.swift */; };
 		F8B3D3092ED0417E8CDF32033F6122F5 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4DEFF43912FD4EFB17D00FEBA02AF6 /* Alamofire.swift */; };
+		FC6107381ED5FEED00D9100D /* NSDictionary+rawString.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6107371ED5FEED00D9100D /* NSDictionary+rawString.swift */; };
 		FFE0D1C890897CF1AE34EC147C84BA2C /* OHHTTPStubs+NSURLSessionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F8924EE5D6D964DB953650FD76B83B9E /* OHHTTPStubs+NSURLSessionConfiguration.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
@@ -109,9 +109,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		091715455495A385122589395850ED36 /* OHHTTPStubs.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OHHTTPStubs.modulemap; sourceTree = "<group>"; };
+		091715455495A385122589395850ED36 /* OHHTTPStubs.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = OHHTTPStubs.modulemap; sourceTree = "<group>"; };
 		0F8FCA014B1789B8B5609863F8392BEC /* NSURLRequest+HTTPBodyTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+HTTPBodyTesting.h"; path = "OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.h"; sourceTree = "<group>"; };
-		156A1B5B335F50C08B8C51ED6651C711 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		156A1B5B335F50C08B8C51ED6651C711 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		160BB36F5B340CA353EDA04590D08A31 /* Pods-LotameDMP_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		181F8F5C57F8A1DBFBCD6CDB7E049E10 /* Pods-LotameDMP_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LotameDMP_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		18EB04B926F07C6DC574CE16F81E9689 /* ResponseSerialization.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ResponseSerialization.swift; path = Source/ResponseSerialization.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		2556B830917A909CE4918EED8D613EBB /* SessionManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Source/SessionManager.swift; sourceTree = "<group>"; };
 		258B7E0EECBA64C4BCA558B81FCF2750 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		26F06CA2E46281C39ABF8AC532C03A69 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2866D261378FCD4FE14943A99A722B77 /* Pods-LotameDMP_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LotameDMP_Example.modulemap"; sourceTree = "<group>"; };
+		2866D261378FCD4FE14943A99A722B77 /* Pods-LotameDMP_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LotameDMP_Example.modulemap"; sourceTree = "<group>"; };
 		29651BD15CB9D9D6946310C2E6ED6021 /* Validation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Validation.swift; path = Source/Validation.swift; sourceTree = "<group>"; };
 		2F5E9968A56CAF2EAB646AD783FDD337 /* LotameError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LotameError.swift; sourceTree = "<group>"; };
 		2F646CB189899F51A9BA78D9BC7C640A /* TaskDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TaskDelegate.swift; path = Source/TaskDelegate.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 		4485579EA4493F94FC9806C540FA3BA0 /* LotameProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LotameProfile.swift; sourceTree = "<group>"; };
 		450C401487E8F40DA326418DE2D54A62 /* OHHTTPStubsResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsResponse.m; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.m; sourceTree = "<group>"; };
 		4522B154AEBE408AA716D0EE51684BD4 /* LotameAudience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LotameAudience.swift; sourceTree = "<group>"; };
-		4927332025C324CA11BC68E9ADD97C5E /* Pods-LotameDMP_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LotameDMP_Tests.modulemap"; sourceTree = "<group>"; };
+		4927332025C324CA11BC68E9ADD97C5E /* Pods-LotameDMP_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-LotameDMP_Tests.modulemap"; sourceTree = "<group>"; };
 		4936C431CDA97A2B1F7141C1CE7CA98D /* LotameDMP.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LotameDMP.xcconfig; sourceTree = "<group>"; };
 		50828A0DCEDF96358ECAA7645741ED22 /* OHHTTPStubs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OHHTTPStubs.xcconfig; sourceTree = "<group>"; };
 		51F9A814E2B204818DF97B58DB17FDCF /* Pods-LotameDMP_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Example-frameworks.sh"; sourceTree = "<group>"; };
@@ -150,14 +150,14 @@
 		771E06E9D132B120EA95EE7A0E21C8CD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		79FF6A8D53FBEF6AFE111C775B2F6BD0 /* Alamofire-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-umbrella.h"; sourceTree = "<group>"; };
 		7A66376F5E3BAE650D43BBCEA0ACDB7B /* NSURLRequest+HTTPBodyTesting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+HTTPBodyTesting.m"; path = "OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.m"; sourceTree = "<group>"; };
-		810606F635C38FCAC78849767F27B757 /* Pods_LotameDMP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LotameDMP_Tests.framework; path = "Pods-LotameDMP_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		810606F635C38FCAC78849767F27B757 /* Pods_LotameDMP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LotameDMP_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81C5210BAD7B98385B871527EB384CAC /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Source/MultipartFormData.swift; sourceTree = "<group>"; };
 		84169E163894A1760462BE867D38856F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		86193E804DD593369BBCC523241D3944 /* Pods_LotameDMP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LotameDMP_Example.framework; path = "Pods-LotameDMP_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86193E804DD593369BBCC523241D3944 /* Pods_LotameDMP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LotameDMP_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8923ADADC9E9EB44413B36D01356CB75 /* LotameDMP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LotameDMP-prefix.pch"; sourceTree = "<group>"; };
 		8A4DEFF43912FD4EFB17D00FEBA02AF6 /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
 		8A64A76B1769FA18E1A4723B6E53871F /* AFError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AFError.swift; path = Source/AFError.swift; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		93A773146EED80261B957E33F48AA646 /* Pods-LotameDMP_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Example.release.xcconfig"; sourceTree = "<group>"; };
 		93C8C41885F1CE88EC3EFAB79E88E699 /* LotameDMP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LotameDMP-umbrella.h"; sourceTree = "<group>"; };
 		94C422830D0003D16D10560429DA699A /* DMP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DMP.swift; sourceTree = "<group>"; };
@@ -167,20 +167,19 @@
 		AD13AFBDCEBD92B6BEE3E5A71440DDC2 /* OHHTTPStubsResponse+JSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OHHTTPStubsResponse+JSON.h"; path = "OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.h"; sourceTree = "<group>"; };
 		AF6E33079A0AC62440C75012BB20ED40 /* Pods-LotameDMP_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LotameDMP_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		B647466486EFB804B68D5FC8AE8B744B /* Alamofire.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Alamofire.xcconfig; sourceTree = "<group>"; };
-		B7F8DB5C4DBB1A49010816C7E0785934 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Alamofire.modulemap; sourceTree = "<group>"; };
+		B7F8DB5C4DBB1A49010816C7E0785934 /* Alamofire.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Alamofire.modulemap; sourceTree = "<group>"; };
 		B974CEE3695BA2D211E692533A5C70EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BACC2776A3FA0FC3516D7C9378D97710 /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Source/Request.swift; sourceTree = "<group>"; };
 		BC7773E62DBB946025A99030A47CAA94 /* Pods-LotameDMP_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		BDF98019B992EB994D2A61002304EEEA /* LotameDMP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LotameDMP-dummy.m"; sourceTree = "<group>"; };
-		BE1821866CF6FA5578C0FF9C3A5141C1 /* LotameDMP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LotameDMP.framework; path = LotameDMP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C403EE09A6CE9F0730A567D7D12EB504 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		BE1821866CF6FA5578C0FF9C3A5141C1 /* LotameDMP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LotameDMP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6649F10029169FD60CF7AA94B4634A6 /* OHPathHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHPathHelpers.m; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.m; sourceTree = "<group>"; };
 		C8BDDD1481BDC693812B617DD80F265C /* Pods-LotameDMP_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LotameDMP_Tests-umbrella.h"; sourceTree = "<group>"; };
 		D20FC0352198484DDB75C6398CAC2FAF /* Pods-LotameDMP_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Example-resources.sh"; sourceTree = "<group>"; };
-		D3A6B0658F4F90B4A4E7E844FC8C77DA /* LotameDMP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LotameDMP.modulemap; sourceTree = "<group>"; };
+		D3A6B0658F4F90B4A4E7E844FC8C77DA /* LotameDMP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LotameDMP.modulemap; sourceTree = "<group>"; };
 		D84BFAD610AC40E81008320042711414 /* Pods-LotameDMP_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		D95467F6E9E38EB2CAC45890B7AEC2E3 /* Pods-LotameDMP_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LotameDMP_Example-dummy.m"; sourceTree = "<group>"; };
-		E046C650AD0C9D8C8E163E0F7C9BD386 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OHHTTPStubs.framework; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E046C650AD0C9D8C8E163E0F7C9BD386 /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3903A9C3157F48E5D7D66FA301F4F39 /* Pods-LotameDMP_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LotameDMP_Tests-dummy.m"; sourceTree = "<group>"; };
 		E6ACD92E8579844D7BA1F53B4F23746C /* Alamofire-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Alamofire-prefix.pch"; sourceTree = "<group>"; };
 		EC570ECC373F68FED243230577391A98 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
@@ -190,6 +189,7 @@
 		F8924EE5D6D964DB953650FD76B83B9E /* OHHTTPStubs+NSURLSessionConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OHHTTPStubs+NSURLSessionConfiguration.m"; path = "OHHTTPStubs/Sources/NSURLSession/OHHTTPStubs+NSURLSessionConfiguration.m"; sourceTree = "<group>"; };
 		F945C090757C5DBD90F1D57EB0575534 /* OHHTTPStubsMethodSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsMethodSwizzling.m; path = OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.m; sourceTree = "<group>"; };
 		F9A8E7E3596FFBEA1AC95B01D7C69DB7 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
+		FC6107371ED5FEED00D9100D /* NSDictionary+rawString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDictionary+rawString.swift"; sourceTree = "<group>"; };
 		FC9305F83118CE566D145BE4380022DE /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
 		FEF0E8CE9EEB29DC85302F94CC30BAFE /* OHHTTPStubs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubs.h; path = OHHTTPStubs/Sources/OHHTTPStubs.h; sourceTree = "<group>"; };
 		FF8C542B18C786E2D40F672B27921463 /* Pods-LotameDMP_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -369,9 +369,8 @@
 				4522B154AEBE408AA716D0EE51684BD4 /* LotameAudience.swift */,
 				2F5E9968A56CAF2EAB646AD783FDD337 /* LotameError.swift */,
 				4485579EA4493F94FC9806C540FA3BA0 /* LotameProfile.swift */,
-				C403EE09A6CE9F0730A567D7D12EB504 /* SwiftyJSON.swift */,
+				FC6107371ED5FEED00D9100D /* NSDictionary+rawString.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -406,7 +405,6 @@
 				26554B40DD5D521D76B0A640DDEF7631 /* OHPathHelpers */,
 				4362454B75989F1CFE4168E0CD6DC258 /* Support Files */,
 			);
-			name = OHHTTPStubs;
 			path = OHHTTPStubs;
 			sourceTree = "<group>";
 		};
@@ -442,7 +440,6 @@
 			children = (
 				9A29C6FFD43240BA36BD6A72470FE8E3 /* Classes */,
 			);
-			name = Pod;
 			path = Pod;
 			sourceTree = "<group>";
 		};
@@ -486,7 +483,6 @@
 				29651BD15CB9D9D6946310C2E6ED6021 /* Validation.swift */,
 				14CC88387F82D38E9D298CA64170402C /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -740,9 +736,9 @@
 				EDEED1665DAB04CBB534F72D10C1DCA1 /* DMP.swift in Sources */,
 				71393AB0F573BAA8CC1E9B9B3E06D5EB /* LotameAudience.swift in Sources */,
 				BB4F21C34153313591D565EE6AEEF685 /* LotameDMP-dummy.m in Sources */,
+				FC6107381ED5FEED00D9100D /* NSDictionary+rawString.swift in Sources */,
 				4D446E6CFF1E01EB14CFFEC34EE72A89 /* LotameError.swift in Sources */,
 				250621B51C99029802984E0FAA553BFB /* LotameProfile.swift in Sources */,
-				AD8E0792535ECDD4768C537054E43DD0 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

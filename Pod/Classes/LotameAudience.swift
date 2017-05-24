@@ -32,8 +32,8 @@ open class LotameAudience : NSObject{
         return json.rawString()
     }
     
-    open var json: JSON{
-        let json: JSON = [
+    open var json: NSDictionary {
+        let json: NSDictionary = [
             "id": id,
             "abbr" : abbreviation
         ]
@@ -43,8 +43,17 @@ open class LotameAudience : NSObject{
     open let id:String
     open let abbreviation:String
     
-    init(json: JSON){
-        id = json["id"].stringValue
-        abbreviation = json["abbr"].stringValue
+    /** Sample payload
+     
+     {
+        "id" : "141",
+        "abbr" : "all"
+     }
+     
+     */
+    
+    init(json: NSDictionary){
+        id = json["id"] as? String ?? ""
+        abbreviation = json["abbr"] as? String ?? ""
     }
 }

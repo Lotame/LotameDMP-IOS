@@ -300,8 +300,8 @@ open class DMP:NSObject{
                 .validate()
                 .responseJSON(options: .allowFragments){ response in
                     DispatchQueue.main.async{
-                        if let value = response.result.value, response.response?.statusCode == 200 && response.result.isSuccess{
-                            completion(Result<LotameProfile>.success(LotameProfile(json: JSON(value))))
+                        if let value = response.result.value as? NSDictionary, response.response?.statusCode == 200 && response.result.isSuccess{
+                            completion(Result<LotameProfile>.success(LotameProfile(json: value)))
                         } else {
                             completion(Result<LotameProfile>.failure(LotameError.unexpectedResponse))
                         }
