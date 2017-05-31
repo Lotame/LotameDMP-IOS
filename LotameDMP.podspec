@@ -18,5 +18,4 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
 
   s.frameworks = 'AdSupport'
-  s.dependency 'Alamofire', '~> 4.4'
 end
