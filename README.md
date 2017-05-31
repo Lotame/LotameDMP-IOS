@@ -33,7 +33,7 @@ To integrate LotameDMP into your Xcode project using CocoaPods, specify it in yo
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod 'LotameDMP', '~> 4.0'
+pod 'LotameDMP', '~> 4.1'
 ```
 
 Then, run the following command:
@@ -187,6 +187,8 @@ or for Objective-C
 ```
 
 ## About this version
+
+Version 4.1.0 removes dependencies on AlamoFire and SwiftyJSON. It also generates a .Framework file for drag-and-drop installation.
 
 Version 4.0.0 updates the code to Swift 3, since Xcode 8.3.2 dropped support for Swift 2.3.
 
