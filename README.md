@@ -248,15 +248,15 @@ Version 4.0.0 updates the code to Swift 3, since Xcode 8.3.2 dropped support for
 
 The previous version of Lotame `3.0.1` had a dependency on Alamofire `2.0`. This dependency has been updated to Alamofire `4.4`. If your project leveraged Alamofire, please see their migration guide for updating your network calls.
 
-Note to code maintainers: when changing the version, make sure to update these 3 locations:
+## Note to maintainers
+
+When a new version of Swift is released, run the `./build_framework.sh` script. This will generate a new zip file in the `dist` folder, labeled with the current git tag and Swift version of your local Mac. Push the generated zip file to the repo.
+
+When changing the version, make sure to update these 3 locations:
 
 1. `LotameDMP.podspec`
 1. Git tag
 1. `sdkVersion` in `DMP.swift`
-
-## Note to maintainers
-
-When a new version of Swift is released, run the `./build_framework.sh` script. This will generate a new zip file in the `dist` folder, labeled with the current git tag and Swift version of your local Mac. Push the generated zip file to the repo.
 
 ## License
 
