@@ -10,4 +10,5 @@ carthage build --no-skip-current
 mkdir -p dist/$VERSION_DIR
 mv Carthage/Build/iOS/LotameDMP.framework dist/$VERSION_DIR/LotameDMP.framework
 cd dist
+rm -f $VERSION_DIR.zip
 zip -r $VERSION_DIR.zip $VERSION_DIR && rm -rf $_
