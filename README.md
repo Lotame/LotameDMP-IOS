@@ -60,6 +60,60 @@ Add the following elements to your project's Info.plist file to configure ATS:
     </dict>
 ```
 
+### Carthage
+
+Carthage is a dependency manager alternative to CocoaPods.
+
+Youc can install Carthage using Homebrew:
+
+```
+$ brew update
+$ brew install carthage
+```
+
+Create a file named `Cartfile`, and add the following text:
+
+```
+github "Lotame/LotameDMP-IOS" ~> 4.1
+```
+
+Run `carthage update`. 
+
+This generates the following file:
+
+```
+./Carthage/Build/iOS/LotameDMP.framework
+```
+
+To install:
+
+1. Open Xcode and go to **Target** > **General** > **Embedded Binaries**
+1. Drag the `LotameDMP.framework` into the **Embedded Binaries** section. 
+1. When prompted, check the box for **Copy items if needed**. 
+
+
+### Drag-and-drop installation
+
+Within this repository, navigate to the `dist` folder. You should see the following contents:
+
+```
+./dist/tag-4.1.0-swift-3.1-framework.zip
+```
+
+Download and unzip this file. You should see a folder containing the `LotameDMP.framework`. 
+
+To install:
+
+1. Open Xcode and go to **Target** > **General** > **Embedded Binaries**
+1. Drag the `LotameDMP.framework` into the **Embedded Binaries** section. 
+1. When prompted, check the box for **Copy items if needed**. 
+
+**Note**: In order for drag-and-drop to work, you must be using the same version of Swift as the pre-compiled framework. The distribution folder contents are labeled with the tag and Swift version, so you know the code state and Swift compatability, respectively. If you're using a different version of Swift, you have a few options:
+
+1. Use CocoaPods
+1. Use Carthage
+1. Download the repo, and run the `./build_framework.sh` script. This generates a framework zip file in the `dist` folder.
+
 ## Usage
 
 LotameDMP must be imported by any file using the library.
@@ -199,6 +253,10 @@ Note to code maintainers: when changing the version, make sure to update these 3
 1. `LotameDMP.podspec`
 1. Git tag
 1. `sdkVersion` in `DMP.swift`
+
+## Note to maintainers
+
+When a new version of Swift is released, run the `./build_framework.sh` script. This will generate a new zip file in the `dist` folder, labeled with the current git tag and Swift version of your local Mac. Push the generated zip file to the repo.
 
 ## License
 
