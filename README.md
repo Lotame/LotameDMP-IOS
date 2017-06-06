@@ -281,7 +281,7 @@ When changing the version, make sure to update these 3 locations:
 1. Git tag
 1. `sdkVersion` in `DMP.swift`
 
-When a new version of Swift is released, run the `./build_framework.sh` script. This will generate a new zip file in the `dist` folder, labeled with the current git tag and Swift version of your local Mac. Push the generated zip file to the repo.
+When a new version of Swift is released, run the `./build_framework.sh` script. This will generate a new zip file in the `dist` folder, labeled with the current git tag and Swift version of your local Mac. Push the generated zip file to the repo, and update its link in the **Drag-and-drop installation** section of this file.
 
 ## License
 
