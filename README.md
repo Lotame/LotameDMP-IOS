@@ -97,7 +97,7 @@ Finally, scroll further down in the README to the **Adding a Run Script phase** 
 
 Download the following file:
 
-[tag-4.1.0-swift-3.1-framework.zip](dist/tag-4.1.0-swift-3.1-framework.zip)
+[tag-4.1.0-swift-3.1-framework.zip](dist/tag-4.1.0-swift-3.1-framework.zip?raw=true)
 
 Unzip it, and you should see the `LotameDMP.framework` inside. 
 
