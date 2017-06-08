@@ -11,7 +11,14 @@ LotameDMP requires Xcode 8 and at least iOS 8.0.  It will work with Swift or Obj
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project:
+
+1. Clone the repo
+1. Go to the Example directory `cd Example/`
+1. Run `pod install`
+1. Open `LotameDMP.xcworkspace`. Do not open the `.xcodeproj`.
+1. Within Xcode, change the scheme from **LotameDMP** (with the toolbox icon) to **LotameDMP-Example**.
+1. Build and Run
 
 ## Installation
 
