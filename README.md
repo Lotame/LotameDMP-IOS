@@ -33,16 +33,23 @@ To integrate LotameDMP into your Xcode project using CocoaPods, specify it in yo
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod 'LotameDMP', '~> 4.0'
+target "YourTargetName" do
+  pod 'LotameDMP', '~> 4.1'
+end
 ```
+
+**Note**: Make sure to update the name of your target
 
 Then, run the following command:
 
 ```bash
+$ pod repo update
 $ pod install
 ```
 
-Add the following elements to your project's Info.plist file to configure ATS:
+**Note**: Make sure to update your local CocoaPod repo if you haven't done so recently.
+
+Add the following elements to your project's `Info.plist` file to configure ATS:
 
 ```xml
     <key>NSAppTransportSecurity</key>
