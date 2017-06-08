@@ -49,6 +49,8 @@ $ pod install
 
 **Note**: Make sure to update your local CocoaPod repo if you haven't done so recently.
 
+Close your `.xcodeproj` file, and open the generated `.xcworkspace`.
+
 Add the following elements to your project's `Info.plist` file to configure ATS:
 
 ```xml
