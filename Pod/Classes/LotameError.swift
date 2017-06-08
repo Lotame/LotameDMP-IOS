@@ -34,6 +34,7 @@ public enum LotameError: Int, Error{
     case trackingDisabled
     case initializeNotCalled
     case unexpectedResponse
+    case invalidURL
     
     func getMessage() -> String{
         switch self{
@@ -43,6 +44,8 @@ public enum LotameError: Int, Error{
             return "Call the initialize method to set your client id before attempting network calls. This only needs to be done once per app run (can put in appdelegate)"
         case .unexpectedResponse:
             return "Server is returning bad responses"
+        case .invalidURL:
+            return "There was an invalid URL"
         }
     }
 }

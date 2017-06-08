@@ -27,7 +27,43 @@
 
 import Foundation
 import AdSupport
-import Alamofire
+
+// Requires Result enum from AlamoFire for backward compatibility
+public enum Result<Value> {
+    case success(Value)
+    case failure(Error)
+    
+    public var isSuccess: Bool {
+        switch self {
+        case .success:
+            return true
+        case .failure:
+            return false
+        }
+    }
+    
+    public var isFailure: Bool {
+        return !isSuccess
+    }
+    
+    public var value: Value? {
+        switch self {
+        case .success(let value):
+            return value
+        case .failure:
+            return nil
+        }
+    }
+    
+    public var error: Error? {
+        switch self {
+        case .success:
+            return nil
+        case .failure(let error):
+            return error
+        }
+    }
+}
 
 /**
     The Lotame Data Management Platform
@@ -40,7 +76,7 @@ open class DMP:NSObject{
     */
     open static let sharedManager = DMP()
     
-    fileprivate static let sdkVersion = "4.0.0"
+    fileprivate static let sdkVersion = "4.1.0"
     
     /**
     Thread safety (especially for behavior data0 is handled via async and sync thread calls.
@@ -207,16 +243,31 @@ open class DMP:NSObject{
             }
             
             let behaviorCopy = sharedManager.behaviors
-            Alamofire.request(Router.sendBehaviorData(baseUrlString: sharedManager.baseBCPUrl, params: behaviorCopy))
-                .validate().response{ response in
-                    DispatchQueue.main.async{
-                        if let statusCode = response.response?.statusCode, statusCode == 200 {
-                            completion(Result<Data>.success(Data()))
-                        }else{
-                            completion(Result<Data>.failure(LotameError.unexpectedResponse))
-                        }
+            
+            guard var url = Foundation.URL(string: sharedManager.baseBCPUrl) else {
+                completion(Result<Data>.failure(LotameError.invalidURL))
+                return
+            }
+            
+            // url is in the format of:
+            // /5/pe=y/c=25/mid=12345-abcd/dt=IDFA/sdk=4.0.0/foo=bar/
+            for behavior in behaviorCopy {
+                if let behaviorValue = behavior.value {
+                    url = url.appendingPathComponent("\(behavior.key)=\(behaviorValue)/");
+                }
+            }
+            let urlRequest = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
+            
+            URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                DispatchQueue.main.async{
+                    if error == nil {
+                        completion(Result<Data>.success(Data()))
+                    }else{
+                        completion(Result<Data>.failure(LotameError.unexpectedResponse))
                     }
                 }
+            }.resume()
+            
             sharedManager.behaviors.removeAll()
         }
     }
@@ -295,56 +346,23 @@ open class DMP:NSObject{
             return
         }
         dispatchQueue.async{
-            
-            Alamofire.request(Router.audienceData(baseUrlString: sharedManager.baseADUrl, params: nil))
-                .validate()
-                .responseJSON(options: .allowFragments){ response in
-                    DispatchQueue.main.async{
-                        if let value = response.result.value, response.response?.statusCode == 200 && response.result.isSuccess{
-                            completion(Result<LotameProfile>.success(LotameProfile(json: JSON(value))))
-                        } else {
-                            completion(Result<LotameProfile>.failure(LotameError.unexpectedResponse))
-                        }
-                    }
+            guard let baseURL = URL(string: sharedManager.baseADUrl) else {
+                completion(Result<LotameProfile>.failure(LotameError.invalidURL))
+                return
             }
-        }
-    }
-    
-    /**
-    Handles building the URLs for each of the requests
-    */
-    fileprivate enum Router: URLRequestConvertible {
-        
-        case sendBehaviorData(baseUrlString: String, params: [Behavior]?)
-        case audienceData(baseUrlString: String, params: [Behavior]?)
-        
-        func asURLRequest() throws -> URLRequest{
+            let req = URLRequest(url: baseURL, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
             
-            var behaviors:[Behavior]?
-            var URL: Foundation.URL?
-            switch self{
-            case .audienceData(let baseURL, let params):
-                URL = Foundation.URL(string: baseURL)
-                behaviors = params
-            case .sendBehaviorData(let baseURL, let params):
-                URL = Foundation.URL(string: baseURL)
-                behaviors = params
-            }
-            
-            //convert behaviors to params
-            var params: [String: Any] = [:]
-            if let behaviors = behaviors{
-                for behavior in behaviors{
-                    if let behaviorValue = behavior.value {
-                        params[behavior.key] = behaviorValue
-                        URL = URL?.appendingPathComponent("\(behavior.key)=\(behaviorValue)/");
+            URLSession.shared.dataTask(with: req) { data, response, error in
+                DispatchQueue.main.async{
+                    if let data = data,
+                        let responseJSON = (try? JSONSerialization.jsonObject(with: data, options: [])) as? NSDictionary {
+                        completion(Result<LotameProfile>.success(LotameProfile(json: responseJSON)))
+                    } else {
+                        completion(Result<LotameProfile>.failure(LotameError.unexpectedResponse))
                     }
                 }
-            }
-            let urlRequest = URLRequest(url: URL!, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
-            return try Alamofire.URLEncoding.default.encode(urlRequest, with: params);
+            }.resume()
         }
-        
     }
     
 }

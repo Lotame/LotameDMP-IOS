@@ -15,7 +15,18 @@ class Tests: XCTestCase {
         super.tearDown()
     }
     
-    let mockProfile = ["Profile": ["pid":"ccd93ea4d2b2182cdb480a28c93b83f5","Audiences": ["Audience":[["id":"60519","abbr":"OCR_Matchflow_Segment_37_2"],["id":"13023","abbr":"usonBusitp"],["id":"99961","abbr":""]]]]]
+    let mockProfile: NSDictionary = [
+        "Profile": [
+            "pid":"ccd93ea4d2b2182cdb480a28c93b83f5",
+            "Audiences": [
+                "Audience":[
+                    ["id":"60519","abbr":"OCR_Matchflow_Segment_37_2"],
+                    ["id":"13023","abbr":"usonBusitp"],
+                    ["id":"99961","abbr":""]
+                ]
+            ]
+        ]
+    ]
     
     func testGetAudienceMock() {
         let expectation = self.expectation(description: "asynchronous request")
@@ -35,10 +46,12 @@ class Tests: XCTestCase {
             result in
             
             XCTAssertNotNil(result.value, "Profile must exist")
-            XCTAssertEqual(self.mockProfile["Profile"]!["pid"] as? String, result.value?.pid, "Profile object id must match the mock")
+            let profileObject = self.mockProfile["Profile"] as! [String: Any]
+            let pid = profileObject["pid"] as! String
+            XCTAssertEqual(pid, result.value?.pid, "Profile object id must match the mock")
             XCTAssertEqual("60519", result.value?.audiences[0].id, "First audience object must match the mock")
             XCTAssertEqual("OCR_Matchflow_Segment_37_2", result.value?.audiences[0].abbreviation, "First audience object must match the mock")
-            XCTAssertEqual(result.value?.jsonString!, JSON(self.mockProfile).rawString()!, "Json generation should work correctly")
+            XCTAssertEqual(result.value!.jsonString!, self.mockProfile.rawString()!, "Json generation should work correctly")
             expectation.fulfill()
         }
         self.waitForExpectations(timeout: 10.0, handler: nil)

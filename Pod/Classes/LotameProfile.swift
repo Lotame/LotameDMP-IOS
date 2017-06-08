@@ -35,10 +35,38 @@ open class LotameProfile: NSObject{
         return json.rawString()
     }
     
-    open var json: JSON{
-        var json: JSON = ["Profile": ["pid": pid]]
-        json["Profile"]["Audiences"] = JSON(["Audience" : audiences.map{["id":$0.id, "abbr": $0.abbreviation]}])
-        return json
+    /** 
+     
+     {
+        "Profile" : {
+            "pid" : "ccd93ea4d2b2182cdb480a28c93b83f5"
+        }
+     }
+     
+     // or with audiences:
+     
+     {
+        "pid" : "M518E7D21-89E6-4A57-919E-B4FAF3CFFB87",
+        "Audiences" : {
+            "Audience" : [
+                {
+                    "id" : "141",
+                    "abbr" : "all"
+                }
+            ]
+        }
+     }
+     
+     */
+    open var json: NSDictionary {
+        return [
+            "Profile": [
+                "pid": pid,
+                "Audiences": [
+                    "Audience": audiences.map{["id":$0.id, "abbr": $0.abbreviation]}
+                ]
+            ],
+        ]
     }
     
     override init(){
@@ -46,10 +74,40 @@ open class LotameProfile: NSObject{
         pid = ""
     }
     
-    init(json: JSON){
-        pid = json["Profile"]["pid"].stringValue
-        for (_,audience) in json["Profile"]["Audiences"]["Audience"]{
-            audiences.append(LotameAudience(json: audience))
+    /** Sample payload
+     
+     {
+        "Profile" : {
+            "Audiences" : {
+                "Audience" : [
+                    {
+                        "id" : "141",
+                        "abbr" : "all"
+                    }
+                ]
+            },
+            "pid" : "M518E7D21-89E6-4A57-919E-B4FAF3CFFB87",
+            "tpid" : "cc1f57b175293b739496e9d58c6a7ba9"
         }
+     }
+     
+     */
+    init(json: NSDictionary){
+        // If there's no Profile property, there's no use continuing.
+        guard let profile = json["Profile"] as? [String: Any] else {
+            // pid must be initialized
+            pid = ""
+            return
+        }
+        // Extract the pid
+        pid = profile["pid"] as? String ?? ""
+        guard let audiencesObject = profile["Audiences"] as? [String: Any],
+            let audiencesArray = audiencesObject["Audience"] as? [NSDictionary] else { return }
+        let audienceArrayParsed = audiencesArray.map { audienceDictionary in
+            return LotameAudience(json: audienceDictionary)
+        }
+        audiences += audienceArrayParsed
     }
 }
+
+

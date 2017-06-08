@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "LotameDMP"
-  s.version          = "4.0.0"
+  s.version          = "4.1.0"
   s.summary          = "This open source library can be leveraged by Lotame clients to collect data from within their iOS applications."
 
   s.description      = <<-DESC
@@ -18,5 +18,4 @@ Pod::Spec.new do |s|
   s.source_files = 'Pod/Classes/**/*'
 
   s.frameworks = 'AdSupport'
-  s.dependency 'Alamofire', '~> 4.4'
 end
