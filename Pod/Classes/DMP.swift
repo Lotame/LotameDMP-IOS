@@ -163,6 +163,10 @@ open class DMP:NSObject{
         return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(clientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=\(DMP.sdkVersion)/"
     }
     
+    fileprivate var basePixelUrl: String{
+        return "http://bcp.lotamedmp.com/cc?mid=\(DMP.advertisingId!.urlPathEncoded()!)&dt=IDFA"
+    }
+    
     /**
     Will mark the data as a new page view
     */
@@ -362,6 +366,29 @@ open class DMP:NSObject{
                     }
                 }
             }.resume()
+        }
+    }
+
+    /**
+    Send pixel data via a completion handler.
+    */
+    
+    open class func sendPixelRequest(_ completion:@escaping (_ result: Result<LotameProfile>)->Void) {
+        guard sharedManager.isInitialized else{
+            DispatchQueue.main.async{
+                completion(Result<LotameProfile>.failure(LotameError.initializeNotCalled))
+            }
+            return
+        }
+        dispatchQueue.async{
+            guard let baseURL = URL(string: sharedManager.basePixelUrl) else {
+                completion(Result<LotameProfile>.failure(LotameError.invalidURL))
+                return
+            }
+            let req = URLRequest(url: baseURL, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
+            
+            URLSession.shared.dataTask(with: req) { data, response, error in
+                }.resume()
         }
     }
     

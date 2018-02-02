@@ -281,6 +281,20 @@ or for Objective-C
 [DMP startNewSession];
 ```
 
+### Vodafone Integration
+
+For Vodadone integration:
+
+```swift
+DMP.sendPixelRequest()
+```
+
+or for Objective-C
+
+```objective-c
+[DMP sendPixelRequest];
+```
+
 ## About this version
 
 Version 4.1.0 removes dependencies on AlamoFire and SwiftyJSON. It also generates a `.framework` file for drag-and-drop installation.
