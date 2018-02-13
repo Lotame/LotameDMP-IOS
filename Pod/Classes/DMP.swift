@@ -372,21 +372,23 @@ open class DMP:NSObject{
     */
     
     open class func sendRequest(urlPattern:String,_ completion:@escaping (_ result: Result<LotameProfile>)->Void) {
-        guard sharedManager.isInitialized else{
-            DispatchQueue.main.async{
-                completion(Result<LotameProfile>.failure(LotameError.initializeNotCalled))
-            }
-            return
-        }
-        guard DMP.trackingEnabled else{
-            DispatchQueue.main.async{
-                completion(Result<LotameProfile>.failure(LotameError.trackingDisabled))
-            }
-            return
-        }
         
         dispatchQueue.async{
             
+            guard sharedManager.isInitialized else{
+                DispatchQueue.main.async{
+                    completion(Result<LotameProfile>.failure(LotameError.initializeNotCalled))
+                }
+                return
+            }
+            
+            guard DMP.trackingEnabled else{
+                DispatchQueue.main.async{
+                    completion(Result<LotameProfile>.failure(LotameError.trackingDisabled))
+                }
+                return
+            }
+
             guard let mid = DMP.advertisingId?.urlPathEncoded(), !mid.isEmpty  else {
                 DispatchQueue.main.async{
                     completion(Result<LotameProfile>.failure(LotameError.invalidMID))
