@@ -35,7 +35,7 @@ public enum LotameError: Int, Error{
     case initializeNotCalled
     case unexpectedResponse
     case invalidURL
-    case invalidMID
+    case invalidID
     
     func getMessage() -> String{
         switch self{
@@ -47,8 +47,8 @@ public enum LotameError: Int, Error{
             return "Server is returning bad responses"
         case .invalidURL:
             return "There was an invalid URL"
-        case .invalidMID:
-            return "There was an invalid MID"
+        case .invalidID:
+            return "There was an invalid ID"
         }
     }
 }

@@ -391,7 +391,7 @@ open class DMP:NSObject{
 
             guard let mid = DMP.advertisingId?.urlPathEncoded(), !mid.isEmpty  else {
                 DispatchQueue.main.async{
-                    completion(Result<LotameProfile>.failure(LotameError.invalidMID))
+                    completion(Result<LotameProfile>.failure(LotameError.invalidID))
                 }
                 return
             }
