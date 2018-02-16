@@ -281,6 +281,20 @@ or for Objective-C
 [DMP startNewSession];
 ```
 
+### Send an HTTP or HTTPs request using the supplied URL pattern
+
+This pattern can contain two replacement macros, {deviceid} and {deviceidtype}, which will be replaced before performing the HTTP(s) call.
+
+```swift
+DMP.sendRequest(urlPattern: "http://xyz.com/getData?mid={deviceid}&dt={deviceidtype}")
+```
+
+or for Objective-C
+
+```objective-c
+[DMP sendRequest urlPattern:@"http://xyz.com/getData?mid={deviceid}&dt={deviceidtype}"];
+```
+
 ## About this version
 
 Version 4.1.0 removes dependencies on AlamoFire and SwiftyJSON. It also generates a `.framework` file for drag-and-drop installation.

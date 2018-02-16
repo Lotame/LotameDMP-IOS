@@ -364,6 +364,51 @@ open class DMP:NSObject{
             }.resume()
         }
     }
+
+    /**
+    Send an HTTP or HTTPs request using the supplied URL pattern.
+    This pattern can contain two replacement macros, {deviceid} and {deviceidtype},
+    which will be replaced before performing the HTTP(s) call.
+    */
+    
+    open class func sendRequest(urlPattern:String,_ completion:@escaping (_ result: Result<LotameProfile>)->Void) {
+        
+        dispatchQueue.async{
+            
+            guard sharedManager.isInitialized else{
+                DispatchQueue.main.async{
+                    completion(Result<LotameProfile>.failure(LotameError.initializeNotCalled))
+                }
+                return
+            }
+            
+            guard DMP.trackingEnabled else{
+                DispatchQueue.main.async{
+                    completion(Result<LotameProfile>.failure(LotameError.trackingDisabled))
+                }
+                return
+            }
+
+            guard let mid = DMP.advertisingId?.urlPathEncoded(), !mid.isEmpty  else {
+                DispatchQueue.main.async{
+                    completion(Result<LotameProfile>.failure(LotameError.invalidID))
+                }
+                return
+            }
+            
+            var newStringPattern = urlPattern.replacingOccurrences(of:"{deviceid}",with: mid)
+            newStringPattern = newStringPattern.replacingOccurrences(of:"{deviceidtype}",with:"IDFA")
+            
+            guard let newUrlPattern = URL(string: newStringPattern) else {
+                completion(Result<LotameProfile>.failure(LotameError.invalidURL))
+                return
+            }
+            
+            let req = URLRequest(url: newUrlPattern, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
+            
+            URLSession.shared.dataTask(with: req).resume()
+        }
+    }
     
 }
 
