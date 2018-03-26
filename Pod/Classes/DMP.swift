@@ -179,7 +179,7 @@ open class DMP:NSObject{
     Call this first to initialize the singleton. Only needs to be called once.
     Starts a new session, sets the domain to default "crwdcntrl.net" and httpProtocol to default "https"
     **/
-    open class func initialize(_ clientId: String){
+    @objc open class func initialize(_ clientId: String){
         DMP.sharedManager.clientId = clientId
         DMP.sharedManager.domain = defaultDomain
         DMP.sharedManager.httpProtocol = defaultProtocol
@@ -189,7 +189,7 @@ open class DMP:NSObject{
     /**
     Starts a new page view session
     */
-    open class func startNewSession(){
+    @objc open class func startNewSession(){
         dispatchQueue.sync{
             sharedManager.isNewSession = true
         }
@@ -275,7 +275,7 @@ open class DMP:NSObject{
     /**
     Sends the collected behavior data to the Lotame server without a completion handler
     */
-    open class func sendBehaviorData(){
+    @objc open class func sendBehaviorData(){
         sendBehaviorData(){
             err in
             //Could log the message here
@@ -285,7 +285,7 @@ open class DMP:NSObject{
     /**
     Collects behavior data with any type and value
     */
-    open class func addBehaviorData(_ value: String?, forType key: String){
+    @objc open class func addBehaviorData(_ value: String?, forType key: String){
         if !key.isEmpty{
             dispatchQueue.async{
                 if DMP.trackingEnabled{
@@ -298,7 +298,7 @@ open class DMP:NSObject{
     /**
     Collects a specific behavior id
     */
-    open class func addBehaviorData(behaviorId: Int64){
+    @objc open class func addBehaviorData(behaviorId: Int64){
         addBehaviorData(behaviorId.description, forType:"b")
     }
     
@@ -306,7 +306,7 @@ open class DMP:NSObject{
     /**
     Collects a specific opportunity id
     */
-    open class func addBehaviorData(opportunityId: Int64){
+    @objc open class func addBehaviorData(opportunityId: Int64){
         addBehaviorData(opportunityId.description, forType:opportunityParamKey)
     }
     

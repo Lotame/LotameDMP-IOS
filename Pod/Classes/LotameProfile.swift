@@ -29,9 +29,9 @@ import Foundation
 @objc
 open class LotameProfile: NSObject{
     open let pid:String
-    open var audiences: [LotameAudience] = []
+    @objc open var audiences: [LotameAudience] = []
     
-    open var jsonString:String? {
+    @objc open var jsonString:String? {
         return json.rawString()
     }
     
