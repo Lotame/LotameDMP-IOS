@@ -69,7 +69,7 @@ public enum Result<Value> {
     The Lotame Data Management Platform
 */
 @objc
-open class DMP:NSObject{
+open class DMP: NSObject {
     /**
     LotameDMP is a singleton.  Calls should be made to the class functions, which
     will use this sharedManager as an object.
@@ -87,10 +87,10 @@ open class DMP:NSObject{
     /**
     Gets the IDFA or nil if it is not enabled.
     */
-    open static var advertisingId: String?{
+    open static var advertisingId: String? {
         if trackingEnabled{
             return ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        }else{
+        } else {
             return nil
         }
     }
@@ -98,10 +98,10 @@ open class DMP:NSObject{
     /**
     Structure for the behavior tracking data
     */
-    fileprivate struct Behavior{
+    fileprivate struct Behavior {
         var key: String
         var value: String?
-        init(value: String?, forKey: String){
+        init(value: String?, forKey: String) {
             self.key = forKey
             self.value = value
         }
@@ -110,25 +110,25 @@ open class DMP:NSObject{
     /**
     The accumulated behavior tracking data. This is reset after each sendBehaviorData call.
     */
-    fileprivate var behaviors:[Behavior] = []
+    fileprivate var behaviors: [Behavior] = []
     
     /**
     Tracking is enabled only if advertising id is enabled on the user's device
     */
-    open static var trackingEnabled: Bool{
+    open static var trackingEnabled: Bool {
         return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
     }
     
     /**
     The id registered with Lotame
     */
-    fileprivate var clientId: String?{
-        didSet{
+    fileprivate var clientId: String? {
+        didSet {
             DMP.startNewSession()
         }
     }
     
-    fileprivate var isInitialized:Bool{
+    fileprivate var isInitialized:Bool {
         return clientId != nil && !clientId!.isEmpty
     }
     
@@ -138,8 +138,8 @@ open class DMP:NSObject{
     /**
     The domain of the base urls for the network calls. Defaults to crwdcntrl.net
     */
-    open var domain: String = DMP.defaultDomain{
-        didSet{
+    open var domain: String = DMP.defaultDomain {
+        didSet {
             DMP.startNewSession()
         }
     }
@@ -149,17 +149,17 @@ open class DMP:NSObject{
     Changing to http will require special settings in Info.plist to disable
     ATS.
     */
-    open var httpProtocol: String = DMP.defaultProtocol{
-        didSet{
+    open var httpProtocol: String = DMP.defaultProtocol {
+        didSet {
             DMP.startNewSession()
         }
     }
     
-    fileprivate var baseBCPUrl: String{
+    fileprivate var baseBCPUrl: String {
         return "\(httpProtocol)://bcp.\(domain.urlHostEncoded()!)/5/c=\(clientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/e=app/dt=IDFA/sdk=\(DMP.sdkVersion)/"
     }
     
-    fileprivate var baseADUrl: String{
+    fileprivate var baseADUrl: String {
         return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(clientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=\(DMP.sdkVersion)/"
     }
     
@@ -171,7 +171,7 @@ open class DMP:NSObject{
     /**
     The DMP is a singleton, use the initialize method to set the values in the singleton
     */
-    fileprivate override init(){
+    fileprivate override init() {
         
     }
     
@@ -179,7 +179,7 @@ open class DMP:NSObject{
     Call this first to initialize the singleton. Only needs to be called once.
     Starts a new session, sets the domain to default "crwdcntrl.net" and httpProtocol to default "https"
     **/
-    @objc open class func initialize(_ clientId: String){
+    @objc open class func initialize(_ clientId: String) {
         DMP.sharedManager.clientId = clientId
         DMP.sharedManager.domain = defaultDomain
         DMP.sharedManager.httpProtocol = defaultProtocol
@@ -189,7 +189,7 @@ open class DMP:NSObject{
     /**
     Starts a new page view session
     */
-    open class func startNewSession(){
+    open class func startNewSession() {
         dispatchQueue.sync{
             sharedManager.isNewSession = true
         }
@@ -198,7 +198,7 @@ open class DMP:NSObject{
     /**
      Used by objective-c code that does not support generics. Do not use in swift. Use sendBehaviorData instead
      */
-    @objc open class func sendBehaviorDataWithHandler(_ handler:@escaping (_ error: NSError?)->Void) {
+    @objc open class func sendBehaviorDataWithHandler(_ handler: @escaping (_ error: NSError?) -> Void) {
         sendBehaviorData{ result in
             handler(result.error as NSError?)
         }
@@ -209,16 +209,16 @@ open class DMP:NSObject{
     to the completion handler.
     **Note:** Does not collect data if the user has limited ad tracking turned on, but still clears behaviors.
     */
-    open class func sendBehaviorData(_ completion:@escaping (_ result: Result<Data>) -> Void){
+    open class func sendBehaviorData(_ completion: @escaping (_ result: Result<Data>) -> Void) {
         
         dispatchQueue.async{
-            guard sharedManager.isInitialized else{
+            guard sharedManager.isInitialized else {
                 DispatchQueue.main.async{
                     completion(Result<Data>.failure(LotameError.initializeNotCalled))
                 }
                 return
             }
-            guard DMP.trackingEnabled else{
+            guard DMP.trackingEnabled else {
                 sharedManager.behaviors.removeAll()
                 //Don't send tracking data if it user has opted out
                 DispatchQueue.main.async{
@@ -228,13 +228,13 @@ open class DMP:NSObject{
             }
             //Add random number for cache busting
             sharedManager.behaviors.insert(Behavior(value: arc4random_uniform(999999999).description, forKey: "rand"), at: 0)
-            if sharedManager.isNewSession{
+            if sharedManager.isNewSession {
                 //Add page view for new sessions
                 sharedManager.behaviors.insert(Behavior(value: "y", forKey: "pv"), at: 1)
                 sharedManager.isNewSession = false
             }
             
-            for (index, behavior) in sharedManager.behaviors.enumerated(){
+            for (index, behavior) in sharedManager.behaviors.enumerated() {
                 if behavior.key == opportunityParamKey{
                     //Insert 1 'count placements' behavior if there is at least 1 opportunity
                     sharedManager.behaviors.insert(Behavior(value:"y", forKey: "dp"), at: index + 1)
@@ -262,7 +262,7 @@ open class DMP:NSObject{
                 DispatchQueue.main.async{
                     if error == nil {
                         completion(Result<Data>.success(Data()))
-                    }else{
+                    } else {
                         completion(Result<Data>.failure(LotameError.unexpectedResponse))
                     }
                 }
@@ -275,8 +275,8 @@ open class DMP:NSObject{
     /**
     Sends the collected behavior data to the Lotame server without a completion handler
     */
-    open class func sendBehaviorData(){
-        sendBehaviorData(){
+    open class func sendBehaviorData() {
+        sendBehaviorData() {
             err in
             //Could log the message here
         }
@@ -285,10 +285,10 @@ open class DMP:NSObject{
     /**
     Collects behavior data with any type and value
     */
-    open class func addBehaviorData(_ value: String?, forType key: String){
-        if !key.isEmpty{
-            dispatchQueue.async{
-                if DMP.trackingEnabled{
+    open class func addBehaviorData(_ value: String?, forType key: String) {
+        if !key.isEmpty {
+            dispatchQueue.async {
+                if DMP.trackingEnabled {
                     sharedManager.behaviors.append(Behavior(value: value, forKey: key))
                 }
             }
@@ -298,7 +298,7 @@ open class DMP:NSObject{
     /**
     Collects a specific behavior id
     */
-    open class func addBehaviorData(behaviorId: Int64){
+    open class func addBehaviorData(behaviorId: Int64) {
         addBehaviorData(behaviorId.description, forType:"b")
     }
     
@@ -306,18 +306,18 @@ open class DMP:NSObject{
     /**
     Collects a specific opportunity id
     */
-    open class func addBehaviorData(opportunityId: Int64){
+    open class func addBehaviorData(opportunityId: Int64) {
         addBehaviorData(opportunityId.description, forType:opportunityParamKey)
     }
     
     /**
     Used by objective-c code that does not support generics. Do not use in swift. Use getAudienceData instead
     */
-    @objc open class func getAudienceDataWithHandler(_ handler:@escaping (_ profile: LotameProfile?, _ success: Bool)->Void) {
+    @objc open class func getAudienceDataWithHandler(_ handler: @escaping (_ profile: LotameProfile?, _ success: Bool) -> Void) {
         getAudienceData{ result in
             if let resultValue = result.value, result.isSuccess {
                 handler(resultValue, true)
-            }else{
+            } else {
                 handler(nil, false)
             }
         }
@@ -331,14 +331,14 @@ open class DMP:NSObject{
     
     **Note:** Does not get results if the user has limited ad tracking turned on
     */
-    open class func getAudienceData(_ completion:@escaping (_ result: Result<LotameProfile>)->Void) {
-        guard sharedManager.isInitialized else{
-            DispatchQueue.main.async{
+    open class func getAudienceData(_ completion: @escaping (_ result: Result<LotameProfile>) -> Void) {
+        guard sharedManager.isInitialized else {
+            DispatchQueue.main.async {
                 completion(Result<LotameProfile>.failure(LotameError.initializeNotCalled))
             }
             return
         }
-        guard DMP.trackingEnabled else{
+        guard DMP.trackingEnabled else {
             //Don't get audience data if it user has opted out
             DispatchQueue.main.async{
                 completion(Result<LotameProfile>.failure(LotameError.trackingDisabled))
@@ -371,25 +371,25 @@ open class DMP:NSObject{
     which will be replaced before performing the HTTP(s) call.
     */
     
-    open class func sendRequest(urlPattern:String,_ completion:@escaping (_ result: Result<LotameProfile>)->Void) {
+    open class func sendRequest(urlPattern:String,_ completion: @escaping (_ result: Result<LotameProfile>) -> Void) {
         
         dispatchQueue.async{
             
-            guard sharedManager.isInitialized else{
+            guard sharedManager.isInitialized else {
                 DispatchQueue.main.async{
                     completion(Result<LotameProfile>.failure(LotameError.initializeNotCalled))
                 }
                 return
             }
             
-            guard DMP.trackingEnabled else{
+            guard DMP.trackingEnabled else {
                 DispatchQueue.main.async{
                     completion(Result<LotameProfile>.failure(LotameError.trackingDisabled))
                 }
                 return
             }
 
-            guard let mid = DMP.advertisingId?.urlPathEncoded(), !mid.isEmpty  else {
+            guard let mid = DMP.advertisingId?.urlPathEncoded(), !mid.isEmpty else {
                 DispatchQueue.main.async{
                     completion(Result<LotameProfile>.failure(LotameError.invalidID))
                 }
