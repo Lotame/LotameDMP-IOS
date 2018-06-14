@@ -179,7 +179,7 @@ open class DMP:NSObject{
     Call this first to initialize the singleton. Only needs to be called once.
     Starts a new session, sets the domain to default "crwdcntrl.net" and httpProtocol to default "https"
     **/
-    open class func initialize(_ clientId: String){
+    @objc open class func initialize(_ clientId: String){
         DMP.sharedManager.clientId = clientId
         DMP.sharedManager.domain = defaultDomain
         DMP.sharedManager.httpProtocol = defaultProtocol
