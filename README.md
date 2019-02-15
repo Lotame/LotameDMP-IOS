@@ -203,7 +203,7 @@ or for Objective-C
 [DMP addBehaviorDataWithOpportunityId: 1];
 ```
 
-It must be sent to the server to record the behaviors:
+Multiple behaviors can be appended as detailed above. Once all of the relevant behavior data for the screen or action has been appended, it must be sent to the server to record the behaviors:
 
 ```swift
 DMP.sendBehaviorData()
