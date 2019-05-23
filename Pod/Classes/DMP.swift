@@ -74,7 +74,7 @@ open class DMP:NSObject{
     LotameDMP is a singleton.  Calls should be made to the class functions, which
     will use this sharedManager as an object.
     */
-    open static let sharedManager = DMP()
+    public static let sharedManager = DMP()
     
     fileprivate static let sdkVersion = "4.1.0"
     
@@ -87,7 +87,7 @@ open class DMP:NSObject{
     /**
     Gets the IDFA or nil if it is not enabled.
     */
-    open static var advertisingId: String?{
+    public static var advertisingId: String?{
         if trackingEnabled{
             return ASIdentifierManager.shared().advertisingIdentifier.uuidString
         }else{
@@ -115,7 +115,7 @@ open class DMP:NSObject{
     /**
     Tracking is enabled only if advertising id is enabled on the user's device
     */
-    open static var trackingEnabled: Bool{
+    public static var trackingEnabled: Bool{
         return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
     }
     
