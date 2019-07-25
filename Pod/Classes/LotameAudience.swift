@@ -28,7 +28,7 @@ import Foundation
 
 @objc
 open class LotameAudience : NSObject{
-    open var jsonString:String? {
+    @objc open var jsonString:String? {
         return json.rawString()
     }
     

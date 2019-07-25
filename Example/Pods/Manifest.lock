@@ -1,5 +1,5 @@
 PODS:
-  - LotameDMP (4.1.0)
+  - LotameDMP (4.2.0)
   - OHHTTPStubs (6.0.0):
     - OHHTTPStubs/Default (= 6.0.0)
   - OHHTTPStubs/Core (6.0.0)
@@ -18,14 +18,18 @@ DEPENDENCIES:
   - LotameDMP (from `../`)
   - OHHTTPStubs
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - OHHTTPStubs
+
 EXTERNAL SOURCES:
   LotameDMP:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  LotameDMP: fe278f889649f03f7511ace8d7b965a34ff6bf2c
+  LotameDMP: bc610b77997bff79a705faf390699f450c184720
   OHHTTPStubs: 752f9b11fd810a15162d50f11c06ff94f8e012eb
 
 PODFILE CHECKSUM: 50039ae88500faea322d8bcc41901e68028c282f
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.7.5
