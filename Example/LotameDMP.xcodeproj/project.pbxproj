@@ -48,7 +48,7 @@
 		C38C3EE0F22BF2FECB37AA87 /* Pods_LotameDMP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LotameDMP_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3D06D713BB18D797D99F6FA /* Pods_LotameDMP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LotameDMP_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0F887560874FC6BE9FC36A6 /* Pods-LotameDMP_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LotameDMP_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.release.xcconfig"; sourceTree = "<group>"; };
-		E1250959D9A53E3904AE529F /* LotameDMP.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LotameDMP.podspec; path = ../LotameDMP.podspec; sourceTree = "<group>"; };
+		E1250959D9A53E3904AE529F /* LotameDMP.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LotameDMP.podspec; path = ../LotameDMP.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EACAD3F12B6BE04C206757A1 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +232,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
