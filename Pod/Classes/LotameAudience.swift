@@ -40,8 +40,8 @@ open class LotameAudience : NSObject{
         return json
     }
     
-    open let id:String
-    open let abbreviation:String
+    public let id:String
+    public let abbreviation:String
     
     /** Sample payload
      

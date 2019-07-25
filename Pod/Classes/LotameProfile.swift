@@ -28,7 +28,7 @@ import Foundation
 
 @objc
 open class LotameProfile: NSObject{
-    open let pid:String
+    public let pid:String
     @objc open var audiences: [LotameAudience] = []
     
     @objc open var jsonString:String? {

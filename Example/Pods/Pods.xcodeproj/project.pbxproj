@@ -7,452 +7,427 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		091EED9B30979CC72EE311C6E564278F /* LotameAudience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8CA21B808194F7291C819DACB6613 /* LotameAudience.swift */; };
-		1AC728F2B7A3507DEFF369D673A0BEBF /* Pods-LotameDMP_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8BDDD1481BDC693812B617DD80F265C /* Pods-LotameDMP_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1C64932FA286C76276A32A4BC4F3C6DE /* OHHTTPStubs-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 341A19848AB04DFD31FFA7CF6D586F8F /* OHHTTPStubs-dummy.m */; };
-		23D4322540EB8C3D76906244528507CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DA89ACC7E3F7D2D730E4753E010F22 /* Foundation.framework */; };
-		2828C5A8C3FF12A877F8243078BFE26F /* OHHTTPStubsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DDFACB15AE0CAD061590DCC2A5A2089 /* OHHTTPStubsResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3084191BDC83456B1401C24DB3AACF8F /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AC927E3976DEA1B1D7126BFA48AC2DF5 /* OHHTTPStubsResponse.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3CFEC03FAC91212BA2B481E8D8CBF9CB /* LotameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0A62213C345D3467DBD22594F326C /* LotameError.swift */; };
-		43A9703A4BEDF7EBCE1236A8F3F8358A /* OHHTTPStubsMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = DC3D140BF8FC7B8535DE8659E063065C /* OHHTTPStubsMethodSwizzling.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		4544043B3F83E12258851F1586DD524E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DA89ACC7E3F7D2D730E4753E010F22 /* Foundation.framework */; };
-		48273BDB8BCEDC764057D44F01C4A184 /* DMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023A889C3414A192342E3F9B59DE9CC7 /* DMP.swift */; };
-		57BEF5452B8ABD57683D286244C7FC94 /* OHHTTPStubsResponse+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = A687BD121243E48A7E2628B96C7FBA33 /* OHHTTPStubsResponse+JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5A49661E078BC71D2B90294BE028B4F2 /* Pods-LotameDMP_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D95467F6E9E38EB2CAC45890B7AEC2E3 /* Pods-LotameDMP_Example-dummy.m */; };
-		64C91FFBDEDD820655E28F38024FEE22 /* OHHTTPStubsResponse+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 62516388DF3216DAEBB0343389F5D6C9 /* OHHTTPStubsResponse+JSON.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		7D70AD9517711B55173D6130E078838A /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C8FA4609FC104C5A9365639172CF08B /* CFNetwork.framework */; };
-		81F89C092EA32ED88DE4D43772DDA854 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DA89ACC7E3F7D2D730E4753E010F22 /* Foundation.framework */; };
-		83A37634F48394BD93F108582501A4C4 /* OHPathHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 84D764138D4A90A77DEF0E526C8C7F2A /* OHPathHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9890E6D0FDF36E4CA8ACA675C86FC6D2 /* OHHTTPStubsMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 336C9FA95F6CD2CC1131B991C16DED10 /* OHHTTPStubsMethodSwizzling.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		A09A5CF97D5BA24AFF48826D44F00F78 /* LotameDMP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 279BF8DAB02CA5C7B8ECFCFBEBC5EF99 /* LotameDMP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0A2186A1786188B449AEB083BBB7891 /* OHHTTPStubs.h in Headers */ = {isa = PBXBuildFile; fileRef = FE2BD0E37C429DFEF125E8DEC773B323 /* OHHTTPStubs.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B51C8DCD30AD84CC7C648C3BD6B967E8 /* LotameDMP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A305C7813F93BC7115EFFB1A8E38E504 /* LotameDMP-dummy.m */; };
-		B71274CE2E5707A2AD5688829FE616D0 /* OHHTTPStubs-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BF017655E83213C81840F94B9689DD82 /* OHHTTPStubs-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA5AA0B5A39584D9BAF1A302C313C3F3 /* Pods-LotameDMP_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E3903A9C3157F48E5D7D66FA301F4F39 /* Pods-LotameDMP_Tests-dummy.m */; };
-		C309EF95A035264431C6B8499E743294 /* NSDictionary+rawString.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2F6944589C8E2BF3E4B607AC34FC65 /* NSDictionary+rawString.swift */; };
-		C5ED19E01DFC9993E0C9AB6C85ACAB1D /* NSURLRequest+HTTPBodyTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CB9EA6B6DF9CB7C03A45E2F52DB5844 /* NSURLRequest+HTTPBodyTesting.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C86DFF71F80F40AD1FEAF1B4824A4E1F /* Compatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = A0A15221CFDD522A45853BB0310D5136 /* Compatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA306BDBD477DE20CD0836C7F5F0BF4B /* OHPathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 450325F19144189919B0080A0215D565 /* OHPathHelpers.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		CC20F5B64D3CA7ABC7217569E2D631C8 /* Pods-LotameDMP_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6446F7CD4D49C7CD4745D9D8A08F0EC8 /* Pods-LotameDMP_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC3BE4B3C6C098A5B9B063DB25FCDF8B /* NSURLRequest+HTTPBodyTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 83CF4900198E64C05D7672E94D4874A7 /* NSURLRequest+HTTPBodyTesting.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		DEFE9B87FB3459391EAC40EF04748388 /* LotameProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554AD84423AFB42355D8FA3619A67865 /* LotameProfile.swift */; };
-		E051B949D969BCE0CD553D323D63977E /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = CD87E919C41A155E7D1C6A408E15D337 /* OHHTTPStubs.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		E54B4BCD0022722FC835FF1C8A33A5DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DA89ACC7E3F7D2D730E4753E010F22 /* Foundation.framework */; };
-		F13218EDC7590DD5E1996F75201751F7 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7628A499B877C460E21A5952B6A5682 /* AdSupport.framework */; };
-		FFE0D1C890897CF1AE34EC147C84BA2C /* OHHTTPStubs+NSURLSessionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 4586960B90D80CA6706030C6732EC3E1 /* OHHTTPStubs+NSURLSessionConfiguration.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		0599BFCF965F2F2F209A4C7CEC044D0D /* OHHTTPStubsResponse+JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A4BA20B54661D55DC83B918BE0484DF /* OHHTTPStubsResponse+JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		18B5466A0EDB5020BF69FEB759246D31 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37DDDFC5040E95C16AAF76BA042BBF2 /* Foundation.framework */; };
+		1C18455DF93C09A2BD3840AE363EF7A0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE8BC1C63D1AF6D634DDB818E350B3F3 /* AdSupport.framework */; };
+		206407F913BBDFA53BAF336956437AD5 /* DMP.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3A1204420E297FEFBBF6F89F430B2 /* DMP.swift */; };
+		34CF50694A9673EC4B4BFDA7AB543A96 /* LotameProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1305E27548D48725066761122C2379E /* LotameProfile.swift */; };
+		364D48013D222AFAD7884D6DE166D5EF /* OHPathHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = EF6354B02448CA718096EDC0E61E2BB8 /* OHPathHelpers.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		37BE153F911BE389F0B95646161A1550 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B88EFF9B8F45B5AD8E83526853D19AB5 /* CFNetwork.framework */; };
+		3AFAE4DB951EBF38B22CBAE39D6C9CD4 /* Compatibility.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0ED123A3ADE2E52CB3FFAF964FEC5A /* Compatibility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40692FF10180FBF9881D7072567C59B5 /* Pods-LotameDMP_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5191F3E7134205B79A21F0EE85405130 /* Pods-LotameDMP_Tests-dummy.m */; };
+		44E62B81707F245FA4D65EB2FB4D44FF /* Pods-LotameDMP_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B5A20D1B9F8863F3BFDEBE4C1383A /* Pods-LotameDMP_Example-dummy.m */; };
+		571C77086DA52BD3CD60799069A9E209 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37DDDFC5040E95C16AAF76BA042BBF2 /* Foundation.framework */; };
+		590DF70E6DAB632980CC8E3A68C11084 /* OHHTTPStubsMethodSwizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 8594342C1F2B5F5755F96330DDCFDB93 /* OHHTTPStubsMethodSwizzling.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		600D4827597B1BBB7926900C09117B3D /* OHHTTPStubs-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FE80F3223A860C288694B4AC0254CD06 /* OHHTTPStubs-dummy.m */; };
+		60B45CF20D84B42BC22A6E0929B95074 /* OHHTTPStubs-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F4A935C4609F513AB5EEDEAC6C33ECE3 /* OHHTTPStubs-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66E2855F77032C37F7EC31D14828136D /* OHHTTPStubsResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E86E12635F6BB39085F316D5582E0B7 /* OHHTTPStubsResponse.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		739269BED7DC1790B5F9DDB4D512C028 /* NSDictionary+rawString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB343B95D0DE72203B8AB121A83F29C /* NSDictionary+rawString.swift */; };
+		82F90E2076CCAAB4C04AA3AB0E6F9E04 /* Pods-LotameDMP_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8DF0557A308CFF9D90987DF5B907E87D /* Pods-LotameDMP_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8487F06B6445C85E0D450B003054A3A3 /* OHHTTPStubs.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A77B83DA3131FBEA39A6A3F55391795 /* OHHTTPStubs.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		9463234BE0CF8E10C0E800982D164784 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37DDDFC5040E95C16AAF76BA042BBF2 /* Foundation.framework */; };
+		9FD97DBF7FE63B472A08D375AD40826D /* OHHTTPStubs.h in Headers */ = {isa = PBXBuildFile; fileRef = E78D55C51758F0F6FB7FA11389BAEBA2 /* OHHTTPStubs.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4D5D0341E969A2BC8CBF3F44343E1CB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F37DDDFC5040E95C16AAF76BA042BBF2 /* Foundation.framework */; };
+		A871964C74275D66D41392AA7042E757 /* OHHTTPStubsMethodSwizzling.h in Headers */ = {isa = PBXBuildFile; fileRef = 58BAE426B8C13FC8ED535A44AA9BC057 /* OHHTTPStubsMethodSwizzling.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		B29C8368F21A1E67ED1E3121E55FD103 /* LotameError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1322D6DD3C415E8985556A76E24C73 /* LotameError.swift */; };
+		B3417B6691E5FA812FA61094B5BB34B3 /* LotameAudience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BCE383A61C7EA3892467F22F6EF6A8 /* LotameAudience.swift */; };
+		C62077DB292F4F111DAA256037FF30A1 /* Pods-LotameDMP_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 110D3B76C82925EC12E1E6123BD937BE /* Pods-LotameDMP_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CFF583FFE082E7E080ABDCA925AFC1D5 /* OHHTTPStubsResponse+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 75EEC316BBFD5AE0743E5050447B7401 /* OHHTTPStubsResponse+JSON.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		D7346078844032C56A7A4F39270D7177 /* NSURLRequest+HTTPBodyTesting.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D8C2DE6E24C9F26D6700909FE8EFDA7 /* NSURLRequest+HTTPBodyTesting.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB765BED365BDF89CB0F1E645A821FE5 /* LotameDMP-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = BFC934EDA19AA33BB2DD56AEDDC22DBE /* LotameDMP-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFF416A83FC126EBF77E6609424660A3 /* LotameDMP-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B8AD649326224B73C5EA6611D08D3A4 /* LotameDMP-dummy.m */; };
+		F43777D6F96E37CA0699B2152917745D /* NSURLRequest+HTTPBodyTesting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A9FCF844060A874F2B62C3F6940986F /* NSURLRequest+HTTPBodyTesting.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F7BDF4875F878226B236F2FC7C8FEB5F /* OHHTTPStubs+NSURLSessionConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = D78AC5DD795D30144616AB1170E46CD7 /* OHHTTPStubs+NSURLSessionConfiguration.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		F97A29C977B22A391237B414D55621DA /* OHHTTPStubsResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AF4CC85C444EF41391019095D2EB43E /* OHHTTPStubsResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA0A4E39D71793AEF2951C03E3DECE80 /* OHPathHelpers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C96F5EDB5E10139BD229A15031AE1D2 /* OHPathHelpers.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		2B51E5FA61A57AE0D78FAF74125588DE /* PBXContainerItemProxy */ = {
+		7E23F0B1642F5A935D55CDE2B7880466 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 06A23325201207EEE8C22E3551E28E4A;
-			remoteInfo = OHHTTPStubs;
-		};
-		3C84D76C05EF430BF0D667F7D0025F8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CEDC323E3873EA9652574174ACAAF17A;
+			remoteGlobalIDString = 67A9220953C4409162DEC4AB0B6A21CA;
 			remoteInfo = LotameDMP;
 		};
-		7F7DEED2E852B0ED2B95D4A33FFF0372 /* PBXContainerItemProxy */ = {
+		85651EEDDE7E171F2EEC006B92618C3C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = CEDC323E3873EA9652574174ACAAF17A;
+			remoteGlobalIDString = A983A2D06C5B6AA3D6ABA5CCC0A16725;
+			remoteInfo = OHHTTPStubs;
+		};
+		E340F81080B22152C55DEBA313409803 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 67A9220953C4409162DEC4AB0B6A21CA;
 			remoteInfo = LotameDMP;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		023A889C3414A192342E3F9B59DE9CC7 /* DMP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DMP.swift; path = Pod/Classes/DMP.swift; sourceTree = "<group>"; };
-		160BB36F5B340CA353EDA04590D08A31 /* Pods-LotameDMP_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		181F8F5C57F8A1DBFBCD6CDB7E049E10 /* Pods-LotameDMP_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LotameDMP_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1C3464FC662A7B3F3A6D74D3617C3E0D /* Pods_LotameDMP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LotameDMP_Tests.framework; path = "Pods-LotameDMP_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C4D80FF794C4A13B9739893FFD59DFD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1E16FC5DF55FFB20F63956547B17753F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		279BF8DAB02CA5C7B8ECFCFBEBC5EF99 /* LotameDMP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LotameDMP-umbrella.h"; sourceTree = "<group>"; };
-		2866D261378FCD4FE14943A99A722B77 /* Pods-LotameDMP_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LotameDMP_Example.modulemap"; sourceTree = "<group>"; };
-		2DDFACB15AE0CAD061590DCC2A5A2089 /* OHHTTPStubsResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubsResponse.h; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.h; sourceTree = "<group>"; };
-		32843707BE20FBD899CECEBDB212D693 /* LotameDMP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LotameDMP.framework; path = LotameDMP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		336C9FA95F6CD2CC1131B991C16DED10 /* OHHTTPStubsMethodSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsMethodSwizzling.m; path = OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.m; sourceTree = "<group>"; };
-		33831E10F65C9368D1499DF0338BB53A /* OHHTTPStubs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OHHTTPStubs.xcconfig; sourceTree = "<group>"; };
-		341A19848AB04DFD31FFA7CF6D586F8F /* OHHTTPStubs-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OHHTTPStubs-dummy.m"; sourceTree = "<group>"; };
-		3564FC056F5F1E7E5C809D7BB0F34646 /* LotameDMP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LotameDMP-prefix.pch"; sourceTree = "<group>"; };
-		3C8FA4609FC104C5A9365639172CF08B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
-		3F6843AA96F513831A4CBD26850657A8 /* Pods-LotameDMP_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LotameDMP_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		450325F19144189919B0080A0215D565 /* OHPathHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHPathHelpers.m; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.m; sourceTree = "<group>"; };
-		4586960B90D80CA6706030C6732EC3E1 /* OHHTTPStubs+NSURLSessionConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OHHTTPStubs+NSURLSessionConfiguration.m"; path = "OHHTTPStubs/Sources/NSURLSession/OHHTTPStubs+NSURLSessionConfiguration.m"; sourceTree = "<group>"; };
-		4927332025C324CA11BC68E9ADD97C5E /* Pods-LotameDMP_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-LotameDMP_Tests.modulemap"; sourceTree = "<group>"; };
-		51F9A814E2B204818DF97B58DB17FDCF /* Pods-LotameDMP_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Example-frameworks.sh"; sourceTree = "<group>"; };
-		554AD84423AFB42355D8FA3619A67865 /* LotameProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LotameProfile.swift; path = Pod/Classes/LotameProfile.swift; sourceTree = "<group>"; };
-		581AC0E6A878A80EFCC3C5A83CA83488 /* Pods-LotameDMP_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Tests-resources.sh"; sourceTree = "<group>"; };
-		62516388DF3216DAEBB0343389F5D6C9 /* OHHTTPStubsResponse+JSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OHHTTPStubsResponse+JSON.m"; path = "OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.m"; sourceTree = "<group>"; };
-		6446F7CD4D49C7CD4745D9D8A08F0EC8 /* Pods-LotameDMP_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LotameDMP_Example-umbrella.h"; sourceTree = "<group>"; };
-		6A5C777022B25248A8DC4622DBB328EF /* Pods_LotameDMP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LotameDMP_Example.framework; path = "Pods-LotameDMP_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6D816C355437EC34814B054C668048C2 /* LotameDMP.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LotameDMP.xcconfig; sourceTree = "<group>"; };
-		7C07770D338CCEF198E267779A8ECF52 /* OHHTTPStubs.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OHHTTPStubs.modulemap; sourceTree = "<group>"; };
-		83CF4900198E64C05D7672E94D4874A7 /* NSURLRequest+HTTPBodyTesting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+HTTPBodyTesting.m"; path = "OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.m"; sourceTree = "<group>"; };
-		84D764138D4A90A77DEF0E526C8C7F2A /* OHPathHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHPathHelpers.h; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.h; sourceTree = "<group>"; };
-		8BD6B9FE3F296DB1FC9E75CBB61B6B44 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CB9EA6B6DF9CB7C03A45E2F52DB5844 /* NSURLRequest+HTTPBodyTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+HTTPBodyTesting.h"; path = "OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.h"; sourceTree = "<group>"; };
-		920EBFAEA070B1AB1F73DF527AB2C8CA /* LotameDMP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = LotameDMP.modulemap; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		93A773146EED80261B957E33F48AA646 /* Pods-LotameDMP_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Example.release.xcconfig"; sourceTree = "<group>"; };
-		9BF8CA21B808194F7291C819DACB6613 /* LotameAudience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LotameAudience.swift; path = Pod/Classes/LotameAudience.swift; sourceTree = "<group>"; };
-		A0A15221CFDD522A45853BB0310D5136 /* Compatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Compatibility.h; path = OHHTTPStubs/Sources/Compatibility.h; sourceTree = "<group>"; };
-		A305C7813F93BC7115EFFB1A8E38E504 /* LotameDMP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LotameDMP-dummy.m"; sourceTree = "<group>"; };
-		A687BD121243E48A7E2628B96C7FBA33 /* OHHTTPStubsResponse+JSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OHHTTPStubsResponse+JSON.h"; path = "OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.h"; sourceTree = "<group>"; };
-		A7E9EDAE5408AF6C6D87189136FBC8BB /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OHHTTPStubs.framework; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC927E3976DEA1B1D7126BFA48AC2DF5 /* OHHTTPStubsResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsResponse.m; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.m; sourceTree = "<group>"; };
-		AF6E33079A0AC62440C75012BB20ED40 /* Pods-LotameDMP_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LotameDMP_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B974CEE3695BA2D211E692533A5C70EA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC7773E62DBB946025A99030A47CAA94 /* Pods-LotameDMP_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		BF017655E83213C81840F94B9689DD82 /* OHHTTPStubs-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubs-umbrella.h"; sourceTree = "<group>"; };
-		C22A20D311B8EF609E62382F4FA1E1AB /* OHHTTPStubs-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubs-prefix.pch"; sourceTree = "<group>"; };
-		C6DA89ACC7E3F7D2D730E4753E010F22 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		C8BDDD1481BDC693812B617DD80F265C /* Pods-LotameDMP_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LotameDMP_Tests-umbrella.h"; sourceTree = "<group>"; };
-		CCD0A62213C345D3467DBD22594F326C /* LotameError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LotameError.swift; path = Pod/Classes/LotameError.swift; sourceTree = "<group>"; };
-		CD87E919C41A155E7D1C6A408E15D337 /* OHHTTPStubs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubs.m; path = OHHTTPStubs/Sources/OHHTTPStubs.m; sourceTree = "<group>"; };
-		D20FC0352198484DDB75C6398CAC2FAF /* Pods-LotameDMP_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Example-resources.sh"; sourceTree = "<group>"; };
-		D84BFAD610AC40E81008320042711414 /* Pods-LotameDMP_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D95467F6E9E38EB2CAC45890B7AEC2E3 /* Pods-LotameDMP_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LotameDMP_Example-dummy.m"; sourceTree = "<group>"; };
-		DC3D140BF8FC7B8535DE8659E063065C /* OHHTTPStubsMethodSwizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubsMethodSwizzling.h; path = OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.h; sourceTree = "<group>"; };
-		DD2F6944589C8E2BF3E4B607AC34FC65 /* NSDictionary+rawString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSDictionary+rawString.swift"; path = "Pod/Classes/NSDictionary+rawString.swift"; sourceTree = "<group>"; };
-		E3903A9C3157F48E5D7D66FA301F4F39 /* Pods-LotameDMP_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LotameDMP_Tests-dummy.m"; sourceTree = "<group>"; };
-		F7628A499B877C460E21A5952B6A5682 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
-		F77E62830A158EAFB548B5FDA425C9B5 /* Pods-LotameDMP_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LotameDMP_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		FE2BD0E37C429DFEF125E8DEC773B323 /* OHHTTPStubs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubs.h; path = OHHTTPStubs/Sources/OHHTTPStubs.h; sourceTree = "<group>"; };
-		FF8C542B18C786E2D40F672B27921463 /* Pods-LotameDMP_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		0A0ED123A3ADE2E52CB3FFAF964FEC5A /* Compatibility.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Compatibility.h; path = OHHTTPStubs/Sources/Compatibility.h; sourceTree = "<group>"; };
+		0AF4CC85C444EF41391019095D2EB43E /* OHHTTPStubsResponse.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubsResponse.h; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.h; sourceTree = "<group>"; };
+		0D8C2DE6E24C9F26D6700909FE8EFDA7 /* NSURLRequest+HTTPBodyTesting.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLRequest+HTTPBodyTesting.h"; path = "OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.h"; sourceTree = "<group>"; };
+		110D3B76C82925EC12E1E6123BD937BE /* Pods-LotameDMP_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LotameDMP_Tests-umbrella.h"; sourceTree = "<group>"; };
+		1342E49F406785FF5FA94AEB52723C60 /* Pods-LotameDMP_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LotameDMP_Example-Info.plist"; sourceTree = "<group>"; };
+		17E33041B314FA837A3CAEB9DF3CDE9F /* OHHTTPStubs.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OHHTTPStubs.framework; path = OHHTTPStubs.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A9FCF844060A874F2B62C3F6940986F /* NSURLRequest+HTTPBodyTesting.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLRequest+HTTPBodyTesting.m"; path = "OHHTTPStubs/Sources/NSURLSession/NSURLRequest+HTTPBodyTesting.m"; sourceTree = "<group>"; };
+		28BCE383A61C7EA3892467F22F6EF6A8 /* LotameAudience.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LotameAudience.swift; path = Pod/Classes/LotameAudience.swift; sourceTree = "<group>"; };
+		2C96F5EDB5E10139BD229A15031AE1D2 /* OHPathHelpers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHPathHelpers.h; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.h; sourceTree = "<group>"; };
+		2E96EBD464EF0DD6096F8613EBE1F7CD /* Pods-LotameDMP_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LotameDMP_Tests.modulemap"; sourceTree = "<group>"; };
+		31F46032A4CBB623D0DAFAFD734B67D0 /* OHHTTPStubs.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OHHTTPStubs.xcconfig; sourceTree = "<group>"; };
+		361B5A20D1B9F8863F3BFDEBE4C1383A /* Pods-LotameDMP_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LotameDMP_Example-dummy.m"; sourceTree = "<group>"; };
+		36EF92B99D61627ACB8DA27C22952E4E /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3DB343B95D0DE72203B8AB121A83F29C /* NSDictionary+rawString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSDictionary+rawString.swift"; path = "Pod/Classes/NSDictionary+rawString.swift"; sourceTree = "<group>"; };
+		3F3967EAAFE4099E55E7EA1969D6D008 /* Pods-LotameDMP_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		47B84DFD288B53093B2D6F6F49C040B0 /* Pods-LotameDMP_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		4A77B83DA3131FBEA39A6A3F55391795 /* OHHTTPStubs.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubs.m; path = OHHTTPStubs/Sources/OHHTTPStubs.m; sourceTree = "<group>"; };
+		5191F3E7134205B79A21F0EE85405130 /* Pods-LotameDMP_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LotameDMP_Tests-dummy.m"; sourceTree = "<group>"; };
+		531A78CD450C07DF1614D564FE9E15A5 /* LotameDMP.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = LotameDMP.modulemap; sourceTree = "<group>"; };
+		58BAE426B8C13FC8ED535A44AA9BC057 /* OHHTTPStubsMethodSwizzling.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubsMethodSwizzling.h; path = OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.h; sourceTree = "<group>"; };
+		66DE4D70BD19441EC0A1AE3951C7A8DD /* LotameDMP.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LotameDMP.framework; path = LotameDMP.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E909690749F84BCA7FE7F4E51484B21 /* Pods-LotameDMP_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Example-frameworks.sh"; sourceTree = "<group>"; };
+		75EEC316BBFD5AE0743E5050447B7401 /* OHHTTPStubsResponse+JSON.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OHHTTPStubsResponse+JSON.m"; path = "OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.m"; sourceTree = "<group>"; };
+		7B8AD649326224B73C5EA6611D08D3A4 /* LotameDMP-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LotameDMP-dummy.m"; sourceTree = "<group>"; };
+		7E86E12635F6BB39085F316D5582E0B7 /* OHHTTPStubsResponse.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsResponse.m; path = OHHTTPStubs/Sources/OHHTTPStubsResponse.m; sourceTree = "<group>"; };
+		80670E25F44C427720136829E4C06182 /* Pods_LotameDMP_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LotameDMP_Example.framework; path = "Pods-LotameDMP_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8287E90740DB044AF44D4FEB83851D8C /* Pods-LotameDMP_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LotameDMP_Example.modulemap"; sourceTree = "<group>"; };
+		8594342C1F2B5F5755F96330DDCFDB93 /* OHHTTPStubsMethodSwizzling.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHHTTPStubsMethodSwizzling.m; path = OHHTTPStubs/Sources/NSURLSession/OHHTTPStubsMethodSwizzling.m; sourceTree = "<group>"; };
+		8A4BA20B54661D55DC83B918BE0484DF /* OHHTTPStubsResponse+JSON.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "OHHTTPStubsResponse+JSON.h"; path = "OHHTTPStubs/Sources/JSON/OHHTTPStubsResponse+JSON.h"; sourceTree = "<group>"; };
+		8C6EC9F2D4BB06E9EE6E0D4EC313D254 /* Pods-LotameDMP_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LotameDMP_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8D7FE0EF969576C3C4D34650E03F5AB7 /* Pods-LotameDMP_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LotameDMP_Tests-Info.plist"; sourceTree = "<group>"; };
+		8DF0557A308CFF9D90987DF5B907E87D /* Pods-LotameDMP_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LotameDMP_Example-umbrella.h"; sourceTree = "<group>"; };
+		9058C767650B5C74857D14CCC5481E3D /* Pods-LotameDMP_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LotameDMP_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		94EDABF14D13D1FAD59D5083228911F1 /* Pods_LotameDMP_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LotameDMP_Tests.framework; path = "Pods-LotameDMP_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A08F8D9AB580513B0B7F886FA0B654C /* Pods-LotameDMP_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LotameDMP_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9B50AF1F8CBA8A10EB8B0360DA753349 /* Pods-LotameDMP_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Example.release.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A7C3C05D8D3682BB8EA21062A44E1E50 /* LotameDMP.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LotameDMP.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AC01F09E76DFF41F48E95064A1D49D8B /* OHHTTPStubs.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = OHHTTPStubs.modulemap; sourceTree = "<group>"; };
+		AE8BC1C63D1AF6D634DDB818E350B3F3 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
+		AFE7071FF3E3EF6EE93AB8BAACAD3303 /* OHHTTPStubs-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "OHHTTPStubs-Info.plist"; sourceTree = "<group>"; };
+		B0208C253B77948C15E18E386150B5FE /* Pods-LotameDMP_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LotameDMP_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		B2130237C33E292AB7177FFC65813BF9 /* LotameDMP-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LotameDMP-prefix.pch"; sourceTree = "<group>"; };
+		B88EFF9B8F45B5AD8E83526853D19AB5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
+		B8FD6B7B00D050AFCC8714E6AEB29DB5 /* Pods-LotameDMP_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LotameDMP_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		BB124CEB6DF23DE1183DF0B0EA6C4667 /* LotameDMP.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LotameDMP.xcconfig; sourceTree = "<group>"; };
+		BB1322D6DD3C415E8985556A76E24C73 /* LotameError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LotameError.swift; path = Pod/Classes/LotameError.swift; sourceTree = "<group>"; };
+		BE9FBBD9BAD9C2456408E7F396629B86 /* Pods-LotameDMP_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LotameDMP_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		BFC934EDA19AA33BB2DD56AEDDC22DBE /* LotameDMP-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LotameDMP-umbrella.h"; sourceTree = "<group>"; };
+		D1305E27548D48725066761122C2379E /* LotameProfile.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LotameProfile.swift; path = Pod/Classes/LotameProfile.swift; sourceTree = "<group>"; };
+		D422BFBF45B95B43DD6C71909884C10B /* LotameDMP-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LotameDMP-Info.plist"; sourceTree = "<group>"; };
+		D78AC5DD795D30144616AB1170E46CD7 /* OHHTTPStubs+NSURLSessionConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "OHHTTPStubs+NSURLSessionConfiguration.m"; path = "OHHTTPStubs/Sources/NSURLSession/OHHTTPStubs+NSURLSessionConfiguration.m"; sourceTree = "<group>"; };
+		E78D55C51758F0F6FB7FA11389BAEBA2 /* OHHTTPStubs.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OHHTTPStubs.h; path = OHHTTPStubs/Sources/OHHTTPStubs.h; sourceTree = "<group>"; };
+		EAD3A1204420E297FEFBBF6F89F430B2 /* DMP.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DMP.swift; path = Pod/Classes/DMP.swift; sourceTree = "<group>"; };
+		EF6354B02448CA718096EDC0E61E2BB8 /* OHPathHelpers.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OHPathHelpers.m; path = OHHTTPStubs/Sources/OHPathHelpers/OHPathHelpers.m; sourceTree = "<group>"; };
+		F37DDDFC5040E95C16AAF76BA042BBF2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F4A935C4609F513AB5EEDEAC6C33ECE3 /* OHHTTPStubs-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubs-umbrella.h"; sourceTree = "<group>"; };
+		F5EA1BA8BDDFA94E27D64DB13F2F6F4E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		FB080E8D50C347D4EE68330CEE34395E /* OHHTTPStubs-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OHHTTPStubs-prefix.pch"; sourceTree = "<group>"; };
+		FE80F3223A860C288694B4AC0254CD06 /* OHHTTPStubs-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "OHHTTPStubs-dummy.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		42935CE2B8713E33BF6E611C39C7C51E /* Frameworks */ = {
+		ECD07FE9FE79FD0E885C12523A98F1F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E54B4BCD0022722FC835FF1C8A33A5DA /* Foundation.framework in Frameworks */,
+				9463234BE0CF8E10C0E800982D164784 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		57D88E2A6E841B917FEBA8D9BF8006DA /* Frameworks */ = {
+		F2C72CA0FCE49B1E6CDB5D2ED3CDD23B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23D4322540EB8C3D76906244528507CB /* Foundation.framework in Frameworks */,
+				18B5466A0EDB5020BF69FEB759246D31 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C7AE56C614EA98A5132171AE9A318E9A /* Frameworks */ = {
+		F4841850BC38A830EB52B3A60B8F98C2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D70AD9517711B55173D6130E078838A /* CFNetwork.framework in Frameworks */,
-				4544043B3F83E12258851F1586DD524E /* Foundation.framework in Frameworks */,
+				1C18455DF93C09A2BD3840AE363EF7A0 /* AdSupport.framework in Frameworks */,
+				A4D5D0341E969A2BC8CBF3F44343E1CB /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F657F9A33675B4F7390F4497F7FCC59C /* Frameworks */ = {
+		F85E9C7363B0839405F64D063BE830AB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F13218EDC7590DD5E1996F75201751F7 /* AdSupport.framework in Frameworks */,
-				81F89C092EA32ED88DE4D43772DDA854 /* Foundation.framework in Frameworks */,
+				37BE153F911BE389F0B95646161A1550 /* CFNetwork.framework in Frameworks */,
+				571C77086DA52BD3CD60799069A9E209 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0293D7DC79745455808549F6B180705A /* Products */ = {
+		03C5C200A0787E300053CFA8F53CA094 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				32843707BE20FBD899CECEBDB212D693 /* LotameDMP.framework */,
-				A7E9EDAE5408AF6C6D87189136FBC8BB /* OHHTTPStubs.framework */,
-				6A5C777022B25248A8DC4622DBB328EF /* Pods_LotameDMP_Example.framework */,
-				1C3464FC662A7B3F3A6D74D3617C3E0D /* Pods_LotameDMP_Tests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		086EC7A6D5B8ACCABD0CBC6F2757A2AA /* Pods-LotameDMP_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				1C4D80FF794C4A13B9739893FFD59DFD /* Info.plist */,
-				4927332025C324CA11BC68E9ADD97C5E /* Pods-LotameDMP_Tests.modulemap */,
-				181F8F5C57F8A1DBFBCD6CDB7E049E10 /* Pods-LotameDMP_Tests-acknowledgements.markdown */,
-				F77E62830A158EAFB548B5FDA425C9B5 /* Pods-LotameDMP_Tests-acknowledgements.plist */,
-				E3903A9C3157F48E5D7D66FA301F4F39 /* Pods-LotameDMP_Tests-dummy.m */,
-				FF8C542B18C786E2D40F672B27921463 /* Pods-LotameDMP_Tests-frameworks.sh */,
-				581AC0E6A878A80EFCC3C5A83CA83488 /* Pods-LotameDMP_Tests-resources.sh */,
-				C8BDDD1481BDC693812B617DD80F265C /* Pods-LotameDMP_Tests-umbrella.h */,
-				D84BFAD610AC40E81008320042711414 /* Pods-LotameDMP_Tests.debug.xcconfig */,
-				BC7773E62DBB946025A99030A47CAA94 /* Pods-LotameDMP_Tests.release.xcconfig */,
-			);
-			name = "Pods-LotameDMP_Tests";
-			path = "Target Support Files/Pods-LotameDMP_Tests";
-			sourceTree = "<group>";
-		};
-		0BDCC62477D72B6F4A8A123005FF72ED /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				A0A15221CFDD522A45853BB0310D5136 /* Compatibility.h */,
-				FE2BD0E37C429DFEF125E8DEC773B323 /* OHHTTPStubs.h */,
-				CD87E919C41A155E7D1C6A408E15D337 /* OHHTTPStubs.m */,
-				2DDFACB15AE0CAD061590DCC2A5A2089 /* OHHTTPStubsResponse.h */,
-				AC927E3976DEA1B1D7126BFA48AC2DF5 /* OHHTTPStubsResponse.m */,
-			);
-			name = Core;
-			sourceTree = "<group>";
-		};
-		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				46B415710FFADDA66BFF482B620053EF /* iOS */,
+				5C88371D693D7408DE5F65AD03C9F501 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		243097C06FAA4FD02D9CBDBD620D7938 /* JSON */ = {
+		0F6563792412388EE02A0B1CCB601583 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				A687BD121243E48A7E2628B96C7FBA33 /* OHHTTPStubsResponse+JSON.h */,
-				62516388DF3216DAEBB0343389F5D6C9 /* OHHTTPStubsResponse+JSON.m */,
+				8A4BA20B54661D55DC83B918BE0484DF /* OHHTTPStubsResponse+JSON.h */,
+				75EEC316BBFD5AE0743E5050447B7401 /* OHHTTPStubsResponse+JSON.m */,
 			);
 			name = JSON;
 			sourceTree = "<group>";
 		};
-		3ACD61BDB55476D218DC43F4453F229C /* Pods */ = {
+		227C95F0C709FCE091FD4764158928DB /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				E492DADCD5FFD055DD381778D1CECC24 /* OHHTTPStubs */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		402B96F96A820BA282E27D511006D6D3 /* OHPathHelpers */ = {
-			isa = PBXGroup;
-			children = (
-				84D764138D4A90A77DEF0E526C8C7F2A /* OHPathHelpers.h */,
-				450325F19144189919B0080A0215D565 /* OHPathHelpers.m */,
-			);
-			name = OHPathHelpers;
-			sourceTree = "<group>";
-		};
-		46B415710FFADDA66BFF482B620053EF /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				F7628A499B877C460E21A5952B6A5682 /* AdSupport.framework */,
-				3C8FA4609FC104C5A9365639172CF08B /* CFNetwork.framework */,
-				C6DA89ACC7E3F7D2D730E4753E010F22 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		6BE73F65D48B7442B9AD0579F822E3AA /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E9FC310342247B47409357C80424D3D9 /* Pods-LotameDMP_Example */,
-				086EC7A6D5B8ACCABD0CBC6F2757A2AA /* Pods-LotameDMP_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		7AD59C478740611E123415ECB14783B6 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				C5C15F36173CA8F7D2D2C381DD3CA434 /* LotameDMP */,
+				D994AD11B2796B92B4B86BFA5543C341 /* LotameDMP */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		35E420606A7083326E74BADCCA7A6960 /* Pods-LotameDMP_Example */ = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				7AD59C478740611E123415ECB14783B6 /* Development Pods */,
-				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
-				3ACD61BDB55476D218DC43F4453F229C /* Pods */,
-				0293D7DC79745455808549F6B180705A /* Products */,
-				6BE73F65D48B7442B9AD0579F822E3AA /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		7EDCE9D01D6597E514314B1B1E689919 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				1E16FC5DF55FFB20F63956547B17753F /* Info.plist */,
-				7C07770D338CCEF198E267779A8ECF52 /* OHHTTPStubs.modulemap */,
-				33831E10F65C9368D1499DF0338BB53A /* OHHTTPStubs.xcconfig */,
-				341A19848AB04DFD31FFA7CF6D586F8F /* OHHTTPStubs-dummy.m */,
-				C22A20D311B8EF609E62382F4FA1E1AB /* OHHTTPStubs-prefix.pch */,
-				BF017655E83213C81840F94B9689DD82 /* OHHTTPStubs-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/OHHTTPStubs";
-			sourceTree = "<group>";
-		};
-		98F73EEB1B6EC48427858FE1CAF77E12 /* NSURLSession */ = {
-			isa = PBXGroup;
-			children = (
-				8CB9EA6B6DF9CB7C03A45E2F52DB5844 /* NSURLRequest+HTTPBodyTesting.h */,
-				83CF4900198E64C05D7672E94D4874A7 /* NSURLRequest+HTTPBodyTesting.m */,
-				4586960B90D80CA6706030C6732EC3E1 /* OHHTTPStubs+NSURLSessionConfiguration.m */,
-				DC3D140BF8FC7B8535DE8659E063065C /* OHHTTPStubsMethodSwizzling.h */,
-				336C9FA95F6CD2CC1131B991C16DED10 /* OHHTTPStubsMethodSwizzling.m */,
-			);
-			name = NSURLSession;
-			sourceTree = "<group>";
-		};
-		C5C15F36173CA8F7D2D2C381DD3CA434 /* LotameDMP */ = {
-			isa = PBXGroup;
-			children = (
-				023A889C3414A192342E3F9B59DE9CC7 /* DMP.swift */,
-				9BF8CA21B808194F7291C819DACB6613 /* LotameAudience.swift */,
-				CCD0A62213C345D3467DBD22594F326C /* LotameError.swift */,
-				554AD84423AFB42355D8FA3619A67865 /* LotameProfile.swift */,
-				DD2F6944589C8E2BF3E4B607AC34FC65 /* NSDictionary+rawString.swift */,
-				DF4D1A00DFC4E5EFF21A884208D5E64B /* Support Files */,
-			);
-			name = LotameDMP;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		DF4D1A00DFC4E5EFF21A884208D5E64B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				8BD6B9FE3F296DB1FC9E75CBB61B6B44 /* Info.plist */,
-				920EBFAEA070B1AB1F73DF527AB2C8CA /* LotameDMP.modulemap */,
-				6D816C355437EC34814B054C668048C2 /* LotameDMP.xcconfig */,
-				A305C7813F93BC7115EFFB1A8E38E504 /* LotameDMP-dummy.m */,
-				3564FC056F5F1E7E5C809D7BB0F34646 /* LotameDMP-prefix.pch */,
-				279BF8DAB02CA5C7B8ECFCFBEBC5EF99 /* LotameDMP-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/LotameDMP";
-			sourceTree = "<group>";
-		};
-		E492DADCD5FFD055DD381778D1CECC24 /* OHHTTPStubs */ = {
-			isa = PBXGroup;
-			children = (
-				0BDCC62477D72B6F4A8A123005FF72ED /* Core */,
-				243097C06FAA4FD02D9CBDBD620D7938 /* JSON */,
-				98F73EEB1B6EC48427858FE1CAF77E12 /* NSURLSession */,
-				402B96F96A820BA282E27D511006D6D3 /* OHPathHelpers */,
-				7EDCE9D01D6597E514314B1B1E689919 /* Support Files */,
-			);
-			name = OHHTTPStubs;
-			path = OHHTTPStubs;
-			sourceTree = "<group>";
-		};
-		E9FC310342247B47409357C80424D3D9 /* Pods-LotameDMP_Example */ = {
-			isa = PBXGroup;
-			children = (
-				B974CEE3695BA2D211E692533A5C70EA /* Info.plist */,
-				2866D261378FCD4FE14943A99A722B77 /* Pods-LotameDMP_Example.modulemap */,
-				AF6E33079A0AC62440C75012BB20ED40 /* Pods-LotameDMP_Example-acknowledgements.markdown */,
-				3F6843AA96F513831A4CBD26850657A8 /* Pods-LotameDMP_Example-acknowledgements.plist */,
-				D95467F6E9E38EB2CAC45890B7AEC2E3 /* Pods-LotameDMP_Example-dummy.m */,
-				51F9A814E2B204818DF97B58DB17FDCF /* Pods-LotameDMP_Example-frameworks.sh */,
-				D20FC0352198484DDB75C6398CAC2FAF /* Pods-LotameDMP_Example-resources.sh */,
-				6446F7CD4D49C7CD4745D9D8A08F0EC8 /* Pods-LotameDMP_Example-umbrella.h */,
-				160BB36F5B340CA353EDA04590D08A31 /* Pods-LotameDMP_Example.debug.xcconfig */,
-				93A773146EED80261B957E33F48AA646 /* Pods-LotameDMP_Example.release.xcconfig */,
+				8287E90740DB044AF44D4FEB83851D8C /* Pods-LotameDMP_Example.modulemap */,
+				9058C767650B5C74857D14CCC5481E3D /* Pods-LotameDMP_Example-acknowledgements.markdown */,
+				B8FD6B7B00D050AFCC8714E6AEB29DB5 /* Pods-LotameDMP_Example-acknowledgements.plist */,
+				361B5A20D1B9F8863F3BFDEBE4C1383A /* Pods-LotameDMP_Example-dummy.m */,
+				6E909690749F84BCA7FE7F4E51484B21 /* Pods-LotameDMP_Example-frameworks.sh */,
+				1342E49F406785FF5FA94AEB52723C60 /* Pods-LotameDMP_Example-Info.plist */,
+				8DF0557A308CFF9D90987DF5B907E87D /* Pods-LotameDMP_Example-umbrella.h */,
+				BE9FBBD9BAD9C2456408E7F396629B86 /* Pods-LotameDMP_Example.debug.xcconfig */,
+				9B50AF1F8CBA8A10EB8B0360DA753349 /* Pods-LotameDMP_Example.release.xcconfig */,
 			);
 			name = "Pods-LotameDMP_Example";
 			path = "Target Support Files/Pods-LotameDMP_Example";
 			sourceTree = "<group>";
 		};
+		44938CE84664052D6B3A26202F494E12 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC01F09E76DFF41F48E95064A1D49D8B /* OHHTTPStubs.modulemap */,
+				31F46032A4CBB623D0DAFAFD734B67D0 /* OHHTTPStubs.xcconfig */,
+				FE80F3223A860C288694B4AC0254CD06 /* OHHTTPStubs-dummy.m */,
+				AFE7071FF3E3EF6EE93AB8BAACAD3303 /* OHHTTPStubs-Info.plist */,
+				FB080E8D50C347D4EE68330CEE34395E /* OHHTTPStubs-prefix.pch */,
+				F4A935C4609F513AB5EEDEAC6C33ECE3 /* OHHTTPStubs-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/OHHTTPStubs";
+			sourceTree = "<group>";
+		};
+		50C70F7C3F5C4377FE00068ED6DBFF5D /* NSURLSession */ = {
+			isa = PBXGroup;
+			children = (
+				0D8C2DE6E24C9F26D6700909FE8EFDA7 /* NSURLRequest+HTTPBodyTesting.h */,
+				1A9FCF844060A874F2B62C3F6940986F /* NSURLRequest+HTTPBodyTesting.m */,
+				D78AC5DD795D30144616AB1170E46CD7 /* OHHTTPStubs+NSURLSessionConfiguration.m */,
+				58BAE426B8C13FC8ED535A44AA9BC057 /* OHHTTPStubsMethodSwizzling.h */,
+				8594342C1F2B5F5755F96330DDCFDB93 /* OHHTTPStubsMethodSwizzling.m */,
+			);
+			name = NSURLSession;
+			sourceTree = "<group>";
+		};
+		562E23A461D7C2E54CF31EE915397F38 /* Pods-LotameDMP_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				2E96EBD464EF0DD6096F8613EBE1F7CD /* Pods-LotameDMP_Tests.modulemap */,
+				9A08F8D9AB580513B0B7F886FA0B654C /* Pods-LotameDMP_Tests-acknowledgements.markdown */,
+				8C6EC9F2D4BB06E9EE6E0D4EC313D254 /* Pods-LotameDMP_Tests-acknowledgements.plist */,
+				5191F3E7134205B79A21F0EE85405130 /* Pods-LotameDMP_Tests-dummy.m */,
+				B0208C253B77948C15E18E386150B5FE /* Pods-LotameDMP_Tests-frameworks.sh */,
+				8D7FE0EF969576C3C4D34650E03F5AB7 /* Pods-LotameDMP_Tests-Info.plist */,
+				110D3B76C82925EC12E1E6123BD937BE /* Pods-LotameDMP_Tests-umbrella.h */,
+				3F3967EAAFE4099E55E7EA1969D6D008 /* Pods-LotameDMP_Tests.debug.xcconfig */,
+				47B84DFD288B53093B2D6F6F49C040B0 /* Pods-LotameDMP_Tests.release.xcconfig */,
+			);
+			name = "Pods-LotameDMP_Tests";
+			path = "Target Support Files/Pods-LotameDMP_Tests";
+			sourceTree = "<group>";
+		};
+		5C88371D693D7408DE5F65AD03C9F501 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				AE8BC1C63D1AF6D634DDB818E350B3F3 /* AdSupport.framework */,
+				B88EFF9B8F45B5AD8E83526853D19AB5 /* CFNetwork.framework */,
+				F37DDDFC5040E95C16AAF76BA042BBF2 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		71F978A7E52EBD2C9DE77C163DE05028 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				35E420606A7083326E74BADCCA7A6960 /* Pods-LotameDMP_Example */,
+				562E23A461D7C2E54CF31EE915397F38 /* Pods-LotameDMP_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B6456424CC6194BCDF3AD0EF3F5216CC /* OHHTTPStubs */ = {
+			isa = PBXGroup;
+			children = (
+				F3D9A1DEDAFA017821BBA8BC573324D1 /* Core */,
+				0F6563792412388EE02A0B1CCB601583 /* JSON */,
+				50C70F7C3F5C4377FE00068ED6DBFF5D /* NSURLSession */,
+				CBEEA4DECCB0802CE1220675BCE284E6 /* OHPathHelpers */,
+				44938CE84664052D6B3A26202F494E12 /* Support Files */,
+			);
+			name = OHHTTPStubs;
+			path = OHHTTPStubs;
+			sourceTree = "<group>";
+		};
+		BF3493E378CA618B596A7E1076758F29 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				531A78CD450C07DF1614D564FE9E15A5 /* LotameDMP.modulemap */,
+				BB124CEB6DF23DE1183DF0B0EA6C4667 /* LotameDMP.xcconfig */,
+				7B8AD649326224B73C5EA6611D08D3A4 /* LotameDMP-dummy.m */,
+				D422BFBF45B95B43DD6C71909884C10B /* LotameDMP-Info.plist */,
+				B2130237C33E292AB7177FFC65813BF9 /* LotameDMP-prefix.pch */,
+				BFC934EDA19AA33BB2DD56AEDDC22DBE /* LotameDMP-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LotameDMP";
+			sourceTree = "<group>";
+		};
+		CBEEA4DECCB0802CE1220675BCE284E6 /* OHPathHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				2C96F5EDB5E10139BD229A15031AE1D2 /* OHPathHelpers.h */,
+				EF6354B02448CA718096EDC0E61E2BB8 /* OHPathHelpers.m */,
+			);
+			name = OHPathHelpers;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				227C95F0C709FCE091FD4764158928DB /* Development Pods */,
+				03C5C200A0787E300053CFA8F53CA094 /* Frameworks */,
+				D08302D42EA12CAD5556652C6B83347B /* Pods */,
+				FC46EB8570AAC7BFA3063AE45ED4F36F /* Products */,
+				71F978A7E52EBD2C9DE77C163DE05028 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D08302D42EA12CAD5556652C6B83347B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6456424CC6194BCDF3AD0EF3F5216CC /* OHHTTPStubs */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D994AD11B2796B92B4B86BFA5543C341 /* LotameDMP */ = {
+			isa = PBXGroup;
+			children = (
+				EAD3A1204420E297FEFBBF6F89F430B2 /* DMP.swift */,
+				28BCE383A61C7EA3892467F22F6EF6A8 /* LotameAudience.swift */,
+				BB1322D6DD3C415E8985556A76E24C73 /* LotameError.swift */,
+				D1305E27548D48725066761122C2379E /* LotameProfile.swift */,
+				3DB343B95D0DE72203B8AB121A83F29C /* NSDictionary+rawString.swift */,
+				DAB4F76D0E5AEF42914F6F2DF79E456F /* Pod */,
+				BF3493E378CA618B596A7E1076758F29 /* Support Files */,
+			);
+			name = LotameDMP;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		DAB4F76D0E5AEF42914F6F2DF79E456F /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				36EF92B99D61627ACB8DA27C22952E4E /* LICENSE */,
+				A7C3C05D8D3682BB8EA21062A44E1E50 /* LotameDMP.podspec */,
+				F5EA1BA8BDDFA94E27D64DB13F2F6F4E /* README.md */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F3D9A1DEDAFA017821BBA8BC573324D1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0A0ED123A3ADE2E52CB3FFAF964FEC5A /* Compatibility.h */,
+				E78D55C51758F0F6FB7FA11389BAEBA2 /* OHHTTPStubs.h */,
+				4A77B83DA3131FBEA39A6A3F55391795 /* OHHTTPStubs.m */,
+				0AF4CC85C444EF41391019095D2EB43E /* OHHTTPStubsResponse.h */,
+				7E86E12635F6BB39085F316D5582E0B7 /* OHHTTPStubsResponse.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		FC46EB8570AAC7BFA3063AE45ED4F36F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				66DE4D70BD19441EC0A1AE3951C7A8DD /* LotameDMP.framework */,
+				17E33041B314FA837A3CAEB9DF3CDE9F /* OHHTTPStubs.framework */,
+				80670E25F44C427720136829E4C06182 /* Pods_LotameDMP_Example.framework */,
+				94EDABF14D13D1FAD59D5083228911F1 /* Pods_LotameDMP_Tests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2638B6EF58ACB780CD6826B78E98FCC6 /* Headers */ = {
+		6A5031636F847331FB3507ECB1762C4C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC728F2B7A3507DEFF369D673A0BEBF /* Pods-LotameDMP_Tests-umbrella.h in Headers */,
+				C62077DB292F4F111DAA256037FF30A1 /* Pods-LotameDMP_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2BD7DAD655969C1CBE791C6616EA79D0 /* Headers */ = {
+		9E508AE6A046A8EDB9FE48B629D3EA9C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C86DFF71F80F40AD1FEAF1B4824A4E1F /* Compatibility.h in Headers */,
-				C5ED19E01DFC9993E0C9AB6C85ACAB1D /* NSURLRequest+HTTPBodyTesting.h in Headers */,
-				B71274CE2E5707A2AD5688829FE616D0 /* OHHTTPStubs-umbrella.h in Headers */,
-				A0A2186A1786188B449AEB083BBB7891 /* OHHTTPStubs.h in Headers */,
-				43A9703A4BEDF7EBCE1236A8F3F8358A /* OHHTTPStubsMethodSwizzling.h in Headers */,
-				57BEF5452B8ABD57683D286244C7FC94 /* OHHTTPStubsResponse+JSON.h in Headers */,
-				2828C5A8C3FF12A877F8243078BFE26F /* OHHTTPStubsResponse.h in Headers */,
-				83A37634F48394BD93F108582501A4C4 /* OHPathHelpers.h in Headers */,
+				3AFAE4DB951EBF38B22CBAE39D6C9CD4 /* Compatibility.h in Headers */,
+				D7346078844032C56A7A4F39270D7177 /* NSURLRequest+HTTPBodyTesting.h in Headers */,
+				60B45CF20D84B42BC22A6E0929B95074 /* OHHTTPStubs-umbrella.h in Headers */,
+				9FD97DBF7FE63B472A08D375AD40826D /* OHHTTPStubs.h in Headers */,
+				A871964C74275D66D41392AA7042E757 /* OHHTTPStubsMethodSwizzling.h in Headers */,
+				0599BFCF965F2F2F209A4C7CEC044D0D /* OHHTTPStubsResponse+JSON.h in Headers */,
+				F97A29C977B22A391237B414D55621DA /* OHHTTPStubsResponse.h in Headers */,
+				FA0A4E39D71793AEF2951C03E3DECE80 /* OHPathHelpers.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5AC8752F5B99DABDE1772BB7B48A347E /* Headers */ = {
+		C647AB15CCF249CF62C8D71B77CFB129 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC20F5B64D3CA7ABC7217569E2D631C8 /* Pods-LotameDMP_Example-umbrella.h in Headers */,
+				82F90E2076CCAAB4C04AA3AB0E6F9E04 /* Pods-LotameDMP_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B299516788FC9768BB668FDC8CE579ED /* Headers */ = {
+		DE5530D0D6F68F9228E914ED4D89B249 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A09A5CF97D5BA24AFF48826D44F00F78 /* LotameDMP-umbrella.h in Headers */,
+				DB765BED365BDF89CB0F1E645A821FE5 /* LotameDMP-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		06A23325201207EEE8C22E3551E28E4A /* OHHTTPStubs */ = {
+		67A9220953C4409162DEC4AB0B6A21CA /* LotameDMP */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 19142A73CC341F046FCCB0FA32840347 /* Build configuration list for PBXNativeTarget "OHHTTPStubs" */;
+			buildConfigurationList = DBF367DB8067FD65BF4A52681F8757B3 /* Build configuration list for PBXNativeTarget "LotameDMP" */;
 			buildPhases = (
-				0CDDA1BE2252047B38A492F669E33D0B /* Sources */,
-				C7AE56C614EA98A5132171AE9A318E9A /* Frameworks */,
-				2BD7DAD655969C1CBE791C6616EA79D0 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = OHHTTPStubs;
-			productName = OHHTTPStubs;
-			productReference = A7E9EDAE5408AF6C6D87189136FBC8BB /* OHHTTPStubs.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		77B2AE97412927504EE0EDD727CDBF77 /* Pods-LotameDMP_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DC51B26385D8F3845A2852C412920160 /* Build configuration list for PBXNativeTarget "Pods-LotameDMP_Tests" */;
-			buildPhases = (
-				AEF68B82F13891E49FBABD5AE99BF06D /* Sources */,
-				42935CE2B8713E33BF6E611C39C7C51E /* Frameworks */,
-				2638B6EF58ACB780CD6826B78E98FCC6 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				79AF07300BA834235C44F965C55AAB41 /* PBXTargetDependency */,
-				C6F3FCC7F55004E4F9B1D6E5246F8F04 /* PBXTargetDependency */,
-			);
-			name = "Pods-LotameDMP_Tests";
-			productName = "Pods-LotameDMP_Tests";
-			productReference = 1C3464FC662A7B3F3A6D74D3617C3E0D /* Pods_LotameDMP_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		CEDC323E3873EA9652574174ACAAF17A /* LotameDMP */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2AB4BA42E0996C7A4F9085206FE10DE6 /* Build configuration list for PBXNativeTarget "LotameDMP" */;
-			buildPhases = (
-				F2D47809B77ECF5578F691DC41B02F6D /* Sources */,
-				F657F9A33675B4F7390F4497F7FCC59C /* Frameworks */,
-				B299516788FC9768BB668FDC8CE579ED /* Headers */,
+				DE5530D0D6F68F9228E914ED4D89B249 /* Headers */,
+				90483551F4C95D0464533DD3BBF71B43 /* Sources */,
+				F4841850BC38A830EB52B3A60B8F98C2 /* Frameworks */,
+				BB965DF1905C6ABC9A6A6EC068E6A333 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -460,129 +435,200 @@
 			);
 			name = LotameDMP;
 			productName = LotameDMP;
-			productReference = 32843707BE20FBD899CECEBDB212D693 /* LotameDMP.framework */;
+			productReference = 66DE4D70BD19441EC0A1AE3951C7A8DD /* LotameDMP.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		E273E0224058CF512E8AEDF71BCBA535 /* Pods-LotameDMP_Example */ = {
+		8CECB5439DCC651885F7FCECC9D833E0 /* Pods-LotameDMP_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11B053AB79CA9A461D14C9815545AD79 /* Build configuration list for PBXNativeTarget "Pods-LotameDMP_Example" */;
+			buildConfigurationList = 3CD02A9B663444B01A72044FDAAC6C9A /* Build configuration list for PBXNativeTarget "Pods-LotameDMP_Tests" */;
 			buildPhases = (
-				F4690B78B688C65157480334DCA18C74 /* Sources */,
-				57D88E2A6E841B917FEBA8D9BF8006DA /* Frameworks */,
-				5AC8752F5B99DABDE1772BB7B48A347E /* Headers */,
+				6A5031636F847331FB3507ECB1762C4C /* Headers */,
+				7337372B848180C532C869930E8A16EF /* Sources */,
+				ECD07FE9FE79FD0E885C12523A98F1F2 /* Frameworks */,
+				B63D0BE6264F8CC4F8F50D2C03DE0A6F /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C261A2862976C779FDD5A02055D7852C /* PBXTargetDependency */,
+				5C308C4AA20055ED6B968248CFDFF5F0 /* PBXTargetDependency */,
+				15DAE8E6241F112522C8F84D09AB871E /* PBXTargetDependency */,
+			);
+			name = "Pods-LotameDMP_Tests";
+			productName = "Pods-LotameDMP_Tests";
+			productReference = 94EDABF14D13D1FAD59D5083228911F1 /* Pods_LotameDMP_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		A983A2D06C5B6AA3D6ABA5CCC0A16725 /* OHHTTPStubs */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C322931CDBB634810A9C89C9DB9C837F /* Build configuration list for PBXNativeTarget "OHHTTPStubs" */;
+			buildPhases = (
+				9E508AE6A046A8EDB9FE48B629D3EA9C /* Headers */,
+				7AEBD8790307A5733735CE887951A2F1 /* Sources */,
+				F85E9C7363B0839405F64D063BE830AB /* Frameworks */,
+				444D392B4B716B23FA1CC3BC95FA3311 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OHHTTPStubs;
+			productName = OHHTTPStubs;
+			productReference = 17E33041B314FA837A3CAEB9DF3CDE9F /* OHHTTPStubs.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F03A24B6FE41501BBDE816EA70CECFA1 /* Pods-LotameDMP_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00EF9C5B5111C8F4FBC9B58A3631E49D /* Build configuration list for PBXNativeTarget "Pods-LotameDMP_Example" */;
+			buildPhases = (
+				C647AB15CCF249CF62C8D71B77CFB129 /* Headers */,
+				F705A06E351F51FADABC23303D77E951 /* Sources */,
+				F2C72CA0FCE49B1E6CDB5D2ED3CDD23B /* Frameworks */,
+				0DD9AC54B62EA6A149314DBC5E56A93F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				80A10404C94EF4888192A2833F443F06 /* PBXTargetDependency */,
 			);
 			name = "Pods-LotameDMP_Example";
 			productName = "Pods-LotameDMP_Example";
-			productReference = 6A5C777022B25248A8DC4622DBB328EF /* Pods_LotameDMP_Example.framework */;
+			productReference = 80670E25F44C427720136829E4C06182 /* Pods_LotameDMP_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 0293D7DC79745455808549F6B180705A /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = FC46EB8570AAC7BFA3063AE45ED4F36F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEDC323E3873EA9652574174ACAAF17A /* LotameDMP */,
-				06A23325201207EEE8C22E3551E28E4A /* OHHTTPStubs */,
-				E273E0224058CF512E8AEDF71BCBA535 /* Pods-LotameDMP_Example */,
-				77B2AE97412927504EE0EDD727CDBF77 /* Pods-LotameDMP_Tests */,
+				67A9220953C4409162DEC4AB0B6A21CA /* LotameDMP */,
+				A983A2D06C5B6AA3D6ABA5CCC0A16725 /* OHHTTPStubs */,
+				F03A24B6FE41501BBDE816EA70CECFA1 /* Pods-LotameDMP_Example */,
+				8CECB5439DCC651885F7FCECC9D833E0 /* Pods-LotameDMP_Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		0DD9AC54B62EA6A149314DBC5E56A93F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		444D392B4B716B23FA1CC3BC95FA3311 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B63D0BE6264F8CC4F8F50D2C03DE0A6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB965DF1905C6ABC9A6A6EC068E6A333 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		0CDDA1BE2252047B38A492F669E33D0B /* Sources */ = {
+		7337372B848180C532C869930E8A16EF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC3BE4B3C6C098A5B9B063DB25FCDF8B /* NSURLRequest+HTTPBodyTesting.m in Sources */,
-				FFE0D1C890897CF1AE34EC147C84BA2C /* OHHTTPStubs+NSURLSessionConfiguration.m in Sources */,
-				1C64932FA286C76276A32A4BC4F3C6DE /* OHHTTPStubs-dummy.m in Sources */,
-				E051B949D969BCE0CD553D323D63977E /* OHHTTPStubs.m in Sources */,
-				9890E6D0FDF36E4CA8ACA675C86FC6D2 /* OHHTTPStubsMethodSwizzling.m in Sources */,
-				64C91FFBDEDD820655E28F38024FEE22 /* OHHTTPStubsResponse+JSON.m in Sources */,
-				3084191BDC83456B1401C24DB3AACF8F /* OHHTTPStubsResponse.m in Sources */,
-				CA306BDBD477DE20CD0836C7F5F0BF4B /* OHPathHelpers.m in Sources */,
+				40692FF10180FBF9881D7072567C59B5 /* Pods-LotameDMP_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AEF68B82F13891E49FBABD5AE99BF06D /* Sources */ = {
+		7AEBD8790307A5733735CE887951A2F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA5AA0B5A39584D9BAF1A302C313C3F3 /* Pods-LotameDMP_Tests-dummy.m in Sources */,
+				F43777D6F96E37CA0699B2152917745D /* NSURLRequest+HTTPBodyTesting.m in Sources */,
+				F7BDF4875F878226B236F2FC7C8FEB5F /* OHHTTPStubs+NSURLSessionConfiguration.m in Sources */,
+				600D4827597B1BBB7926900C09117B3D /* OHHTTPStubs-dummy.m in Sources */,
+				8487F06B6445C85E0D450B003054A3A3 /* OHHTTPStubs.m in Sources */,
+				590DF70E6DAB632980CC8E3A68C11084 /* OHHTTPStubsMethodSwizzling.m in Sources */,
+				CFF583FFE082E7E080ABDCA925AFC1D5 /* OHHTTPStubsResponse+JSON.m in Sources */,
+				66E2855F77032C37F7EC31D14828136D /* OHHTTPStubsResponse.m in Sources */,
+				364D48013D222AFAD7884D6DE166D5EF /* OHPathHelpers.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F2D47809B77ECF5578F691DC41B02F6D /* Sources */ = {
+		90483551F4C95D0464533DD3BBF71B43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				48273BDB8BCEDC764057D44F01C4A184 /* DMP.swift in Sources */,
-				091EED9B30979CC72EE311C6E564278F /* LotameAudience.swift in Sources */,
-				B51C8DCD30AD84CC7C648C3BD6B967E8 /* LotameDMP-dummy.m in Sources */,
-				3CFEC03FAC91212BA2B481E8D8CBF9CB /* LotameError.swift in Sources */,
-				DEFE9B87FB3459391EAC40EF04748388 /* LotameProfile.swift in Sources */,
-				C309EF95A035264431C6B8499E743294 /* NSDictionary+rawString.swift in Sources */,
+				206407F913BBDFA53BAF336956437AD5 /* DMP.swift in Sources */,
+				B3417B6691E5FA812FA61094B5BB34B3 /* LotameAudience.swift in Sources */,
+				DFF416A83FC126EBF77E6609424660A3 /* LotameDMP-dummy.m in Sources */,
+				B29C8368F21A1E67ED1E3121E55FD103 /* LotameError.swift in Sources */,
+				34CF50694A9673EC4B4BFDA7AB543A96 /* LotameProfile.swift in Sources */,
+				739269BED7DC1790B5F9DDB4D512C028 /* NSDictionary+rawString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F4690B78B688C65157480334DCA18C74 /* Sources */ = {
+		F705A06E351F51FADABC23303D77E951 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A49661E078BC71D2B90294BE028B4F2 /* Pods-LotameDMP_Example-dummy.m in Sources */,
+				44E62B81707F245FA4D65EB2FB4D44FF /* Pods-LotameDMP_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		79AF07300BA834235C44F965C55AAB41 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LotameDMP;
-			target = CEDC323E3873EA9652574174ACAAF17A /* LotameDMP */;
-			targetProxy = 7F7DEED2E852B0ED2B95D4A33FFF0372 /* PBXContainerItemProxy */;
-		};
-		C261A2862976C779FDD5A02055D7852C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = LotameDMP;
-			target = CEDC323E3873EA9652574174ACAAF17A /* LotameDMP */;
-			targetProxy = 3C84D76C05EF430BF0D667F7D0025F8E /* PBXContainerItemProxy */;
-		};
-		C6F3FCC7F55004E4F9B1D6E5246F8F04 /* PBXTargetDependency */ = {
+		15DAE8E6241F112522C8F84D09AB871E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = OHHTTPStubs;
-			target = 06A23325201207EEE8C22E3551E28E4A /* OHHTTPStubs */;
-			targetProxy = 2B51E5FA61A57AE0D78FAF74125588DE /* PBXContainerItemProxy */;
+			target = A983A2D06C5B6AA3D6ABA5CCC0A16725 /* OHHTTPStubs */;
+			targetProxy = 85651EEDDE7E171F2EEC006B92618C3C /* PBXContainerItemProxy */;
+		};
+		5C308C4AA20055ED6B968248CFDFF5F0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LotameDMP;
+			target = 67A9220953C4409162DEC4AB0B6A21CA /* LotameDMP */;
+			targetProxy = 7E23F0B1642F5A935D55CDE2B7880466 /* PBXContainerItemProxy */;
+		};
+		80A10404C94EF4888192A2833F443F06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LotameDMP;
+			target = 67A9220953C4409162DEC4AB0B6A21CA /* LotameDMP */;
+			targetProxy = E340F81080B22152C55DEBA313409803 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3381268531AF64BDABC7904456DA5A2E /* Release */ = {
+		26463E5B5F79E0C57EBEDD7D0F1834BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D816C355437EC34814B054C668048C2 /* LotameDMP.xcconfig */;
+			baseConfigurationReference = 3F3967EAAFE4099E55E7EA1969D6D008 /* Pods-LotameDMP_Tests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -592,103 +638,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LotameDMP/LotameDMP-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LotameDMP/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LotameDMP/LotameDMP.modulemap";
-				PRODUCT_NAME = LotameDMP;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		441A4156AC730B48394DF06C4946B9FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93A773146EED80261B957E33F48AA646 /* Pods-LotameDMP_Example.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LotameDMP_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LotameDMP_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4F75CE70A6927B45F7D346218181CFAD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33831E10F65C9368D1499DF0338BB53A /* OHHTTPStubs.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OHHTTPStubs/OHHTTPStubs-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OHHTTPStubs/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OHHTTPStubs/OHHTTPStubs.modulemap";
-				PRODUCT_NAME = OHHTTPStubs;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		5E782AA461901942A7BBB054B7D96646 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D84BFAD610AC40E81008320042711414 /* Pods-LotameDMP_Tests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LotameDMP_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -698,148 +648,16 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LotameDMP_Tests;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		85F605B586DF2494B8CA51E3CA9412F6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 33831E10F65C9368D1499DF0338BB53A /* OHHTTPStubs.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/OHHTTPStubs/OHHTTPStubs-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OHHTTPStubs/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OHHTTPStubs/OHHTTPStubs.modulemap";
-				PRODUCT_NAME = OHHTTPStubs;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		87DDAC05DE0183A43C80FB8AC64AE5C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 160BB36F5B340CA353EDA04590D08A31 /* Pods-LotameDMP_Example.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LotameDMP_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LotameDMP_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A3FD378FDD948896879B8C7B9A9AEE83 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6D816C355437EC34814B054C668048C2 /* LotameDMP.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/LotameDMP/LotameDMP-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/LotameDMP/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/LotameDMP/LotameDMP.modulemap";
-				PRODUCT_NAME = LotameDMP;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		ACB35F67CCD9CF6B91F3911A4FBDEAAC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BC7773E62DBB946025A99030A47CAA94 /* Pods-LotameDMP_Tests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-LotameDMP_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_LotameDMP_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */ = {
+		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -849,10 +667,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -860,6 +680,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -868,7 +689,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -887,14 +707,17 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */ = {
+		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -904,10 +727,12 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -915,6 +740,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -923,7 +749,6 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -944,65 +769,294 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		91AB117A184021D720C70CCBAF8DF5DE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31F46032A4CBB623D0DAFAFD734B67D0 /* OHHTTPStubs.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OHHTTPStubs/OHHTTPStubs-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OHHTTPStubs/OHHTTPStubs-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OHHTTPStubs/OHHTTPStubs.modulemap";
+				PRODUCT_MODULE_NAME = OHHTTPStubs;
+				PRODUCT_NAME = OHHTTPStubs;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B6EA980FAC9EF76349A4C2805DE30992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB124CEB6DF23DE1183DF0B0EA6C4667 /* LotameDMP.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LotameDMP/LotameDMP-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LotameDMP/LotameDMP-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LotameDMP/LotameDMP.modulemap";
+				PRODUCT_MODULE_NAME = LotameDMP;
+				PRODUCT_NAME = LotameDMP;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C19849EE17AFB981B859816105CC477C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31F46032A4CBB623D0DAFAFD734B67D0 /* OHHTTPStubs.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/OHHTTPStubs/OHHTTPStubs-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OHHTTPStubs/OHHTTPStubs-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OHHTTPStubs/OHHTTPStubs.modulemap";
+				PRODUCT_MODULE_NAME = OHHTTPStubs;
+				PRODUCT_NAME = OHHTTPStubs;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DD56E6EBC85170D538F540676418F214 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB124CEB6DF23DE1183DF0B0EA6C4667 /* LotameDMP.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/LotameDMP/LotameDMP-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LotameDMP/LotameDMP-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LotameDMP/LotameDMP.modulemap";
+				PRODUCT_MODULE_NAME = LotameDMP;
+				PRODUCT_NAME = LotameDMP;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		ECB445D6C30B93D81512EE7093859012 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B50AF1F8CBA8A10EB8B0360DA753349 /* Pods-LotameDMP_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F561BB01C0D7AAF1AE3B92A5E941F98A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47B84DFD288B53093B2D6F6F49C040B0 /* Pods-LotameDMP_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LotameDMP_Tests/Pods-LotameDMP_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F865F430082BAF24F5E3D3B8B07B609D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE9FBBD9BAD9C2456408E7F396629B86 /* Pods-LotameDMP_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-LotameDMP_Example/Pods-LotameDMP_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11B053AB79CA9A461D14C9815545AD79 /* Build configuration list for PBXNativeTarget "Pods-LotameDMP_Example" */ = {
+		00EF9C5B5111C8F4FBC9B58A3631E49D /* Build configuration list for PBXNativeTarget "Pods-LotameDMP_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				87DDAC05DE0183A43C80FB8AC64AE5C7 /* Debug */,
-				441A4156AC730B48394DF06C4946B9FC /* Release */,
+				F865F430082BAF24F5E3D3B8B07B609D /* Debug */,
+				ECB445D6C30B93D81512EE7093859012 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		19142A73CC341F046FCCB0FA32840347 /* Build configuration list for PBXNativeTarget "OHHTTPStubs" */ = {
+		3CD02A9B663444B01A72044FDAAC6C9A /* Build configuration list for PBXNativeTarget "Pods-LotameDMP_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4F75CE70A6927B45F7D346218181CFAD /* Debug */,
-				85F605B586DF2494B8CA51E3CA9412F6 /* Release */,
+				26463E5B5F79E0C57EBEDD7D0F1834BC /* Debug */,
+				F561BB01C0D7AAF1AE3B92A5E941F98A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2AB4BA42E0996C7A4F9085206FE10DE6 /* Build configuration list for PBXNativeTarget "LotameDMP" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A3FD378FDD948896879B8C7B9A9AEE83 /* Debug */,
-				3381268531AF64BDABC7904456DA5A2E /* Release */,
+				7EF7227D9B20A1D549000096ACCB23D7 /* Debug */,
+				4BE66A09A74FD25164AAB3C2645B9B93 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		C322931CDBB634810A9C89C9DB9C837F /* Build configuration list for PBXNativeTarget "OHHTTPStubs" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E4B68EE12B21C47CB798D9B1ECA6D7A7 /* Debug */,
-				B254DAA6CF0CE39F4A3D11B90A7E059A /* Release */,
+				91AB117A184021D720C70CCBAF8DF5DE /* Debug */,
+				C19849EE17AFB981B859816105CC477C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DC51B26385D8F3845A2852C412920160 /* Build configuration list for PBXNativeTarget "Pods-LotameDMP_Tests" */ = {
+		DBF367DB8067FD65BF4A52681F8757B3 /* Build configuration list for PBXNativeTarget "LotameDMP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E782AA461901942A7BBB054B7D96646 /* Debug */,
-				ACB35F67CCD9CF6B91F3911A4FBDEAAC /* Release */,
+				B6EA980FAC9EF76349A4C2805DE30992 /* Debug */,
+				DD56E6EBC85170D538F540676418F214 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
