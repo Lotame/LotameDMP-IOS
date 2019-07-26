@@ -15,7 +15,9 @@
   "platforms": {
     "ios": "8.0"
   },
+  "swift_versions": "5.0",
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
-  "frameworks": "AdSupport"
+  "frameworks": "AdSupport",
+  "swift_version": "5.0"
 }
