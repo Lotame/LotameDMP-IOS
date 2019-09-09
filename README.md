@@ -192,7 +192,6 @@ Behavior Data is collected through one of the add commands:
 ```swift
 DMP.addBehaviorData("value", forType: "type")
 DMP.addBehaviorData(behaviorId: 1)
-DMP.addBehaviorData(opportunityId: 1)
 ```
 
 or for Objective-C
@@ -200,7 +199,6 @@ or for Objective-C
 ```objective-c
 [DMP addBehaviorData:@"value" forType: @"type"];
 [DMP addBehaviorDataWithBehaviorId: 1];
-[DMP addBehaviorDataWithOpportunityId: 1];
 ```
 
 Multiple behaviors can be appended as detailed above. Once all of the relevant behavior data for the screen or action has been appended, it must be sent to the server to record the behaviors:
