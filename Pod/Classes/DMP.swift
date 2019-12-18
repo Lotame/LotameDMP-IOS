@@ -352,7 +352,7 @@ open class DMP:NSObject{
             }
             let req = URLRequest(url: baseURL, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
             
-            URLSession.shared.dataTask(with: req) { data, response, error in
+            URLSession.shared.dataTah: req) { data, response, error in
                 DispatchQueue.main.async{
                     if let data = data,
                         let responseJSON = (try? JSONSerialization.jsonObject(with: data, options: [])) as? NSDictionary {

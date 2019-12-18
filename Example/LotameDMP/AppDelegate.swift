@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Set Lotame DMP client id here
-        DMP.initialize("25")
+        DMP.initialize("4290")
         return true
     }
 
