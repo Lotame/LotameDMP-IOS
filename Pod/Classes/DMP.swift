@@ -76,7 +76,7 @@ open class DMP:NSObject{
     */
     public static let sharedManager = DMP()
     
-    fileprivate static let sdkVersion = "4.1.0"
+    fileprivate static let sdkVersion = "5.0.0"
     
     /**
     Thread safety (especially for behavior data0 is handled via async and sync thread calls.
@@ -352,7 +352,7 @@ open class DMP:NSObject{
             }
             let req = URLRequest(url: baseURL, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
             
-            URLSession.shared.dataTask(with: req) { data, response, error in
+            URLSession.shared.dataTah: req) { data, response, error in
                 DispatchQueue.main.async{
                     if let data = data,
                         let responseJSON = (try? JSONSerialization.jsonObject(with: data, options: [])) as? NSDictionary {

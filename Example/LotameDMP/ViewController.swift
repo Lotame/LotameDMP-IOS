@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     fileprivate var foregroundNotification: NSObjectProtocol!
     override func viewDidLoad() {
         super.viewDidLoad()
-        foregroundNotification = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationWillEnterForeground, object: nil, queue: OperationQueue.main) {
+        foregroundNotification = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: OperationQueue.main) {
             [unowned self] notification in
             self.showUUID()
         }

@@ -41,7 +41,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target "YourTargetName" do
-  pod 'LotameDMP', '~> 4.1'
+  pod 'LotameDMP', '~> 5.0'
 end
 ```
 
@@ -90,7 +90,7 @@ $ brew install carthage
 Create a file named `Cartfile`, and add the following text:
 
 ```
-github "Lotame/LotameDMP-IOS" ~> 4.1
+github "Lotame/LotameDMP-IOS" ~> 5.0
 ```
 
 Run `carthage update`. 
@@ -113,7 +113,7 @@ Finally, scroll further down in the README to the **Adding a Run Script phase** 
 
 Download the following file:
 
-[tag-4.1.0-swift-3.1-framework.zip](dist/tag-4.1.0-swift-3.1-framework.zip?raw=true)
+[tag-5.0.0-swift-5.0.1-framework.zip](dist/tag-5.0.0-swift-5.0.1-framework.zip?raw=true)
 
 Unzip it, and you should see the `LotameDMP.framework` inside. 
 
@@ -294,6 +294,8 @@ or for Objective-C
 ```
 
 ## About this version
+
+Version 5.0.0 upgrades to swift 5.
 
 Version 4.1.0 removes dependencies on AlamoFire and SwiftyJSON. It also generates a `.framework` file for drag-and-drop installation.
 
