@@ -27,6 +27,7 @@
 
 import Foundation
 import AdSupport
+import AppTrackingTransparency
 
 // Requires Result enum from AlamoFire for backward compatibility
 public enum Result<Value> {
@@ -116,6 +117,9 @@ open class DMP:NSObject{
     Tracking is enabled only if advertising id is enabled on the user's device
     */
     public static var trackingEnabled: Bool{
+        if #available(iOS 14, *) {
+            return ATTrackingManager.trackingAuthorizationStatus == .authorized
+        }
         return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
     }
     
