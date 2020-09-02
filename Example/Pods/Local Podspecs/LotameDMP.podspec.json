@@ -13,11 +13,11 @@
     "tag": "5.0.1"
   },
   "platforms": {
-    "ios": "14.0"
+    "ios": "8.0"
   },
-  "swift_versions": "5.2.4",
+  "swift_versions": "5.0",
   "requires_arc": true,
   "source_files": "Pod/Classes/**/*",
   "frameworks": "AdSupport",
-  "swift_version": "5.2.4"
+  "swift_version": "5.0"
 }
