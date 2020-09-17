@@ -7,7 +7,7 @@ This open source library can be leveraged by Lotame clients to collect data from
 
 ## Requirements
 
-LotameDMP requires Xcode 8 and at least iOS 8.0.  It will work with Swift or Objective-C.
+LotameDMP requires Xcode 8 and at least iOS 10.0.  It will work with Swift or Objective-C.
 
 ## Example
 
@@ -22,7 +22,7 @@ To run the example project:
 
 ## Installation
 
-> **Embedded frameworks require a minimum deployment target of iOS 8 or OS X Sierra (10.12).**
+> **Embedded frameworks require a minimum deployment target of iOS 10 or OS X Sierra (10.12).**
 
 ### CocoaPods
 
@@ -41,7 +41,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target "YourTargetName" do
-  pod 'LotameDMP', '~> 5.0'
+  pod 'LotameDMP', '~> 5.1'
 end
 ```
 
@@ -113,7 +113,7 @@ Finally, scroll further down in the README to the **Adding a Run Script phase** 
 
 Download the following file:
 
-[tag-5.0.0-swift-5.0.1-framework.zip](dist/tag-5.0.0-swift-5.0.1-framework.zip?raw=true)
+[tag-5.1.0-swift-5.0.1-framework.zip](dist/tag-5.1.0-swift-5.0.1-framework.zip?raw=true)
 
 Unzip it, and you should see the `LotameDMP.framework` inside. 
 
@@ -171,16 +171,28 @@ or for Objective-C
 
 ### Initialization
 
-LotameDMP is a singleton that must be initialized with a client id once before using it.  Run the following command before executing any other calls:
+LotameDMP is a singleton that must be initialized with either a single client id or optionally two client ids (one for data collection and a separate one for audience membership) once before using it.  Run one of the following commands, depending on your implementation, before executing any other calls:
 
 ```swift
 DMP.initialize("YOUR_CLIENT_ID_NUMBER")
+```
+
+or if you would like to use a different client id for audience memberships
+
+```
+DMP.initialize("YOUR_CLIENT_ID_NUMBER", "YOUR_CLIENT_ID_FOR_AUDIENCES")
 ```
 
 or for Objective-C
 
 ```objective-c
 [DMP initialize:@"YOUR_CLIENT_ID_NUMBER_"];
+```
+
+or if you would like to use a different client id for audience memberships
+
+```
+[DMP initialize:@"YOUR_CLIENT_ID_NUMBER_", @"YOUR_CLIENT_ID_FOR_AUDIENCES"];
 ```
 
 The initialize call starts a new session and sets the domain and protocols to their default values (https://*.crwdcntrl.net)
@@ -294,6 +306,8 @@ or for Objective-C
 ```
 
 ## About this version
+
+Version 5.1.0 Handles iOS 14 changes for tracking authorization and provides the ability to use a separate client id for audience membership requests.
 
 Version 5.0.0 upgrades to swift 5.
 

@@ -18,8 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //Set Lotame DMP client id here
-        DMP.initialize("4290")
+        //Set Lotame DMP client id(s) here
+        DMP.initialize("25")
+        // Alternatively, use the following method to collect behavior data against
+        // client id 12345 and retrieve audiences defined by client id 25.
+        // DMP.initialize("12345", "25")
         return true
     }
 
