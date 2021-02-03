@@ -77,7 +77,7 @@ open class DMP:NSObject{
     */
     public static let sharedManager = DMP()
     
-    fileprivate static let sdkVersion = "5.0.1"
+    fileprivate static let sdkVersion = "5.1.1"
     
     /**
     Thread safety (especially for behavior data0 is handled via async and sync thread calls.
@@ -117,8 +117,8 @@ open class DMP:NSObject{
     Tracking is enabled only if advertising id is enabled on the user's device
     */
     public static var trackingEnabled: Bool{
-        if #available(iOS 14, *) {
-            return ATTrackingManager.trackingAuthorizationStatus == .authorized
+        if #available(iOS 14.5, *) {
+           return ATTrackingManager.trackingAuthorizationStatus == .authorized
         }
         return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
     }
