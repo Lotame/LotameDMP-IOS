@@ -307,6 +307,8 @@ or for Objective-C
 
 ## About this version
 
+Version 5.2.0 Provides the ability to use a different client id for audience extractions. It also bumps the minimum iOS version up to 14.5 for the new tracking API.
+
 Version 5.1.0 Handles iOS 14 changes for tracking authorization and provides the ability to use a separate client id for audience membership requests.
 
 Version 5.0.0 upgrades to swift 5.
