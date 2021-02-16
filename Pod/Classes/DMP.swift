@@ -77,7 +77,7 @@ open class DMP:NSObject{
     */
     public static let sharedManager = DMP()
     
-    fileprivate static let sdkVersion = "5.1.1"
+    fileprivate static let sdkVersion = "5.2.0"
     
     /**
     Thread safety (especially for behavior data0 is handled via async and sync thread calls.
