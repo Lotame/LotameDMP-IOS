@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "LotameDMP"
-  s.version          = "5.0.1"
+  s.version          = "5.2.0"
   s.summary          = "This open source library can be leveraged by Lotame clients to collect data from within their iOS applications."
 
   s.description      = <<-DESC
@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.author           = { "Dan Rusk" => "djrusk@gmail.com" }
   s.source           = { :git => "https://github.com/Lotame/LotameDMP-IOS.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '10.0'
   s.swift_versions  = '5.0'
   s.requires_arc = true
 

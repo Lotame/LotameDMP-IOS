@@ -77,7 +77,7 @@ open class DMP:NSObject{
     */
     public static let sharedManager = DMP()
     
-    fileprivate static let sdkVersion = "5.0.1"
+    fileprivate static let sdkVersion = "5.2.0"
     
     /**
     Thread safety (especially for behavior data0 is handled via async and sync thread calls.
@@ -117,14 +117,14 @@ open class DMP:NSObject{
     Tracking is enabled only if advertising id is enabled on the user's device
     */
     public static var trackingEnabled: Bool{
-        if #available(iOS 14, *) {
-            return ATTrackingManager.trackingAuthorizationStatus == .authorized
+        if #available(iOS 14.5, *) {
+           return ATTrackingManager.trackingAuthorizationStatus == .authorized
         }
         return ASIdentifierManager.shared().isAdvertisingTrackingEnabled
     }
     
     /**
-    The id registered with Lotame
+    The client id used for collecting user data, ie. behaviors. Provided by Lotame
     */
     fileprivate var clientId: String?{
         didSet{
@@ -132,8 +132,19 @@ open class DMP:NSObject{
         }
     }
     
+    /**
+    An optional client id to be used for retrieving audience membership data. When not specified
+    with the initialize call, the clientId is used for both data collection and audience membership.
+    See initialize methods in this class for details. This id is also provided by Lotame.
+    */
+    fileprivate var audienceMembershipClientId: String?{
+        didSet{
+            DMP.startNewSession()
+        }
+    }
+    
     fileprivate var isInitialized:Bool{
-        return clientId != nil && !clientId!.isEmpty
+        return clientId != nil && !clientId!.isEmpty && audienceMembershipClientId != nil && !audienceMembershipClientId!.isEmpty
     }
     
     fileprivate static let defaultDomain = "crwdcntrl.net"
@@ -164,7 +175,7 @@ open class DMP:NSObject{
     }
     
     fileprivate var baseADUrl: String{
-        return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(clientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=\(DMP.sdkVersion)/"
+        return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(audienceMembershipClientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=\(DMP.sdkVersion)/"
     }
     
     /**
@@ -184,7 +195,14 @@ open class DMP:NSObject{
     Starts a new session, sets the domain to default "crwdcntrl.net" and httpProtocol to default "https"
     **/
     @objc open class func initialize(_ clientId: String){
+        initialize(clientId, clientId)
+    }
+    /**
+     Use this initialize function if you want to request audience memberships using a different client id.
+    **/
+    @objc open class func initialize(_ clientId: String,_ audienceMembershipClientId: String){
         DMP.sharedManager.clientId = clientId
+        DMP.sharedManager.audienceMembershipClientId = audienceMembershipClientId
         DMP.sharedManager.domain = defaultDomain
         DMP.sharedManager.httpProtocol = defaultProtocol
         DMP.startNewSession()
@@ -254,7 +272,7 @@ open class DMP:NSObject{
             }
             
             // url is in the format of:
-            // /5/pe=y/c=25/mid=12345-abcd/dt=IDFA/sdk=4.0.0/foo=bar/
+            // /5/pe=y/c=25/mid=12345-abcd/dt=IDFA/sdk=5.0.1/foo=bar/
             for behavior in behaviorCopy {
                 if let behaviorValue = behavior.value {
                     url = url.appendingPathComponent("\(behavior.key)=\(behaviorValue)/");
