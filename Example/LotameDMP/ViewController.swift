@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(foregroundNotification)
+        NotificationCenter.default.removeObserver(foregroundNotification ?? "")
     }
     
     func showUUID(){
@@ -76,6 +76,9 @@ class ViewController: UIViewController {
             if let profile = result.value{
                 print("JSON Audience result:" + result.value!.jsonString!)
                 var audiences = ""
+                if profile.panoramaId != "" {
+                    audiences += "PanoramaId : \(profile.panoramaId)"
+                }
                 for audience in profile.audiences{
                     if !audiences.isEmpty{
                         audiences += "; "

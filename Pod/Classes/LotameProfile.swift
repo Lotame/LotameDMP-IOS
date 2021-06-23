@@ -4,7 +4,7 @@
 // Created by Dan Rusk
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Lotame
+// Copyright (c) 2021 Lotame
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -29,6 +29,7 @@ import Foundation
 @objc
 open class LotameProfile: NSObject{
     public let pid:String
+    public let panoramaId:String
     @objc open var audiences: [LotameAudience] = []
     
     @objc open var jsonString:String? {
@@ -39,6 +40,7 @@ open class LotameProfile: NSObject{
      
      {
         "Profile" : {
+            "panoramaId": "acdefghijklmnopqrstuvwxyz1234567890"
             "pid" : "ccd93ea4d2b2182cdb480a28c93b83f5"
         }
      }
@@ -46,6 +48,7 @@ open class LotameProfile: NSObject{
      // or with audiences:
      
      {
+        "panoramaId": "acdefghijklmnopqrstuvwxyz1234567890"
         "pid" : "M518E7D21-89E6-4A57-919E-B4FAF3CFFB87",
         "Audiences" : {
             "Audience" : [
@@ -61,6 +64,7 @@ open class LotameProfile: NSObject{
     open var json: NSDictionary {
         return [
             "Profile": [
+                "panoramaId": panoramaId,
                 "pid": pid,
                 "Audiences": [
                     "Audience": audiences.map{["id":$0.id, "abbr": $0.abbreviation]}
@@ -72,6 +76,7 @@ open class LotameProfile: NSObject{
     override init(){
         //Blank for obj-c calls
         pid = ""
+        panoramaId = ""
     }
     
     /** Sample payload
@@ -86,6 +91,7 @@ open class LotameProfile: NSObject{
                     }
                 ]
             },
+            "panoramaId": "acdefghijklmnopqrstuvwxyz1234567890"
             "pid" : "M518E7D21-89E6-4A57-919E-B4FAF3CFFB87",
             "tpid" : "cc1f57b175293b739496e9d58c6a7ba9"
         }
@@ -97,10 +103,12 @@ open class LotameProfile: NSObject{
         guard let profile = json["Profile"] as? [String: Any] else {
             // pid must be initialized
             pid = ""
+            panoramaId = ""
             return
         }
         // Extract the pid
         pid = profile["pid"] as? String ?? ""
+        panoramaId = profile["panoramaId"] as? String ?? ""
         guard let audiencesObject = profile["Audiences"] as? [String: Any],
             let audiencesArray = audiencesObject["Audience"] as? [NSDictionary] else { return }
         let audienceArrayParsed = audiencesArray.map { audienceDictionary in

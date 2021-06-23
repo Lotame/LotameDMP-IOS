@@ -7,7 +7,7 @@ This open source library can be leveraged by Lotame clients to collect data from
 
 ## Requirements
 
-LotameDMP requires Xcode 8 and at least iOS 10.0.  It will work with Swift or Objective-C.
+LotameDMP requires Xcode 12 and at least iOS 10.0.  It will work with Swift or Objective-C.
 
 ## Example
 
@@ -41,7 +41,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
 target "YourTargetName" do
-  pod 'LotameDMP', '~> 5.1'
+  pod 'LotameDMP', '~> 5.3'
 end
 ```
 
@@ -90,7 +90,7 @@ $ brew install carthage
 Create a file named `Cartfile`, and add the following text:
 
 ```
-github "Lotame/LotameDMP-IOS" ~> 5.0
+github "Lotame/LotameDMP-IOS" ~> 5.3
 ```
 
 Run `carthage update`. 
@@ -113,7 +113,7 @@ Finally, scroll further down in the README to the **Adding a Run Script phase** 
 
 Download the following file:
 
-[tag-5.2.0-swift-5.3.2-framework.zip](dist/tag-5.2.0-swift-5.3.2-framework.zip?raw=true)
+[tag-5.3.0-swift-5.3.2-framework.zip](dist/tag-5.3.0-swift-5.3.2-framework.zip?raw=true)
 
 Unzip it, and you should see the `LotameDMP.framework` inside. 
 
@@ -195,6 +195,12 @@ or if you would like to use a different client id for audience memberships
 [DMP initialize:@"YOUR_CLIENT_ID_NUMBER_", @"YOUR_CLIENT_ID_FOR_AUDIENCES"];
 ```
 
+or if you would like to enable panorama id
+
+```
+[DMP initialize:@"YOUR_CLIENT_ID_NUMBER_", @"YOUR_CLIENT_ID_FOR_AUDIENCES", true];
+```
+
 The initialize call starts a new session and sets the domain and protocols to their default values (https://*.crwdcntrl.net)
 
 ### Send Behaviors
@@ -252,13 +258,13 @@ or for Objective-C
 
 ### Get Audience Data
 
-Get the audience data with the following command:
+Get the audience data or panorama id with the following command:
 
 ```swift
 DMP.getAudienceData{
 	result in
 	if let profile = result.value{
-		//Successful request, use LotameProfile object
+		//Successful request, use LotameProfile object (ie. profile.panoramaId or profile.audiences)
 	} else {
 		//result.error will contain an error object
 	}
@@ -306,6 +312,8 @@ or for Objective-C
 ```
 
 ## About this version
+
+Version 5.3.0 Provides an initialize method to enable panorama id and a path to retrieve it via an audience extraction.
 
 Version 5.2.0 Provides the ability to use a different client id for audience extractions. It also bumps the minimum iOS version up to 14.5 for the new tracking API.
 

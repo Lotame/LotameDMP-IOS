@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Lotame. All rights reserved.
 //
 
+import AdSupport
+import AppTrackingTransparency
 import UIKit
 import LotameDMP
 
@@ -19,11 +21,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //Set Lotame DMP client id(s) here
-        DMP.initialize("25")
+        // DMP.initialize("25")
         // Alternatively, use the following method to collect behavior data against
         // client id 12345 and retrieve audiences defined by client id 25.
         // DMP.initialize("12345", "25")
+        DMP.initialize("414", "414", true)
+        requestPermission()
         return true
+    }
+    
+    func requestPermission() {
+        if #available(iOS 14, *) {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                switch status {
+                case .authorized:
+                    // Tracking authorization dialog was shown
+                    // and we are authorized
+                    print("Authorized")
+
+                    // Now that we are authorized we can get the IDFA
+                    print(ASIdentifierManager.shared().advertisingIdentifier)
+                case .denied:
+                    // Tracking authorization dialog was
+                    // shown and permission is denied
+                    print("Denied")
+                case .notDetermined:
+                    // Tracking authorization dialog has not been shown
+                    print("Not Determined")
+                case .restricted:
+                    print("Restricted")
+                @unknown default:
+                    print("Unknown")
+                }
+            }
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -4,7 +4,7 @@
 // Created by Dan Rusk
 // The MIT License (MIT)
 //
-// Copyright (c) 2015 Lotame
+// Copyright (c) 2021 Lotame
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -77,7 +77,7 @@ open class DMP:NSObject{
     */
     public static let sharedManager = DMP()
     
-    fileprivate static let sdkVersion = "5.2.0"
+    fileprivate static let sdkVersion = "5.3.0"
     
     /**
     Thread safety (especially for behavior data0 is handled via async and sync thread calls.
@@ -175,13 +175,22 @@ open class DMP:NSObject{
     }
     
     fileprivate var baseADUrl: String{
-        return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(audienceMembershipClientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=\(DMP.sdkVersion)/"
+        if enablePanoramaId {
+            return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(audienceMembershipClientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=\(DMP.sdkVersion)/rid=y/"
+        } else {
+            return "\(httpProtocol)://ad.\(domain.urlHostEncoded()!)/5/pe=y/c=\(audienceMembershipClientId!.urlPathEncoded()!)/mid=\(DMP.advertisingId!.urlPathEncoded()!)/dt=IDFA/sdk=\(DMP.sdkVersion)/"
+        }
     }
     
     /**
     Will mark the data as a new page view
     */
     fileprivate var isNewSession = true
+    
+    /**
+        Determines whether or not to ask for the panorama id in the Audience Extraction API call.
+     */
+    fileprivate var enablePanoramaId = false;
     
     /**
     The DMP is a singleton, use the initialize method to set the values in the singleton
@@ -201,8 +210,13 @@ open class DMP:NSObject{
      Use this initialize function if you want to request audience memberships using a different client id.
     **/
     @objc open class func initialize(_ clientId: String,_ audienceMembershipClientId: String){
+        initialize(clientId, audienceMembershipClientId, false)
+    }
+    
+    @objc open class func initialize(_ clientId: String,_ audienceMembershipClientId: String,_ enablePanoramaId: Bool){
         DMP.sharedManager.clientId = clientId
         DMP.sharedManager.audienceMembershipClientId = audienceMembershipClientId
+        DMP.sharedManager.enablePanoramaId = enablePanoramaId
         DMP.sharedManager.domain = defaultDomain
         DMP.sharedManager.httpProtocol = defaultProtocol
         DMP.startNewSession()
