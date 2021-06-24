@@ -7,7 +7,7 @@ This open source library can be leveraged by Lotame clients to collect data from
 
 ## Requirements
 
-LotameDMP requires Xcode 12 and at least iOS 10.0.  It will work with Swift or Objective-C.
+LotameDMP requires Xcode 12 and at least iOS 12.0.  It will work with Swift or Objective-C.
 
 ## Example
 
@@ -183,19 +183,19 @@ or if you would like to use a different client id for audience memberships
 DMP.initialize("YOUR_CLIENT_ID_NUMBER", "YOUR_CLIENT_ID_FOR_AUDIENCES")
 ```
 
-or for Objective-C
+or for Objective-C...
 
 ```objective-c
 [DMP initialize:@"YOUR_CLIENT_ID_NUMBER_"];
 ```
 
-or if you would like to use a different client id for audience memberships
+or if you would like to use a different client id for audience memberships...
 
 ```
 [DMP initialize:@"YOUR_CLIENT_ID_NUMBER_", @"YOUR_CLIENT_ID_FOR_AUDIENCES"];
 ```
 
-or if you would like to enable panorama id
+or if you would like to enable panorama id...
 
 ```
 [DMP initialize:@"YOUR_CLIENT_ID_NUMBER_", @"YOUR_CLIENT_ID_FOR_AUDIENCES", true];

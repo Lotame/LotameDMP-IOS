@@ -1,18 +1,18 @@
 PODS:
   - LotameDMP (5.3.0)
-  - OHHTTPStubs (6.0.0):
-    - OHHTTPStubs/Default (= 6.0.0)
-  - OHHTTPStubs/Core (6.0.0)
-  - OHHTTPStubs/Default (6.0.0):
+  - OHHTTPStubs (9.1.0):
+    - OHHTTPStubs/Default (= 9.1.0)
+  - OHHTTPStubs/Core (9.1.0)
+  - OHHTTPStubs/Default (9.1.0):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (6.0.0):
+  - OHHTTPStubs/JSON (9.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (6.0.0):
+  - OHHTTPStubs/NSURLSession (9.1.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (6.0.0)
+  - OHHTTPStubs/OHPathHelpers (9.1.0)
 
 DEPENDENCIES:
   - LotameDMP (from `../`)
@@ -28,8 +28,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   LotameDMP: c08f1b509a892390fcfa5821fedbd5a4e4bff725
-  OHHTTPStubs: 752f9b11fd810a15162d50f11c06ff94f8e012eb
+  OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
 
-PODFILE CHECKSUM: 29103816f3e5c7e8c15b74416c45cb50a22732a8
+PODFILE CHECKSUM: b42b6fbf27c9712498a99fc59516d5673fcf2a2b
 
 COCOAPODS: 1.10.1

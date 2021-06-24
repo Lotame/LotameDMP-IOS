@@ -1,6 +1,6 @@
 /***********************************************************************************
  *
- * Copyright (c) 2012 Olivier Halligon
+ * Copyright (c) 2012 Olivier Halligon, 2016 Sebastian Hagedorn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -22,27 +22,26 @@
  *
  ***********************************************************************************/
 
+////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Imports
 
-#import "OHHTTPStubsResponse+JSON.h"
+#import "HTTPStubsMethodSwizzling.h"
 
-@implementation OHHTTPStubsResponse (JSON)
+//////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark - Method Swizzling Helpers
 
-/*! @name Building a response from JSON objects */
-
-+ (instancetype)responseWithJSONObject:(id)jsonObject
-                            statusCode:(int)statusCode
-                               headers:(nullable NSDictionary *)httpHeaders
+IMP HTTPStubsReplaceMethod(SEL selector,
+                             IMP newImpl,
+                             Class affectedClass,
+                             BOOL isClassMethod)
 {
-    if (!httpHeaders[@"Content-Type"])
-    {
-        NSMutableDictionary* mutableHeaders = [NSMutableDictionary dictionaryWithDictionary:httpHeaders];
-        mutableHeaders[@"Content-Type"] = @"application/json";
-        httpHeaders = [NSDictionary dictionaryWithDictionary:mutableHeaders]; // make immutable again
-    }
-    
-    return [self responseWithData:[NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:nil]
-                       statusCode:statusCode
-                          headers:httpHeaders];
-}
+    Method origMethod = isClassMethod ? class_getClassMethod(affectedClass, selector) : class_getInstanceMethod(affectedClass, selector);
+    IMP origImpl = method_getImplementation(origMethod);
 
-@end
+    if (!class_addMethod(isClassMethod ? object_getClass(affectedClass) : affectedClass, selector, newImpl, method_getTypeEncoding(origMethod)))
+    {
+        method_setImplementation(origMethod, newImpl);
+    }
+
+    return origImpl;
+}

@@ -33,12 +33,12 @@ class Tests: XCTestCase {
         DMP.initialize("99")
         DMP.sharedManager.domain = "testhost.com"
         
-        OHHTTPStubs.stubRequests(passingTest: {
+        HTTPStubs.stubRequests(passingTest: {
             (request: URLRequest) -> Bool in
             return request.url?.host?.hasSuffix("testhost.com") ?? false
             }, withStubResponse: {
-                (request: URLRequest) -> OHHTTPStubsResponse in
-                return OHHTTPStubsResponse(jsonObject: self.mockProfile, statusCode:200, headers:nil)
+                (request: URLRequest) -> HTTPStubsResponse in
+                return HTTPStubsResponse(jsonObject: self.mockProfile, statusCode:200, headers:nil)
         })
         
         

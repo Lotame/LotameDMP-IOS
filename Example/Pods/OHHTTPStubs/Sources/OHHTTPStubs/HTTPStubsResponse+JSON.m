@@ -23,30 +23,26 @@
  ***********************************************************************************/
 
 
-#import "OHPathHelpers.h"
+#import "HTTPStubsResponse+JSON.h"
 
-NSString* __nullable OHPathForFile(NSString* fileName, Class inBundleForClass)
+@implementation HTTPStubsResponse (JSON)
+
+/*! @name Building a response from JSON objects */
+
++ (instancetype)responseWithJSONObject:(id)jsonObject
+                            statusCode:(int)statusCode
+                               headers:(nullable NSDictionary *)httpHeaders
 {
-    NSBundle* bundle = [NSBundle bundleForClass:inBundleForClass];
-    return OHPathForFileInBundle(fileName, bundle);
+    if (!httpHeaders[@"Content-Type"])
+    {
+        NSMutableDictionary* mutableHeaders = [NSMutableDictionary dictionaryWithDictionary:httpHeaders];
+        mutableHeaders[@"Content-Type"] = @"application/json";
+        httpHeaders = [NSDictionary dictionaryWithDictionary:mutableHeaders]; // make immutable again
+    }
+
+    return [self responseWithData:[NSJSONSerialization dataWithJSONObject:jsonObject options:0 error:nil]
+                       statusCode:statusCode
+                          headers:httpHeaders];
 }
 
-NSString* __nullable OHPathForFileInBundle(NSString* fileName, NSBundle* bundle)
-{
-    return [bundle pathForResource:[fileName stringByDeletingPathExtension]
-                            ofType:[fileName pathExtension]];
-}
-
-NSString* __nullable OHPathForFileInDocumentsDir(NSString* fileName)
-{
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *basePath = (paths.count > 0) ? paths[0] : nil;
-    return [basePath stringByAppendingPathComponent:fileName];
-}
-
-NSBundle* __nullable OHResourceBundle(NSString* bundleBasename, Class inBundleForClass)
-{
-    NSBundle* classBundle = [NSBundle bundleForClass:inBundleForClass];
-    return [NSBundle bundleWithPath:[classBundle pathForResource:bundleBasename
-                                                         ofType:@"bundle"]];
-}
+@end
