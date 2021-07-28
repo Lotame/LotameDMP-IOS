@@ -7,7 +7,7 @@ This open source library can be leveraged by Lotame clients to collect data from
 
 ## Requirements
 
-LotameDMP requires Xcode 12 and at least iOS 12.0.  It will work with Swift or Objective-C.
+LotameDMP requires Xcode 12 and at least iOS 11.0.  It will work with Swift or Objective-C.
 
 ## Example
 
