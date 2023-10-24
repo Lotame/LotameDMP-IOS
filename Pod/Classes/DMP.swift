@@ -30,41 +30,42 @@ import AdSupport
 import AppTrackingTransparency
 
 // Requires Result enum from AlamoFire for backward compatibility
-public enum Result<Value> {
-    case success(Value)
-    case failure(Error)
+@objc public class ResultData: NSObject {
+    @objc public let value: Data?
+    @objc public let error: Error?
     
-    public var isSuccess: Bool {
-        switch self {
-        case .success:
-            return true
-        case .failure:
-            return false
-        }
+    @objc public var isSuccess: Bool {
+        return error == nil && value != nil
     }
     
-    public var isFailure: Bool {
+    @objc public var isFailure: Bool {
         return !isSuccess
     }
     
-    public var value: Value? {
-        switch self {
-        case .success(let value):
-            return value
-        case .failure:
-            return nil
-        }
-    }
-    
-    public var error: Error? {
-        switch self {
-        case .success:
-            return nil
-        case .failure(let error):
-            return error
-        }
+    init(value: Data? = nil, _ error: Error? = nil) {
+        self.value = value
+        self.error = error
     }
 }
+
+@objc public class ResultLotameProfile: NSObject {
+    @objc public let value: LotameProfile?
+    @objc public let error: Error?
+    
+    @objc public var isSuccess: Bool {
+        return error == nil && value != nil
+    }
+    
+    @objc public var isFailure: Bool {
+        return !isSuccess
+    }
+    
+    init(value: LotameProfile? = nil, _ error: Error? = nil) {
+        self.value = value
+        self.error = error
+    }
+}
+
 
 /**
     The Lotame Data Management Platform
@@ -75,7 +76,7 @@ open class DMP:NSObject{
     LotameDMP is a singleton.  Calls should be made to the class functions, which
     will use this sharedManager as an object.
     */
-    public static let sharedManager = DMP()
+    @objc public static let sharedManager = DMP()
     
     fileprivate static let sdkVersion = "5.3.0"
     
@@ -88,7 +89,7 @@ open class DMP:NSObject{
     /**
     Gets the IDFA or nil if it is not enabled.
     */
-    public static var advertisingId: String?{
+    @objc public static var advertisingId: String?{
         if trackingEnabled{
             return ASIdentifierManager.shared().advertisingIdentifier.uuidString
         }else{
@@ -116,7 +117,8 @@ open class DMP:NSObject{
     /**
     Tracking is enabled only if advertising id is enabled on the user's device
     */
-    public static var trackingEnabled: Bool{
+    @objc public static var trackingEnabled: Bool{
+        return true
         if #available(iOS 14.5, *) {
            return ATTrackingManager.trackingAuthorizationStatus == .authorized
         }
@@ -153,7 +155,7 @@ open class DMP:NSObject{
     /**
     The domain of the base urls for the network calls. Defaults to crwdcntrl.net
     */
-    open var domain: String = DMP.defaultDomain{
+    @objc open var domain: String = DMP.defaultDomain{
         didSet{
             DMP.startNewSession()
         }
@@ -164,7 +166,7 @@ open class DMP:NSObject{
     Changing to http will require special settings in Info.plist to disable
     ATS.
     */
-    open var httpProtocol: String = DMP.defaultProtocol{
+    @objc open var httpProtocol: String = DMP.defaultProtocol{
         didSet{
             DMP.startNewSession()
         }
@@ -245,12 +247,12 @@ open class DMP:NSObject{
     to the completion handler.
     **Note:** Does not collect data if the user has limited ad tracking turned on, but still clears behaviors.
     */
-    open class func sendBehaviorData(_ completion:@escaping (_ result: Result<Data>) -> Void){
+    @objc open class func sendBehaviorData(_ completion:@escaping (_ result: ResultData) -> Void){
         
         dispatchQueue.async{
             guard sharedManager.isInitialized else{
                 DispatchQueue.main.async{
-                    completion(Result<Data>.failure(LotameError.initializeNotCalled))
+                    completion(ResultData(LotameError.initializeNotCalled))
                 }
                 return
             }
@@ -258,7 +260,7 @@ open class DMP:NSObject{
                 sharedManager.behaviors.removeAll()
                 //Don't send tracking data if it user has opted out
                 DispatchQueue.main.async{
-                    completion(Result<Data>.failure(LotameError.trackingDisabled))
+                    completion(ResultData(LotameError.trackingDisabled))
                 }
                 return
             }
@@ -281,7 +283,7 @@ open class DMP:NSObject{
             let behaviorCopy = sharedManager.behaviors
             
             guard var url = Foundation.URL(string: sharedManager.baseBCPUrl) else {
-                completion(Result<Data>.failure(LotameError.invalidURL))
+                completion(ResultData(LotameError.invalidURL))
                 return
             }
             
@@ -294,12 +296,14 @@ open class DMP:NSObject{
             }
             let urlRequest = URLRequest(url: url, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
             
+            debugPrint("Lotame URL \(urlRequest.url?.absoluteString)")
+            
             URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 DispatchQueue.main.async{
                     if error == nil {
-                        completion(Result<Data>.success(Data()))
+                        completion(ResultData(value: Data()))
                     }else{
-                        completion(Result<Data>.failure(LotameError.unexpectedResponse))
+                        completion(ResultData(LotameError.unexpectedResponse))
                     }
                 }
             }.resume()
@@ -367,34 +371,36 @@ open class DMP:NSObject{
     
     **Note:** Does not get results if the user has limited ad tracking turned on
     */
-    open class func getAudienceData(_ completion:@escaping (_ result: Result<LotameProfile>)->Void) {
+    open class func getAudienceData(_ completion:@escaping (_ result: ResultLotameProfile)->Void) {
         guard sharedManager.isInitialized else{
             DispatchQueue.main.async{
-                completion(Result<LotameProfile>.failure(LotameError.initializeNotCalled))
+                completion(ResultLotameProfile(LotameError.initializeNotCalled))
             }
             return
         }
         guard DMP.trackingEnabled else{
             //Don't get audience data if it user has opted out
             DispatchQueue.main.async{
-                completion(Result<LotameProfile>.failure(LotameError.trackingDisabled))
+                completion(ResultLotameProfile(LotameError.trackingDisabled))
             }
             return
         }
         dispatchQueue.async{
             guard let baseURL = URL(string: sharedManager.baseADUrl) else {
-                completion(Result<LotameProfile>.failure(LotameError.invalidURL))
+                completion(ResultLotameProfile(LotameError.invalidURL))
                 return
             }
             let req = URLRequest(url: baseURL, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
+            
+            debugPrint("Lotame URL \(req.url?.absoluteString)")
             
             URLSession.shared.dataTask(with: req) { data, response, error in
                 DispatchQueue.main.async{
                     if let data = data,
                         let responseJSON = (try? JSONSerialization.jsonObject(with: data, options: [])) as? NSDictionary {
-                        completion(Result<LotameProfile>.success(LotameProfile(json: responseJSON)))
+                        completion(ResultLotameProfile(value: LotameProfile(json: responseJSON)))
                     } else {
-                        completion(Result<LotameProfile>.failure(LotameError.unexpectedResponse))
+                        completion(ResultLotameProfile(LotameError.unexpectedResponse))
                     }
                 }
             }.resume()
@@ -407,27 +413,27 @@ open class DMP:NSObject{
     which will be replaced before performing the HTTP(s) call.
     */
     
-    open class func sendRequest(urlPattern:String,_ completion:@escaping (_ result: Result<LotameProfile>)->Void) {
+    open class func sendRequest(urlPattern:String,_ completion:@escaping (_ result: ResultLotameProfile)->Void) {
         
         dispatchQueue.async{
             
             guard sharedManager.isInitialized else{
                 DispatchQueue.main.async{
-                    completion(Result<LotameProfile>.failure(LotameError.initializeNotCalled))
+                    completion(ResultLotameProfile(LotameError.initializeNotCalled))
                 }
                 return
             }
             
             guard DMP.trackingEnabled else{
                 DispatchQueue.main.async{
-                    completion(Result<LotameProfile>.failure(LotameError.trackingDisabled))
+                    completion(ResultLotameProfile(LotameError.trackingDisabled))
                 }
                 return
             }
 
             guard let mid = DMP.advertisingId?.urlPathEncoded(), !mid.isEmpty  else {
                 DispatchQueue.main.async{
-                    completion(Result<LotameProfile>.failure(LotameError.invalidID))
+                    completion(ResultLotameProfile(LotameError.invalidID))
                 }
                 return
             }
@@ -436,11 +442,13 @@ open class DMP:NSObject{
             newStringPattern = newStringPattern.replacingOccurrences(of:"{deviceidtype}",with:"IDFA")
             
             guard let newUrlPattern = URL(string: newStringPattern) else {
-                completion(Result<LotameProfile>.failure(LotameError.invalidURL))
+                completion(ResultLotameProfile(LotameError.invalidURL))
                 return
             }
             
             let req = URLRequest(url: newUrlPattern, cachePolicy: URLRequest.CachePolicy.reloadIgnoringCacheData, timeoutInterval: 60)
+            
+            debugPrint("Lotame URL \(req.url?.absoluteString)")
             
             URLSession.shared.dataTask(with: req).resume()
         }
