@@ -32,7 +32,7 @@ open class LotameAudience : NSObject{
         return json.rawString()
     }
     
-    open var json: NSDictionary {
+    @objc open var json: NSDictionary {
         let json: NSDictionary = [
             "id": id,
             "abbr" : abbreviation
@@ -40,8 +40,8 @@ open class LotameAudience : NSObject{
         return json
     }
     
-    public let id:String
-    public let abbreviation:String
+    @objc public let id:String
+    @objc public let abbreviation:String
     
     /** Sample payload
      

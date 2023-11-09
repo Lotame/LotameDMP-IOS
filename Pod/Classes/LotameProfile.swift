@@ -28,8 +28,8 @@ import Foundation
 
 @objc
 open class LotameProfile: NSObject{
-    public let pid:String
-    public let panoramaId:String
+    @objc public let pid:String
+    @objc public let panoramaId:String
     @objc open var audiences: [LotameAudience] = []
     
     @objc open var jsonString:String? {
@@ -61,7 +61,7 @@ open class LotameProfile: NSObject{
      }
      
      */
-    open var json: NSDictionary {
+    @objc open var json: NSDictionary {
         return [
             "Profile": [
                 "panoramaId": panoramaId,
