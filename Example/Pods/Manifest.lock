@@ -1,5 +1,5 @@
 PODS:
-  - LotameDMP (5.3.0)
+  - LotameDMP (5.3.1)
   - OHHTTPStubs (9.1.0):
     - OHHTTPStubs/Default (= 9.1.0)
   - OHHTTPStubs/Core (9.1.0)
@@ -27,7 +27,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  LotameDMP: c08f1b509a892390fcfa5821fedbd5a4e4bff725
+  LotameDMP: cc41579809aa6c284e0dda099747e5c3689126fa
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
 
 PODFILE CHECKSUM: b42b6fbf27c9712498a99fc59516d5673fcf2a2b
