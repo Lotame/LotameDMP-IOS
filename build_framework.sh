@@ -6,7 +6,7 @@ CURRENT_TAG=$(git describe --abbrev=0 --tags)
 SWIFT_VER=$(xcrun swift -version | cut -d" " -f4)
 VERSION_DIR=tag-$CURRENT_TAG-swift-$SWIFT_VER-framework
 
-carthage build --no-skip-current
+carthage build --no-skip-current --use-xcframeworks
 mkdir -p dist/$VERSION_DIR
 mv Carthage/Build/iOS/LotameDMP.framework dist/$VERSION_DIR/LotameDMP.framework
 cd dist
